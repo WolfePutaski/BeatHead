@@ -1,0 +1,1170 @@
+fileFormatVersion: 2
+guid: 9d227d5a673aeac4da1349c5ef05a8c9
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Master System - Streets of Rage 2 - Axel Stone 1_0
+    21300002: Master System - Streets of Rage 2 - Axel Stone 1_1
+    21300004: Master System - Streets of Rage 2 - Axel Stone 1_2
+    21300006: Master System - Streets of Rage 2 - Axel Stone 1_3
+    21300008: Master System - Streets of Rage 2 - Axel Stone 1_4
+    21300010: Master System - Streets of Rage 2 - Axel Stone 1_5
+    21300012: Master System - Streets of Rage 2 - Axel Stone 1_6
+    21300014: Master System - Streets of Rage 2 - Axel Stone 1_7
+    21300016: Master System - Streets of Rage 2 - Axel Stone 1_8
+    21300018: Master System - Streets of Rage 2 - Axel Stone 1_9
+    21300020: Master System - Streets of Rage 2 - Axel Stone 1_10
+    21300022: Master System - Streets of Rage 2 - Axel Stone 1_11
+    21300024: Master System - Streets of Rage 2 - Axel Stone 1_12
+    21300026: Master System - Streets of Rage 2 - Axel Stone 1_13
+    21300028: Master System - Streets of Rage 2 - Axel Stone 1_14
+    21300030: Master System - Streets of Rage 2 - Axel Stone 1_15
+    21300032: Master System - Streets of Rage 2 - Axel Stone 1_16
+    21300034: Master System - Streets of Rage 2 - Axel Stone 1_17
+    21300036: Master System - Streets of Rage 2 - Axel Stone 1_18
+    21300038: Master System - Streets of Rage 2 - Axel Stone 1_19
+    21300040: Master System - Streets of Rage 2 - Axel Stone 1_20
+    21300042: Master System - Streets of Rage 2 - Axel Stone 1_21
+    21300044: Master System - Streets of Rage 2 - Axel Stone 1_22
+    21300046: Master System - Streets of Rage 2 - Axel Stone 1_23
+    21300048: Master System - Streets of Rage 2 - Axel Stone 1_24
+    21300050: Master System - Streets of Rage 2 - Axel Stone 1_25
+    21300052: Master System - Streets of Rage 2 - Axel Stone 1_26
+    21300054: Master System - Streets of Rage 2 - Axel Stone 1_27
+    21300056: Master System - Streets of Rage 2 - Axel Stone 1_28
+    21300058: Master System - Streets of Rage 2 - Axel Stone 1_29
+    21300060: Master System - Streets of Rage 2 - Axel Stone 1_30
+    21300062: Master System - Streets of Rage 2 - Axel Stone 1_31
+    21300064: Master System - Streets of Rage 2 - Axel Stone 1_32
+    21300066: Master System - Streets of Rage 2 - Axel Stone 1_33
+    21300068: Master System - Streets of Rage 2 - Axel Stone 1_34
+    21300070: Master System - Streets of Rage 2 - Axel Stone 1_35
+    21300072: Master System - Streets of Rage 2 - Axel Stone 1_36
+    21300074: Master System - Streets of Rage 2 - Axel Stone 1_37
+    21300076: Master System - Streets of Rage 2 - Axel Stone 1_38
+    21300078: Master System - Streets of Rage 2 - Axel Stone 1_39
+    21300080: Master System - Streets of Rage 2 - Axel Stone 1_40
+    21300082: Master System - Streets of Rage 2 - Axel Stone 1_41
+    21300084: Master System - Streets of Rage 2 - Axel Stone 1_42
+    21300086: Master System - Streets of Rage 2 - Axel Stone 1_43
+    21300088: Master System - Streets of Rage 2 - Axel Stone 1_44
+    21300090: Master System - Streets of Rage 2 - Axel Stone 1_45
+    21300092: Master System - Streets of Rage 2 - Axel Stone 1_46
+    21300094: Master System - Streets of Rage 2 - Axel Stone 1_47
+    21300096: Master System - Streets of Rage 2 - Axel Stone 1_48
+    21300098: Master System - Streets of Rage 2 - Axel Stone 1_49
+    21300100: Master System - Streets of Rage 2 - Axel Stone 1_50
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 283
+        width: 22
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c664748e9f60d4abf99247f36cb4be
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 283
+        width: 21
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673b8010679ed304dbb9c3c3f570d7ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 283
+        width: 20
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ed9d499bd99a34caab420ae1766276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 283
+        width: 13
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ec6c51799a14d4d8d805b617d0495b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 283
+        width: 20
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfdc3d822c49d6439d35c1c0952a1c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_5
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 283
+        width: 25
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5881294da8f43d341983992f24dda283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_6
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 283
+        width: 31
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490dfcd0750a9db4691bfe6bd1abc409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_7
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 283
+        width: 35
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43eb7d0d0a8954b4d99d720ad2ca4c11
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_8
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 283
+        width: 40
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eba400ec64c9c842938f5cceeefaaa2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_9
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 283
+        width: 32
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3ed12d53e588b498f82d41fde26613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_10
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 283
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192053b40235a954087fdc0386e709e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_11
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 283
+        width: 21
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca813dc5dc8aa334f9354fdb00e2bb01
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 234
+        width: 29
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119d5019fd86b164984bceacc7088687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 234
+        width: 35
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374ba0c6f6c34d7479330c35fefa0888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_14
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 234
+        width: 36
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e5f4a74a637d14d9fbba96eb603fd1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_15
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 234
+        width: 23
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89299fcdcb57ca241824b638e6dcec20
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_16
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 234
+        width: 37
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e217aa0a87033c547b9e6bde5ad955ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_17
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 234
+        width: 32
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845f8c6f7f4639045ab63e016d306a86
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_18
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 234
+        width: 28
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73281cde21569e48ace04bcdda62cab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_19
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 234
+        width: 32
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fad88dd79ff1024787ccb093fa561c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_20
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 234
+        width: 19
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95d27aa40f1fae47885da2f012dabae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_21
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 234
+        width: 16
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e549d3f8f8c73438f27653d107e0cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 193
+        width: 32
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576da2a0f8a76ab4e882e3e7c9fe1a87
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_23
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 193
+        width: 37
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b529224c1f785d49864d8599bf77d9d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_24
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 193
+        width: 32
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190f275b1308f334aa8a7c1256429bdc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_25
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 193
+        width: 20
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14fad7402a6ebb46ba8e90f4907fa48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_26
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 193
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da3803f233460d4999107c739cfd816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_27
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 193
+        width: 23
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fee78df4b555154294c337590905d49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_28
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 193
+        width: 36
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43f3294125338c45a3368cd1b780cfd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_29
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 144
+        width: 18
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea780f9b1e4e38a409298ed89fb69488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_30
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 144
+        width: 17
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4261e3702c4ef3d4fa370903681cd9a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_31
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 144
+        width: 40
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208ebf352364fb14b84c844d8896660d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_32
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 144
+        width: 16
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963517bdd0a8fe147950acc29cd51fa6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_33
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 40
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26fe609495ee1a49bb56319915f0c44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_34
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 144
+        width: 18
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a96aae9db3b8d34ca177d597693c291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_35
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 144
+        width: 35
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa35a7b0aae2c945bf57820d5f5faea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 91
+        width: 27
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60cb371a5dfb4394db91dd5e2202752f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_37
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 91
+        width: 29
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af172860ca74c145982f9a7507b64c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_38
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 91
+        width: 34
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a316e2141343446853d839cf5e7059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_39
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 91
+        width: 39
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2fe8668e314df429036589a9a17e29
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_40
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 92
+        width: 31
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9cdc3faaaf91e439b27d85efc997b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_41
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 91
+        width: 34
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df9172aa1699ca48b4654e648693300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_42
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 90
+        width: 27
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0676f51098b08c148860e5e1efc511ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 38
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b34160e2836bb2489eb87c585459dab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_44
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 50
+        width: 28
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3007fd9ffd3feb847afc46cbef008468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_45
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 50
+        width: 30
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046c6336bb8cf474b9e207adee7b6453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_46
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 50
+        width: 33
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f23b86906d79924c9df0c33432add82
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_47
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 20
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c53071ced61b546b42098af76aa2d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_48
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 25
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a740443ec670b499a41dd3dcda7f6e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_49
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 28
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795232d9f8b67c643926366ef2382683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_50
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 28
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571744bbaebbfd54385f4ed2732a7564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b902391033425e549932a813a8cc5e7c
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
