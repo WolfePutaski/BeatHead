@@ -1,2 +1,4 @@
 D:\Unity\Projects\Unhurtable\UNHURTABLE\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 D:\Unity\Projects\Unhurtable\UNHURTABLE\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+D:\IDD\2019-2\IDD391 Project\BeatHead\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\IDD\2019-2\IDD391 Project\BeatHead\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

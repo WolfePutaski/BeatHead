@@ -5,17 +5,23 @@ using UnityEngine;
 public class SC_PlayerProperties : MonoBehaviour
 {
 
-    public bool isInvincible; //NoHealthReduction
+    //public bool isInvincible; //NoHealthReduction
     public bool OnBlock;
 
     Rigidbody2D playerPhysics;
+    SC_PlayerMovement playerMovement;
     SC_CameraController cameraController;
+    SC_PlayerBlock playerBlock;
     Animator playerAnim;
 
 
+
     [Header("Health")]
-    public float HP;
+    public float HP; //execution will gain health or when all enemy is gone;
     public float MaxHP;
+
+    [Header("Posture")]
+
 
     [Header("AttackRequest")]
 
@@ -31,6 +37,8 @@ public class SC_PlayerProperties : MonoBehaviour
         HP = MaxHP;
         playerPhysics = GetComponent<Rigidbody2D>();
         playerAnim = gameObject.GetComponentInChildren<Animator>();
+        playerBlock = gameObject.GetComponent<SC_PlayerBlock>();
+        playerMovement = GetComponent<SC_PlayerMovement>();
 
         cameraController = FindObjectOfType<SC_CameraController>();
     }
@@ -66,13 +74,31 @@ public class SC_PlayerProperties : MonoBehaviour
 
     public void Attacked(float damage,float push)
     {
-        if (!OnBlock)
+        if (playerBlock.isBlocking)
         {
-            cameraController.Shake();
+            if (playerBlock.onDeflect) //can deflect
+            {
+                Debug.Log("Deflect!");
+            }
+            else //weak block
+            {
+                playerAnim.SetTrigger("AttackBlocked");
+                playerMovement.canMove = false;
+                playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
+                playerPhysics.AddForce(Vector2.right * push, ForceMode2D.Impulse);
+            }
+            
+
+        }
+        else //take damage
+        {
             playerAnim.SetTrigger("IsHurt");
-            HP -= damage;
+            playerMovement.canMove = false;
+            cameraController.Shake();
             playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
             playerPhysics.AddForce(Vector2.right * push, ForceMode2D.Impulse);
+            HP -= damage;
+
         }
     }
 

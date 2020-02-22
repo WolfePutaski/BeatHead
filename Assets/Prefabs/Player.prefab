@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4631270478274655734}
   m_Layer: 9
-  m_Name: AttackPos
+  m_Name: PlayerAttackPos
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -195,11 +195,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea554e00d74a8b34ba4da6f471b5dfd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 300
-  rollForce: 10
-  canMove: 1
-  isBusy: 0
   isInvincible: 0
+  OnBlock: 0
+  HP: 0
+  MaxHP: 0
+  MaxMeleeAttackers: 1
+  MeleeAttackers: []
+  MaxRangedAttackers: 1
+  RangedAttackers: []
 --- !u!114 &252442494271667810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +221,7 @@ MonoBehaviour:
   attackPos: {fileID: 4631270478274655734}
   attackRadius: 0.5
   damage: 2
+  enemiesToDamage: []
 --- !u!114 &7254024540026994619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPhysics: {fileID: 0}
   playerProperties: {fileID: 0}
+  rollForce: 0
+  playerSpeed: 0
+  canMove: 0
 --- !u!114 &1611106378753813559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,4 +251,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7269ac5fbde6442a1ced5ddba98322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBlock: 0
   isBlocking: 0

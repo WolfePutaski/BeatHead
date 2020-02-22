@@ -7,21 +7,34 @@ public class SC_EnemyAttack : MonoBehaviour
     Animator enemyAnim;
 
     public bool OnScanning = true;
-    [SerializeField]
+    bool isAttacking= false;
+
     float timeBtwAttack;
     public float startTimeBtwAttack;
     LayerMask whatIsPlayer;
     public float attackRadius;
 
-    public float attackDash;
-
     Rigidbody2D enemyPhysics;
     public GameObject Target;
 
     public Transform attackPos;
+    public float attackDash;
     public float damage;
     public float attackPush;
     public Collider2D attackTarget;
+
+    [Header("LightAttack")]
+    public float lightDamage;
+    public float lightAttackDash;
+    public float lightAttackPush;
+    public float lightTBA;
+
+    [Header("HeavyAttack")]
+    public float heavyDamage;
+    public float heavyAttackDash;
+    public float heavyAttackPush;
+    public float heavyTBA;
+
 
     SC_CameraController cameraController;
     SC_EnemyMovement enemyMovement;
@@ -43,7 +56,7 @@ public class SC_EnemyAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (timeBtwAttack <= 0)
         {
@@ -64,23 +77,41 @@ public class SC_EnemyAttack : MonoBehaviour
 
     public void ScanForAttack()
     {
-        if (timeBtwAttack <= 0 && OnScanning && Mathf.Abs(enemyMovement.distanceFromTarget) < enemyMovement.closeDistance)
+        if (!isAttacking && timeBtwAttack <= 0 && OnScanning && Mathf.Abs(enemyMovement.distanceFromTarget) < enemyMovement.closeDistance)
         {
-            timeBtwAttack = startTimeBtwAttack;
-            OnScanning = false;
-            enemyMovement.CancelAttack();
+            isAttacking = true;
             enemyAnim.SetTrigger("Attack");
             Debug.Log("Enemy Attack Triggered");
 
         }
     }
 
+    void SetAttack_Light()
+    {
+        damage = lightDamage;
+        attackDash = lightAttackDash;
+        attackPush = lightAttackPush;
+        startTimeBtwAttack = lightTBA;
+    }
+
+    void SetAttack_Heavy()
+    {
+        damage = heavyDamage;
+        attackDash = heavyAttackDash;
+        attackPush = heavyAttackPush;
+        startTimeBtwAttack = heavyTBA;
+    }
+
+
     public void Attack()
     {
+        isAttacking = false;
+        timeBtwAttack = startTimeBtwAttack;
+        enemyAnim.SetInteger("AttackSequence", enemyAnim.GetInteger("AttackSequence") + 1);
         enemyPhysics.velocity = new Vector2(0, enemyPhysics.velocity.y);
-        enemyPhysics.AddForce(Vector2.right * gameObject.transform.localScale.x * attackDash, ForceMode2D.Impulse);
+        enemyPhysics.AddForce(Vector2.right * gameObject.transform.localScale.x * attackDash);
 
-        enemyMovement.CancelAttack();
+        enemyMovement.CancelAttack(); 
         attackTarget = null;
 
 
@@ -89,8 +120,17 @@ public class SC_EnemyAttack : MonoBehaviour
         if (attackTarget != null)
         {
             attackTarget.transform.position = new Vector2(attackPos.position.x, attackTarget.transform.position.y);
-            attackTarget.GetComponent<SC_PlayerProperties>().Attacked(damage,attackPush * transform.localScale.x); //getcomponent and takedamage
-            Debug.Log("Player Attacked");
+            if (attackTarget.GetComponent<SC_PlayerBlock>().onDeflect)
+            {
+                GetComponent<SC_EnemyProperties>().Deflected(1);
+            }
+            else
+            {
+                attackTarget.transform.position = new Vector2(attackPos.position.x, attackTarget.transform.position.y);
+                attackTarget.GetComponent<SC_PlayerProperties>().Attacked(damage, attackPush * transform.localScale.x); //getcomponent and takedamage
+                Debug.Log("Player Attacked");
+            }
+
         }
 
 
@@ -105,15 +145,20 @@ public class SC_EnemyAttack : MonoBehaviour
     }
     
 
-
     void AllowtoAttack()
     {
         OnScanning = true;
+
     }
 
     void NotAllowtoAttack()
     {
         OnScanning = false;
+    }
+
+    void ResetCombo()
+    {
+        enemyAnim.SetInteger("AttackSequence", 0);
     }
 }
 

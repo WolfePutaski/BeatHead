@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SC_EnemyProperties : MonoBehaviour
 {
+    [Header("Health")]
     public float defaultHP;
     float HP;
 
@@ -12,15 +13,27 @@ public class SC_EnemyProperties : MonoBehaviour
     float regenRateCount = 0;
     public float regenPerSec;
 
+    [Header("Posture")]
+    public float defaultPosture;
+    [SerializeField]
+    float posture;
+    public float stunKnockback;
+
+    bool harderned;
+
+
     Rigidbody2D enemyPhysics;
     Animator enemyAnim;
+    SC_EnemyMovement enemyMovement;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyPhysics = gameObject.GetComponent<Rigidbody2D>();
         enemyAnim = GetComponent<Animator>();
+        enemyMovement = GetComponent<SC_EnemyMovement>();
         HP = defaultHP;
+        posture = defaultPosture;
     }
 
     // Update is called once per frame
@@ -41,16 +54,24 @@ public class SC_EnemyProperties : MonoBehaviour
         if (HP<= 0)
         {
             enemyAnim.SetTrigger("Die");
+            gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         }
     }
 
     public void TakeDamage(float damage, float push)
     {
+        enemyMovement.CanMove = false;
         regenDelayCount = regenDelay;
         HP -= damage;
 
-        enemyPhysics.velocity = new Vector2(0, enemyPhysics.velocity.y);
-        enemyPhysics.AddForce(Vector2.right * push, ForceMode2D.Impulse);
+        if (!harderned)
+        {
+            enemyAnim.SetTrigger("Hurt");
+            enemyPhysics.velocity = new Vector2(0, enemyPhysics.velocity.y);
+            enemyPhysics.AddForce(Vector2.right * push, ForceMode2D.Impulse);
+        }
+
+
     }
 
     public void HealthRegen()
@@ -66,5 +87,39 @@ public class SC_EnemyProperties : MonoBehaviour
         }
 
 
+    }
+
+    public void Die()
+    {
+       Destroy(gameObject);
+    }
+
+    void Harderned()
+    {
+        harderned = true;
+    }
+    void StopHarderned()
+    {
+        harderned = false;
+    }
+
+    public void Deflected(float postureDamage)
+    {
+        posture -= postureDamage;
+        if (posture <= 0)
+        {
+            Stunned();
+        }
+    }
+
+    void Stunned()
+    {
+        enemyAnim.SetTrigger("Stunned");
+        enemyPhysics.AddForce(Vector2.left * stunKnockback * transform.localScale.x, ForceMode2D.Impulse);
+    }
+
+    void ResetPosture()
+    {
+        posture = defaultPosture;
     }
 }

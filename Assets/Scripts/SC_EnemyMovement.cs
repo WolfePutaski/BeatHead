@@ -76,13 +76,13 @@ public class SC_EnemyMovement : MonoBehaviour
     public void RequestAttack()
     {
         Target.SendMessage("GetAttackRequest", gameObject);
-        Debug.Log("Attack Requested");
+        //Debug.Log("Attack Requested");
 
     }
     public void AllowtoAttack()
     {
         IsEngaging = true;
-        Debug.Log("Attack Allowed");
+        //Debug.Log("Attack Allowed");
 
     }
 

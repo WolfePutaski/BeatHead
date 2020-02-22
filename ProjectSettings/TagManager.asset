@@ -7,6 +7,9 @@ TagManager:
   - LevelBounds
   - Music
   - Background
+  - EnemySpawnPoint
+  - Enemy
+  - Deflect
   layers:
   - Default
   - TransparentFX

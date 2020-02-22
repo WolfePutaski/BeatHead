@@ -8,8 +8,11 @@ public class SC_PlayerMovement : MonoBehaviour
     public Rigidbody2D playerPhysics;
     Animator playerAnim;
     public SC_PlayerProperties playerProperties;
+    SC_PlayerBlock playerBlock;
 
     public float rollForce;
+    public float defaultSpeed = 0;
+    public float slowWalkSpeed = 0;
     public float playerSpeed = 0;
 
     public bool canMove;
@@ -20,14 +23,15 @@ public class SC_PlayerMovement : MonoBehaviour
         playerProperties = gameObject.GetComponent<SC_PlayerProperties>();
         playerPhysics = gameObject.GetComponent<Rigidbody2D>();
         playerAnim = gameObject.GetComponentInChildren<Animator>();
+        playerBlock = gameObject.GetComponent<SC_PlayerBlock>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (canMove)
-        {       
-                Movement();
+        {
+            Movement();
 
             if (Input.GetKeyDown(KeyCode.V)
     && Input.GetAxisRaw("Horizontal") != 0
@@ -52,9 +56,18 @@ public class SC_PlayerMovement : MonoBehaviour
     void Movement()
     {
 
-        
-            playerPhysics.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * playerSpeed * Time.deltaTime, playerPhysics.velocity.y);
-       
+        if (playerBlock.isBlocking)
+        {
+            playerSpeed = slowWalkSpeed;
+        }
+        else
+        {
+            playerSpeed = defaultSpeed;
+        }
+
+        playerPhysics.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * playerSpeed * Time.deltaTime, playerPhysics.velocity.y);
+
+
 
         if (playerPhysics.velocity.x > 0)
 

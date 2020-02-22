@@ -53,6 +53,12 @@ TextureImporter:
     21300096: Master System - Streets of Rage 2 - Axel Stone 1_48
     21300098: Master System - Streets of Rage 2 - Axel Stone 1_49
     21300100: Master System - Streets of Rage 2 - Axel Stone 1_50
+    21300102: Master System - Streets of Rage 2 - Axel Stone 1_51
+    21300104: Master System - Streets of Rage 2 - Axel Stone 1_52
+    21300106: Master System - Streets of Rage 2 - Axel Stone 1_53
+    21300108: Master System - Streets of Rage 2 - Axel Stone 1_54
+    21300110: Master System - Streets of Rage 2 - Axel Stone 1_55
+    21300112: Master System - Streets of Rage 2 - Axel Stone 1_56
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -149,7 +155,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74c664748e9f60d4abf99247f36cb4be
+      spriteID: 383f71adcbe685d4480644fbe2595dc3
       vertices: []
       indices: 
       edges: []
@@ -169,7 +175,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 673b8010679ed304dbb9c3c3f570d7ca
+      spriteID: 494c330c59a5ef7469017a738bac0d27
       vertices: []
       indices: 
       edges: []
@@ -189,7 +195,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71ed9d499bd99a34caab420ae1766276
+      spriteID: bc922d2d4d82b3249ac12baa73495e48
       vertices: []
       indices: 
       edges: []
@@ -209,7 +215,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42ec6c51799a14d4d8d805b617d0495b
+      spriteID: 898bc97fef7c5b644a23903affbbf67d
       vertices: []
       indices: 
       edges: []
@@ -229,7 +235,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bfdc3d822c49d6439d35c1c0952a1c1
+      spriteID: 9eaee2613d78c2a498685b07ff525a9d
       vertices: []
       indices: 
       edges: []
@@ -249,7 +255,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5881294da8f43d341983992f24dda283
+      spriteID: 31f6580a790736440b8748c350c173d9
       vertices: []
       indices: 
       edges: []
@@ -269,7 +275,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 490dfcd0750a9db4691bfe6bd1abc409
+      spriteID: a0b3fe3ed281b144187ff6dec4b51d8b
       vertices: []
       indices: 
       edges: []
@@ -289,7 +295,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43eb7d0d0a8954b4d99d720ad2ca4c11
+      spriteID: ef408fd2737d7f14b9e624f9be6b7c29
       vertices: []
       indices: 
       edges: []
@@ -309,7 +315,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9eba400ec64c9c842938f5cceeefaaa2
+      spriteID: 18d9f1ec7ff74b143b636ce831724672
       vertices: []
       indices: 
       edges: []
@@ -329,7 +335,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd3ed12d53e588b498f82d41fde26613
+      spriteID: d12a111fcbbacfa46b461790b3626f6d
       vertices: []
       indices: 
       edges: []
@@ -349,7 +355,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 192053b40235a954087fdc0386e709e8
+      spriteID: f28ca55500b52f34aa2bd5bc5632a77b
       vertices: []
       indices: 
       edges: []
@@ -369,7 +375,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca813dc5dc8aa334f9354fdb00e2bb01
+      spriteID: 611c5705ad505444fb3516dce155995b
       vertices: []
       indices: 
       edges: []
@@ -389,7 +395,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 119d5019fd86b164984bceacc7088687
+      spriteID: 1999b3af73c0b5844b49689dc7e9065a
       vertices: []
       indices: 
       edges: []
@@ -409,7 +415,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 374ba0c6f6c34d7479330c35fefa0888
+      spriteID: aabbba09068750a49bd9cb5b74849506
       vertices: []
       indices: 
       edges: []
@@ -429,7 +435,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1e5f4a74a637d14d9fbba96eb603fd1
+      spriteID: 014108e178796284b9b7eef9a82030bb
       vertices: []
       indices: 
       edges: []
@@ -449,7 +455,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89299fcdcb57ca241824b638e6dcec20
+      spriteID: a8ea425ae86f89c4ab2f3a937e321ecf
       vertices: []
       indices: 
       edges: []
@@ -469,7 +475,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e217aa0a87033c547b9e6bde5ad955ba
+      spriteID: ba55412029a076b4497b0b160846ec54
       vertices: []
       indices: 
       edges: []
@@ -489,7 +495,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 845f8c6f7f4639045ab63e016d306a86
+      spriteID: c5cb8e9cf0e1a42429ab376eb7a61e7d
       vertices: []
       indices: 
       edges: []
@@ -509,7 +515,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d73281cde21569e48ace04bcdda62cab
+      spriteID: 78a4b5a09620f134491e88178e94b266
       vertices: []
       indices: 
       edges: []
@@ -529,7 +535,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fad88dd79ff1024787ccb093fa561c8
+      spriteID: 53ac0b9c59e67c34e8f1e7db854b0e4e
       vertices: []
       indices: 
       edges: []
@@ -549,7 +555,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f95d27aa40f1fae47885da2f012dabae
+      spriteID: ce5ce0025de286f418f81f6252ce8c25
       vertices: []
       indices: 
       edges: []
@@ -569,7 +575,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85e549d3f8f8c73438f27653d107e0cc
+      spriteID: 70adade26c72b6c48b01f86435684d3b
       vertices: []
       indices: 
       edges: []
@@ -589,7 +595,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 576da2a0f8a76ab4e882e3e7c9fe1a87
+      spriteID: 3423e18f196d99e49a55bafb96147e01
       vertices: []
       indices: 
       edges: []
@@ -609,7 +615,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b529224c1f785d49864d8599bf77d9d
+      spriteID: dfc4f091e35ebb14da8485ab822596fd
       vertices: []
       indices: 
       edges: []
@@ -629,7 +635,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 190f275b1308f334aa8a7c1256429bdc
+      spriteID: 13223ecc1816ea14aa5b721738755046
       vertices: []
       indices: 
       edges: []
@@ -649,7 +655,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a14fad7402a6ebb46ba8e90f4907fa48
+      spriteID: ff185c25af9ef2240bd373c4af212c02
       vertices: []
       indices: 
       edges: []
@@ -669,7 +675,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5da3803f233460d4999107c739cfd816
+      spriteID: af15c351c7eeff94faaed78346f85dc9
       vertices: []
       indices: 
       edges: []
@@ -689,7 +695,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fee78df4b555154294c337590905d49
+      spriteID: 7015b0431e922404495b72913e0ed314
       vertices: []
       indices: 
       edges: []
@@ -709,7 +715,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d43f3294125338c45a3368cd1b780cfd
+      spriteID: 4a2effda80cd88f49b55cd53b77164ef
       vertices: []
       indices: 
       edges: []
@@ -729,7 +735,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea780f9b1e4e38a409298ed89fb69488
+      spriteID: fd5eba68416890f43bde948522cee67b
       vertices: []
       indices: 
       edges: []
@@ -749,7 +755,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4261e3702c4ef3d4fa370903681cd9a1
+      spriteID: a17d6d17cd6770a4aabd6da902d9e0d1
       vertices: []
       indices: 
       edges: []
@@ -769,7 +775,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 208ebf352364fb14b84c844d8896660d
+      spriteID: fa9a7f07722ad314cb7268c7b910651e
       vertices: []
       indices: 
       edges: []
@@ -789,7 +795,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 963517bdd0a8fe147950acc29cd51fa6
+      spriteID: ee21fcced8d2cf649afa12b5d6c12189
       vertices: []
       indices: 
       edges: []
@@ -809,7 +815,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c26fe609495ee1a49bb56319915f0c44
+      spriteID: c6b7fe8a77971e94b959c6cc2b907150
       vertices: []
       indices: 
       edges: []
@@ -829,7 +835,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a96aae9db3b8d34ca177d597693c291
+      spriteID: c99e8a028a3dd774fb3f2cabcbf4e6fb
       vertices: []
       indices: 
       edges: []
@@ -849,7 +855,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caa35a7b0aae2c945bf57820d5f5faea
+      spriteID: e95b41824e0fc9945baa04c9d5e6e76b
       vertices: []
       indices: 
       edges: []
@@ -869,7 +875,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60cb371a5dfb4394db91dd5e2202752f
+      spriteID: 271c36a420991d049a8ff5633453a93a
       vertices: []
       indices: 
       edges: []
@@ -889,7 +895,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3af172860ca74c145982f9a7507b64c2
+      spriteID: e5b63e5cd8392c74b9a0f52ee4b37f5d
       vertices: []
       indices: 
       edges: []
@@ -909,7 +915,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61a316e2141343446853d839cf5e7059
+      spriteID: bc48a4355b97ffd45b149fc788546260
       vertices: []
       indices: 
       edges: []
@@ -929,7 +935,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d2fe8668e314df429036589a9a17e29
+      spriteID: 04f2ade125008c44cb450f59de1fd6f5
       vertices: []
       indices: 
       edges: []
@@ -949,7 +955,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca9cdc3faaaf91e439b27d85efc997b5
+      spriteID: 424dfbfa23dc9f547a14f3bee7e9d531
       vertices: []
       indices: 
       edges: []
@@ -969,7 +975,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9df9172aa1699ca48b4654e648693300
+      spriteID: 354046d838c75f247850fc12d3ef76b2
       vertices: []
       indices: 
       edges: []
@@ -989,7 +995,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0676f51098b08c148860e5e1efc511ca
+      spriteID: 8f3538520114bab479e83b95480398dc
       vertices: []
       indices: 
       edges: []
@@ -1009,7 +1015,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b34160e2836bb2489eb87c585459dab
+      spriteID: 4066220363500ce49b5e165a45e1a81d
       vertices: []
       indices: 
       edges: []
@@ -1029,7 +1035,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3007fd9ffd3feb847afc46cbef008468
+      spriteID: 78ca92f70562c534f9dec66d0def517c
       vertices: []
       indices: 
       edges: []
@@ -1049,7 +1055,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 046c6336bb8cf474b9e207adee7b6453
+      spriteID: 72f1f04b7a604c54785e0e13331bc38e
       vertices: []
       indices: 
       edges: []
@@ -1069,7 +1075,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f23b86906d79924c9df0c33432add82
+      spriteID: 08da0616d084967489d9555142893cc6
       vertices: []
       indices: 
       edges: []
@@ -1089,7 +1095,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2c53071ced61b546b42098af76aa2d8
+      spriteID: 867428080460bfd4dbe9354ad20af5a3
       vertices: []
       indices: 
       edges: []
@@ -1109,7 +1115,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68a740443ec670b499a41dd3dcda7f6e
+      spriteID: ae6439eeaeade3a4782d048001e52024
       vertices: []
       indices: 
       edges: []
@@ -1129,7 +1135,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 795232d9f8b67c643926366ef2382683
+      spriteID: cfe2e0d9ada0c1045964d8c621c5c984
       vertices: []
       indices: 
       edges: []
@@ -1149,7 +1155,127 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 571744bbaebbfd54385f4ed2732a7564
+      spriteID: d86b4f53c39d0e5478e6c16699135a03
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_51
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 24
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53e39b140b2e274fb7154ef1164bc19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_52
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 0
+        width: 22
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40df72eeb772c2844bb9392b4400919e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_53
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 27
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8bfd9f89bcdba94f95766daa0953af7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_54
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 27
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a94af8c074043e244b0154fa307ff4ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_55
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 22
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff32255574d49f4f82f185711f79b74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Master System - Streets of Rage 2 - Axel Stone 1_56
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 0
+        width: 24
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a886bd398d94c4fb140112b930306a
       vertices: []
       indices: 
       edges: []

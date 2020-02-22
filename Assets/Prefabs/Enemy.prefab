@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5630773661671206140}
   m_Layer: 13
-  m_Name: AttackPos
+  m_Name: EnemyAttackPos
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146189564694281455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48, y: 1.26, z: 0}
+  m_LocalPosition: {x: 0.78, y: 1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8296466519088867936}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1714070790211081706}
   m_Layer: 13
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296466519088867939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: -12.300002, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5630773661671206140}
@@ -175,7 +175,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 847faf848faeb5c4ebdd9a9de3e0eaea, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -197,6 +197,9 @@ MonoBehaviour:
   defaultHP: 10
   regenDelay: 2
   regenPerSec: 1
+  defaultPosture: 0
+  posture: 0
+  stunKnockback: 0
 --- !u!114 &1845497328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,8 +215,8 @@ MonoBehaviour:
   CanMove: 1
   IsEngaging: 0
   DefaultSpeed: 2
-  farDistanceMin: 1.8
-  farDistanceMax: 2.2
+  farDistanceMin: 1.5
+  farDistanceMax: 1.8
   closeDistance: 1
   distanceFromTarget: 0
   Target: {fileID: 0}
@@ -230,12 +233,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnScanning: 1
-  timeBtwAttack: 0
-  startTimeBtwAttack: 3
+  startTimeBtwAttack: 0
   attackRadius: 0.4
-  attackDash: 3
   Target: {fileID: 0}
   attackPos: {fileID: 5630773661671206140}
+  attackDash: 3
   damage: 0
-  attackPush: 80
+  attackPush: 5
   attackTarget: {fileID: 0}
+  lightDamage: 0
+  lightAttackDash: 1
+  lightAttackPush: 1
+  lightTBA: 0
+  heavyDamage: 0
+  heavyAttackDash: 3
+  heavyAttackPush: 5
+  heavyTBA: 1

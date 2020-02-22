@@ -8,9 +8,15 @@ public class SC_PlayerBlock : MonoBehaviour
     SC_PlayerProperties playerProperties;
     Animator playerAnim;
 
-
     public bool canBlock;
     public bool isBlocking;
+
+    [Header("Deflection")]
+    public float deflectionWindow;
+    public bool onDeflect;
+    [SerializeField]
+    float deflectTimer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,21 +31,48 @@ public class SC_PlayerBlock : MonoBehaviour
         if (canBlock)
         {
             {
-                isBlocking = Input.GetKey(KeyCode.R);
+                if (Input.GetMouseButtonDown(1))
+                {
+                    isBlocking = true;
+                    deflectTimer = deflectionWindow;
+                    onDeflect = true;
+                }
+
+                if (Input.GetMouseButtonUp(1))
+                {
+                    isBlocking = false;
+                    onDeflect = false;
+
+                }
             }
 
-                playerAnim.SetBool("Is Blocking", isBlocking);
-
-
-            
+            playerAnim.SetBool("Is Blocking", isBlocking);
         }
 
+        DeflectCountdown();
 
     }
 
-    void Block()
+    void DeflectCountdown()
     {
+        if (deflectTimer > 0)
+        {
+            deflectTimer -= Time.deltaTime;
+        }
+        if (deflectTimer <= 0)
+        {
+            onDeflect = false;
+        }
 
+        if (onDeflect)
+        {
+            //gameObject.tag = "Deflect";
+        }
+    }
+
+    void Unblock()
+    {
+        isBlocking = false;
     }
 
     void NotAllowBlock()

@@ -15,7 +15,7 @@ public class SC_PlayerAttack : MonoBehaviour
     SC_CameraController cameraController;
 
     public float attackDashForce;
-    public float attackPushModifier;
+    public float attackPushForce;
 
     float timeBtwAttack;
     public float startTimeBtwAttack;
@@ -24,7 +24,7 @@ public class SC_PlayerAttack : MonoBehaviour
     LayerMask whatIsEnemies;
     public float attackRadius;
     public float damage;
-    Collider2D[] enemiesToDamage;
+    public Collider2D[] enemiesToDamage;
 
 
     // Start is called before the first frame update
@@ -33,13 +33,15 @@ public class SC_PlayerAttack : MonoBehaviour
         playerAnim = GetComponentInChildren<Animator>();
         playerPhysics = GetComponent<Rigidbody2D>();
         playerProperties = GetComponent<SC_PlayerProperties>();
-        attackPos = GameObject.Find("AttackPos").GetComponent<Transform>();
+        attackPos = GameObject.Find("PlayerAttackPos").GetComponent<Transform>();
         whatIsEnemies = LayerMask.GetMask("Enemies");
         cameraController = FindObjectOfType<SC_CameraController>();
+        enemiesToDamage = null;
+
     }
 
     // Update is called once per frame
-    void Update()
+    void  Update()
     {
         if (timeBtwAttack <= 0)
         {
@@ -57,15 +59,15 @@ public class SC_PlayerAttack : MonoBehaviour
 
     void Attack()
     {
+        enemiesToDamage = null;
 
         timeBtwAttack = startTimeBtwAttack;
 
         Debug.Log("Pressed Attack");
         playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
-        playerPhysics.AddForce(Vector2.right * gameObject.transform.localScale.x * attackDashForce, ForceMode2D.Impulse);
+        playerPhysics.AddForce(Vector2.right * gameObject.transform.localScale.x * attackDashForce);
 
         //Hitbox
-        enemiesToDamage = null;
         enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRadius, whatIsEnemies);
         if (enemiesToDamage.Length > 0)
         {
@@ -75,9 +77,11 @@ public class SC_PlayerAttack : MonoBehaviour
             {
                 Debug.Log("We hit " + enemy.name);
                 enemy.transform.position = new Vector2(attackPos.position.x, enemy.transform.position.y);
-                enemy.GetComponent<SC_EnemyProperties>().TakeDamage(damage,attackDashForce * attackPushModifier * gameObject.transform.localScale.x); //getcomponent and takedamage
+                enemy.GetComponent<SC_EnemyProperties>().TakeDamage(damage,attackPushForce * gameObject.transform.localScale.x ); //getcomponent and takedamage
             }
         }
+        
+
 
 
     }
