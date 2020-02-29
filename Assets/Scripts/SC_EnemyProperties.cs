@@ -6,8 +6,15 @@ public class SC_EnemyProperties : MonoBehaviour
 {
     [Header("Health")]
     public float defaultHP;
+    [SerializeField]
     float HP;
+    public int defaultDHP;
+    int DHP;
 
+    public GameObject HPBar;
+    float defaultHPBarLength;
+    public List<GameObject> DHPBlock;
+    
     public float regenDelay;
     float regenDelayCount = 0;
     float regenRateCount = 0;
@@ -18,7 +25,12 @@ public class SC_EnemyProperties : MonoBehaviour
     [SerializeField]
     float posture;
     public float stunKnockback;
+    Transform statusGroup;
 
+    public GameObject postureBar;
+    float defaultpostureBarLength;
+
+    [SerializeField]
     bool harderned;
 
 
@@ -34,11 +46,37 @@ public class SC_EnemyProperties : MonoBehaviour
         enemyMovement = GetComponent<SC_EnemyMovement>();
         HP = defaultHP;
         posture = defaultPosture;
+        DHP = defaultDHP;
+
+
+
+
+        ////HUD
+        //HPBar = gameObject.transform.Find("HPBar").gameObject;
+        //postureBar = gameObject.transform.Find("PostureBar").gameObject;
+
+        DHPBlock = new List<GameObject>();
+
+        foreach (Transform child in gameObject.transform.Find("Status Group").Find("HealthBlockGroup").gameObject.transform)
+        {
+            if (child.tag == "Enemy_HPBLock")
+            {
+                DHPBlock.Add(child.gameObject);
+            }
+        }
+
+        defaultHPBarLength = HPBar.transform.localScale.x;
+        defaultpostureBarLength = postureBar.transform.localScale.x;
+        //DHPBlock = Add.
+            //add each block to maximum HP
+            //GameObject.FindGameObjectsWithTag("Enemy_HPBLock");
     }
 
     // Update is called once per frame
     void Update()
     {
+        HUDUpdate();
+
         if (regenDelayCount <= 0)
         {
             if (HP > 0 && HP < defaultHP)
@@ -51,10 +89,16 @@ public class SC_EnemyProperties : MonoBehaviour
             regenDelayCount -= Time.deltaTime;
         }
 
-        if (HP<= 0)
+        if (HP <= 0)
         {
             enemyAnim.SetTrigger("Die");
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+            Destroy(gameObject, 1);
+        }
+
+        if (posture > 0)
+        {
+            harderned = true;
         }
     }
 
@@ -109,6 +153,7 @@ public class SC_EnemyProperties : MonoBehaviour
         if (posture <= 0)
         {
             Stunned();
+            posture = 0;
         }
     }
 
@@ -121,5 +166,49 @@ public class SC_EnemyProperties : MonoBehaviour
     void ResetPosture()
     {
         posture = defaultPosture;
+    }
+
+    void HUDUpdate()
+    {
+        if (gameObject.transform.localScale.x < 0)
+        {
+            gameObject.transform.Find("Status Group").gameObject.transform.localScale = new Vector2(-1, 1);
+        }
+        else
+        {
+            gameObject.transform.Find("Status Group").gameObject.transform.localScale = new Vector2(1, 1);
+        }
+        //PostureBar
+
+        HPBar.transform.localScale = new Vector2(defaultHPBarLength * HP / defaultHP, HPBar.transform.localScale.y);
+
+        //PostureBar
+        if (postureBar.activeSelf == true)
+        {
+            postureBar.transform.localScale = new Vector2(defaultpostureBarLength * posture / defaultPosture, postureBar.transform.localScale.y);
+            if (defaultPosture <= 0)
+            {
+                postureBar.transform.localScale = Vector2.zero;
+            }
+        }
+
+        //Death Blow HP
+        for (int i = 1; i <= DHPBlock.Count; i++)
+        {
+            if (i > DHP)
+            {
+                DHPBlock[i -1].SetActive(false);
+            }
+            else
+            {
+                DHPBlock[i -1].SetActive(true);
+            }
+        }
+
+    }
+
+    void FindHUD()
+    {
+
     }
 }

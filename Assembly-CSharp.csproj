@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\SC_PlayerBlock.cs" />
     <Compile Include="Assets\Scripts\SC_PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\SC_PlayerProperties.cs" />
+    <Compile Include="Assets\Scripts\SC_PostureBar.cs" />
     <Compile Include="Assets\Scripts\SC_SpawnerEnemy.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/IDD/2019-2/IDD391 Project/BeatHead/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

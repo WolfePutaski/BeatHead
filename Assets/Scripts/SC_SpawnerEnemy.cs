@@ -9,6 +9,7 @@ public class SC_SpawnerEnemy : MonoBehaviour
     public float spawnCooldownCount;
     public int enemyCount;
     public int maxEnemeies;
+    public GameObject[] enemyTypes;
     public GameObject enemy;
 
     // Start is called before the first frame update
@@ -40,6 +41,8 @@ public class SC_SpawnerEnemy : MonoBehaviour
 
     public void SpawnEnemy()
     {
+        enemy = enemyTypes[Random.Range(0, enemyTypes.Length)];
+
         Instantiate(enemy);
         enemy.transform.position = new Vector2(spawners[Random.Range(0, spawners.Count)].transform.position.x, 2);
         spawnCooldownCount = spawnCooldown;

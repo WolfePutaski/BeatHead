@@ -7,6 +7,7 @@ public class SC_PlayerBlock : MonoBehaviour
 {
     SC_PlayerProperties playerProperties;
     Animator playerAnim;
+    ParticleSystem deflectPart;
 
     public bool canBlock;
     public bool isBlocking;
@@ -14,8 +15,8 @@ public class SC_PlayerBlock : MonoBehaviour
     [Header("Deflection")]
     public float deflectionWindow;
     public bool onDeflect;
-    [SerializeField]
-    float deflectTimer;
+    
+    public float deflectTimer;
 
 
     // Start is called before the first frame update
@@ -23,6 +24,8 @@ public class SC_PlayerBlock : MonoBehaviour
     {
         playerProperties = GetComponent<SC_PlayerProperties>();
         playerAnim = GetComponent<Animator>();
+        GameObject deflectP = GameObject.Find("Deflect Part");
+        deflectPart = deflectP.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -84,4 +87,11 @@ public class SC_PlayerBlock : MonoBehaviour
     {
         canBlock = true;
     }
+
+    void PlayParticle()
+    {
+        deflectPart.Play();
+    }
+
+
 }

@@ -10,6 +10,7 @@ public class SC_EnemyMovement : MonoBehaviour
     public bool CanMove = true;
     public bool IsEngaging;
     public float DefaultSpeed;
+    public float speedVariable;
     public float farDistanceMin;
     public float farDistanceMax;
     private float farDistance;
@@ -17,9 +18,6 @@ public class SC_EnemyMovement : MonoBehaviour
     public float distanceFromTarget;
 
     [Header("Attacking")]
-
-
-
 
     Rigidbody2D enemyPhysics;
     public GameObject Target;
@@ -33,6 +31,7 @@ public class SC_EnemyMovement : MonoBehaviour
         enemyPhysics = GetComponent<Rigidbody2D>();
         enemyAnim = GetComponent<Animator>();
         defaultScaleX = transform.localScale.x;
+        DefaultSpeed = Random.Range(DefaultSpeed - speedVariable, DefaultSpeed + speedVariable);
     }
 
     // Update is called once per frame
@@ -88,12 +87,13 @@ public class SC_EnemyMovement : MonoBehaviour
 
     public void CancelAttack()
     {
-        IsEngaging = false;
         Target.SendMessage("CancelAttacker", gameObject);
+        IsEngaging = false;
     }
 
     public void FollowPlayer()
     {
+        float btwFarDistance = Random.Range(farDistanceMin, farDistanceMax);
         if (distanceFromTarget < 0)
         {
             transform.localScale = new Vector2(defaultScaleX, transform.localScale.y);
@@ -103,12 +103,12 @@ public class SC_EnemyMovement : MonoBehaviour
             transform.localScale = new Vector2(-defaultScaleX, transform.localScale.y);
         }
 
-        if (Mathf.Abs(distanceFromTarget) > farDistanceMax) //walk towards
+        if (Mathf.Abs(distanceFromTarget) > farDistance + btwFarDistance) //walk towards
         {
             enemyPhysics.velocity = new Vector2(transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
             enemyAnim.SetFloat("MoveDir", 1);
         }
-        if (Mathf.Abs(distanceFromTarget) < farDistanceMin) //walk back
+        if (Mathf.Abs(distanceFromTarget) < farDistance - btwFarDistance) //walk back
         {
             enemyPhysics.velocity = new Vector2(-transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
             enemyAnim.SetFloat("MoveDir", -1);

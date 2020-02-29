@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8296466519088867939, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_Name
-      value: Big Enemy Variant
+      value: Tough Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867939, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
@@ -20,12 +20,12 @@ PrefabInstance:
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.48
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
@@ -72,10 +72,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2154682792397614819, guid: 3b9319ec191b36546b9f9fe8328f297c,
+    - target: {fileID: 1714070790211081706, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
-      propertyPath: m_Color.r
-      value: 1
+      propertyPath: heavyTBA
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845497328, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: DefaultSpeed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2154682792397614819, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
@@ -86,6 +90,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 17839888, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c2d8e5ba916821742b155a1a9a64ac60, type: 2}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: defaultHP
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: regenDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: defaultPosture
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}

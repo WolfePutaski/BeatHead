@@ -73,20 +73,6 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: NotAllowMoving
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
-    functionName: NotAllowtoAttack
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
     functionName: SetAttack_Light
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -102,6 +88,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.3
     functionName: AllowtoAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.3
+    functionName: AllowMoving
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

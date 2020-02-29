@@ -10,6 +10,9 @@ TagManager:
   - EnemySpawnPoint
   - Enemy
   - Deflect
+  - Enemy_HPBLock
+  - Player_HPBlock
+  - Player_PostureBar
   layers:
   - Default
   - TransparentFX

@@ -394,20 +394,6 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: NotAllowMoving
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
-    functionName: NotAllowtoAttack
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0
     functionName: SetAttack_Heavy
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -430,13 +416,6 @@ AnimationClip:
     messageOptions: 0
   - time: 0.45
     functionName: StopHarderned
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.7
-    functionName: AllowtoAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -7,8 +7,9 @@ public class SC_EnemyAttack : MonoBehaviour
     Animator enemyAnim;
 
     public bool OnScanning = true;
-    bool isAttacking= false;
+    public bool isAttacking= false;
 
+    [SerializeField]
     float timeBtwAttack;
     public float startTimeBtwAttack;
     LayerMask whatIsPlayer;
@@ -18,19 +19,22 @@ public class SC_EnemyAttack : MonoBehaviour
     public GameObject Target;
 
     public Transform attackPos;
-    public float attackDash;
-    public float damage;
-    public float attackPush;
+    float attackDash;
+    float damage;
+    float postureDamage;
+    float attackPush;
     public Collider2D attackTarget;
 
     [Header("LightAttack")]
     public float lightDamage;
+    public float lightPostureDmg;
     public float lightAttackDash;
     public float lightAttackPush;
     public float lightTBA;
 
     [Header("HeavyAttack")]
     public float heavyDamage;
+    public float heavyPostureDmg;
     public float heavyAttackDash;
     public float heavyAttackPush;
     public float heavyTBA;
@@ -58,13 +62,18 @@ public class SC_EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeBtwAttack <= 0)
+        if (timeBtwAttack <= 0 && enemyMovement.IsEngaging)
         {
             OnScanning = true;
         }
         else
         {
             timeBtwAttack -= Time.deltaTime;
+        }
+
+        if (!enemyMovement.IsEngaging)
+        {
+            OnScanning = false;
         }
 
         if (OnScanning && enemyMovement.IsEngaging)
@@ -89,6 +98,7 @@ public class SC_EnemyAttack : MonoBehaviour
     void SetAttack_Light()
     {
         damage = lightDamage;
+        postureDamage = lightPostureDmg;
         attackDash = lightAttackDash;
         attackPush = lightAttackPush;
         startTimeBtwAttack = lightTBA;
@@ -97,6 +107,7 @@ public class SC_EnemyAttack : MonoBehaviour
     void SetAttack_Heavy()
     {
         damage = heavyDamage;
+        postureDamage = heavyPostureDmg;
         attackDash = heavyAttackDash;
         attackPush = heavyAttackPush;
         startTimeBtwAttack = heavyTBA;
@@ -111,7 +122,6 @@ public class SC_EnemyAttack : MonoBehaviour
         enemyPhysics.velocity = new Vector2(0, enemyPhysics.velocity.y);
         enemyPhysics.AddForce(Vector2.right * gameObject.transform.localScale.x * attackDash);
 
-        enemyMovement.CancelAttack(); 
         attackTarget = null;
 
 
@@ -123,11 +133,13 @@ public class SC_EnemyAttack : MonoBehaviour
             if (attackTarget.GetComponent<SC_PlayerBlock>().onDeflect)
             {
                 GetComponent<SC_EnemyProperties>().Deflected(1);
+                Debug.Log("Deflect!");
+                attackTarget.GetComponent<Animator>().SetTrigger("Deflected");
             }
             else
             {
                 attackTarget.transform.position = new Vector2(attackPos.position.x, attackTarget.transform.position.y);
-                attackTarget.GetComponent<SC_PlayerProperties>().Attacked(damage, attackPush * transform.localScale.x); //getcomponent and takedamage
+                attackTarget.GetComponent<SC_PlayerProperties>().Attacked(damage, postureDamage, attackPush * transform.localScale.x); //getcomponent and takedamage
                 Debug.Log("Player Attacked");
             }
 
@@ -159,6 +171,12 @@ public class SC_EnemyAttack : MonoBehaviour
     void ResetCombo()
     {
         enemyAnim.SetInteger("AttackSequence", 0);
+    }
+
+    void NotAttacking()
+    {
+        isAttacking = false;
+        enemyAnim.ResetTrigger("Attack");
     }
 }
 
