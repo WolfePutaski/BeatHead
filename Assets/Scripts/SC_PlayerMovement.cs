@@ -49,7 +49,7 @@ public class SC_PlayerMovement : MonoBehaviour
         playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
         playerPhysics.AddForce(Vector2.right * transform.localScale.x * rollForce, ForceMode2D.Impulse);
         playerAnim.SetTrigger("Pressed Roll");
-
+        
 
     }
 

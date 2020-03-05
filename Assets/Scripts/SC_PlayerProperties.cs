@@ -16,12 +16,23 @@ public class SC_PlayerProperties : MonoBehaviour
     Animator playerAnim;
 
     [Header("Health")]
-    public int defaultHPBlock;
-    public int HPBlock;
+    public int maxBigHP;
+    public int BigHP;
+    public float BigHPRefill;
+    public float BigHPRefillCount;
+    public float BigHPDegenRate;
+
     public float HP; //execution will gain health or when all enemy is gone;
     public float maxHP;
     public float defaultRegenDelay;
+    public float HPRegenRate;
+    public float mashCount;
+    bool isDowned;
     float HPregenDelayCount;
+    bool onRecovering;
+
+    GameObject HPBar;
+    public GameObject[] HPBlock;
 
     [Header("Posture")]
     public float maxPosture;
@@ -50,23 +61,25 @@ public class SC_PlayerProperties : MonoBehaviour
         playerMovement = GetComponent<SC_PlayerMovement>();
         cameraController = FindObjectOfType<SC_CameraController>();
 
+        BigHP = maxBigHP;
         HP = maxHP;
         posture = Mathf.Clamp(maxPosture,0, maxPosture);
         postureRegenRate = postureRegenRate_default;
 
         //HUD
         postureBar = GameObject.Find("Player_PostureBar");
+        HPBar = GameObject.Find("Player_HPBar");
+        HPBlock = GameObject.FindGameObjectsWithTag("Player_HPBlock");
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        HPRegen();
+        BigHPRegen();
+        UpdateHealth();
         PostureRegen();
         HUDUpdate();
-        
-
         
     }
 
@@ -131,17 +144,89 @@ public class SC_PlayerProperties : MonoBehaviour
         }
     }
 
-    void HPRegen()
+    void BigHPRegen()
+    {
+        if (BigHP < maxBigHP)
+        {
+            if (BigHPRefillCount < 1 && BigHPRefillCount > 0)
+            {
+                BigHPRefillCount -= Time.deltaTime * BigHPDegenRate;
+            }
+            if (BigHPRefillCount >= 1)
+            {
+                BigHPRefillCount = 0;
+                BigHP++;
+            }
+            if (BigHPRefillCount <= 0)
+            {
+                BigHPRefillCount = 0;
+            }
+        }
+        
+    }
+
+    void UpdateHealth()
     {
         if (HP < maxHP && HPregenDelayCount <= 0)
         {
-            HP += Time.deltaTime;
+            HP += Time.deltaTime * HPRegenRate;
         }
 
         if (HPregenDelayCount > 0)
         {
             HPregenDelayCount -= Time.deltaTime;
         }
+
+        if (HP < 0)
+        {
+            HP = 0;
+            BigHP--;
+            isDowned = true;
+            gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+            playerAnim.SetTrigger("WentDown");
+
+        }
+
+        //Downed
+        if (isDowned)
+        {
+            
+            if (mashCount > 0)
+            {
+                mashCount -= Time.deltaTime;
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                mashCount += 1;
+            }
+
+            if (mashCount >= 10)
+            {
+                isDowned = false;
+                onRecovering = true;
+                playerAnim.SetTrigger("GetUp");
+                HP = 10;
+                mashCount = 0;
+                StartCoroutine(GetUpDelay());
+ 
+            }
+        }
+
+        if (onRecovering)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        }
+    }
+
+    IEnumerator GetUpDelay()
+    {
+
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .5f);
+        yield return new WaitForSeconds(3);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
+        onRecovering = false;
+        gameObject.layer = LayerMask.NameToLayer("Player");
+
     }
 
     void PostureRegen()
@@ -167,8 +252,44 @@ public class SC_PlayerProperties : MonoBehaviour
     
     void HUDUpdate()
     {
-        float percentage = (1 - posture / maxPosture);
-        postureBar.GetComponent<Image>().fillAmount = percentage;
+        //HP
+        if (!isDowned)
+        {
+            float HPPercentage = (HP / maxHP);
+            HPBar.GetComponent<Image>().fillAmount = HPPercentage;
+        }
+        if (isDowned)
+        {
+            HPBar.GetComponent<Image>().fillAmount = mashCount/10;
+        }
+
+
+        //BigHP
+        for (int i = 0; i < maxBigHP; i++)
+        {
+            Image img = HPBlock[i].GetComponent<Image>();
+
+            if (i < BigHP) //active
+            {
+                HPBlock[i].SetActive(true);
+                img.color = new Color(1f, 1f, 1f);
+                img.fillAmount = 1;
+            }
+            //last one
+            if (i == BigHP)
+            {
+                img.color = new Color(0.6f, 0.6f, 0.6f);
+                img.fillAmount = BigHPRefillCount;
+            }
+            //more than last
+            if (i > BigHP)
+            {
+                HPBlock[i].SetActive(false);
+            }
+        }
+        //Posture
+        float posturePercentage = (1 - posture / maxPosture);
+        postureBar.GetComponent<Image>().fillAmount = posturePercentage;
 
         if (posture < maxPosture)
         {

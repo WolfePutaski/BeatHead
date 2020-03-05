@@ -7,7 +7,10 @@ using UnityEngine;
 
 public class SC_PlayerAttack : MonoBehaviour
 {
+
+
     bool canAttack = true;
+
 
     Animator playerAnim;
     Rigidbody2D playerPhysics;
@@ -43,6 +46,7 @@ public class SC_PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void  Update()
     {
+
         if (timeBtwAttack <= 0)
         {
             if (canAttack && Input.GetMouseButtonDown(0))

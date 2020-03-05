@@ -13,6 +13,7 @@ TagManager:
   - Enemy_HPBLock
   - Player_HPBlock
   - Player_PostureBar
+  - Player_HPBar
   layers:
   - Default
   - TransparentFX

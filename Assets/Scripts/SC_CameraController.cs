@@ -28,6 +28,7 @@ public class SC_CameraController : MonoBehaviour
     void FixedUpdate()
     {
         FollowPlayer();
+        
         //transform.position = new Vector3(playerPos.position.x, yOffset, transform.position.z);
 
 

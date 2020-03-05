@@ -4,7 +4,7 @@ D:/IDD/2019-2/IDD391 Project/Build/Pre-Alpha/Beat Head.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
-0cc4e7e7ad05a66d8ab95b68db76f162 Assembly-CSharp.dll:.SC_PlayerProperties
+ad28f0f0eae04a37499723a70fd78e95 Assembly-CSharp.dll:.SC_PlayerProperties
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -20,9 +20,9 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
-ffade2ac5009c2d461eeb6626f9c1bdd Assembly-CSharp.dll:.SC_EnemyMovement
+8ee831ff827de3dff1e84a23e93a1224 Assembly-CSharp.dll:.SC_EnemyMovement
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.Editor.dll:UnityEngine.Advertisements.Editor.Placeholder
-d76b06488834b9b21dc889eac7a87790 Assembly-CSharp.dll:.SC_EnemyAttack
+a92e26bd94f6c03f0e66db89722ea92d Assembly-CSharp.dll:.SC_EnemyAttack
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 5fc094978ce3e3591a7500ed380d854a UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -123,9 +123,9 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
-78bfa7134b35e3fc79cb380201f452aa Assembly-CSharp.dll:.SC_SpawnerEnemy
+aa4af42f89c85fd9712fed34e7cffa5e Assembly-CSharp.dll:.SC_SpawnerEnemy
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
-51a92d1ef7f3dc83f1384f1ce53eda89 Assembly-CSharp.dll:.SC_PlayerAttack
+22ec33ee3dbcbbda0a1de7d607282d44 Assembly-CSharp.dll:.SC_PlayerAttack
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -160,10 +160,11 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-dbd122232373ae98016c68e13f54d00b Assembly-CSharp.dll:.SC_PlayerBlock
+a6bff4aa0770d0191ff7d97cb8277764 Assembly-CSharp.dll:.SC_PlayerBlock
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 aa50d0deeec72edf777e0c3d6275b92d Assembly-CSharp.dll:.SC_PlayerMovement
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-722cfc6bc2771c98f580f09b209b6dda Assembly-CSharp.dll:.SC_EnemyProperties
+37b1dfdf0a438fc800f8763235869e50 Assembly-CSharp.dll:.SC_EnemyProperties
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SC_PostureBar
