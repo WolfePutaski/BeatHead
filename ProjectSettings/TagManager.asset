@@ -14,6 +14,7 @@ TagManager:
   - Player_HPBlock
   - Player_PostureBar
   - Player_HPBar
+  - Door
   layers:
   - Default
   - TransparentFX

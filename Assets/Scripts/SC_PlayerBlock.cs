@@ -7,16 +7,16 @@ public class SC_PlayerBlock : MonoBehaviour
 {
     SC_PlayerProperties playerProperties;
     Animator playerAnim;
-    ParticleSystem deflectPart;
+    //ParticleSystem deflectPart;
 
-    public bool canBlock;
-    public bool isBlocking;
+    //public bool canBlock;
+    //public bool isBlocking;
 
-    [Header("Deflection")]
-    public float deflectionWindow;
-    public bool onDeflect;
-    
-    public float deflectTimer;
+    //[Header("Deflection")]
+    //public float deflectionWindow;
+    //public bool onDeflect;
+
+    //public float deflectTimer;
 
 
     // Start is called before the first frame update
@@ -24,32 +24,34 @@ public class SC_PlayerBlock : MonoBehaviour
     {
         playerProperties = GetComponent<SC_PlayerProperties>();
         playerAnim = GetComponent<Animator>();
-        GameObject deflectP = GameObject.Find("Deflect Part");
-        deflectPart = deflectP.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canBlock)
+        if (playerProperties.canBlock)
         {
             {
                 if (Input.GetMouseButtonDown(1))
                 {
-                    isBlocking = true;
-                    deflectTimer = deflectionWindow;
-                    onDeflect = true;
+                    playerProperties.canAttack = false;
+                    playerProperties.isBlocking = true;
+                    playerProperties.deflectTimer = playerProperties.deflectionWindow;
+                    playerProperties.onDeflect = true;
                 }
 
-                if (Input.GetMouseButtonUp(1))
-                {
-                    isBlocking = false;
-                    onDeflect = false;
 
-                }
             }
 
-            playerAnim.SetBool("Is Blocking", isBlocking);
+            playerAnim.SetBool("Is Blocking", playerProperties.isBlocking);
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            playerProperties.canAttack = true;
+            playerProperties.isBlocking = false;
+            playerProperties.onDeflect = false;
+
         }
 
         DeflectCountdown();
@@ -58,16 +60,16 @@ public class SC_PlayerBlock : MonoBehaviour
 
     void DeflectCountdown()
     {
-        if (deflectTimer > 0)
+        if (playerProperties.deflectTimer > 0)
         {
-            deflectTimer -= Time.deltaTime;
+            playerProperties.deflectTimer -= Time.deltaTime;
         }
-        if (deflectTimer <= 0)
+        if (playerProperties.deflectTimer <= 0)
         {
-            onDeflect = false;
+            playerProperties.onDeflect = false;
         }
 
-        if (onDeflect)
+        if (playerProperties.onDeflect)
         {
             //gameObject.tag = "Deflect";
         }
@@ -75,22 +77,22 @@ public class SC_PlayerBlock : MonoBehaviour
 
     void Unblock()
     {
-        isBlocking = false;
+        playerProperties.isBlocking = false;
     }
 
-    void NotAllowBlock()
+    void Deactive_canBlock()
     {
-        canBlock = false;
+        playerProperties.canBlock = false;
     }
 
-    void AllowBlock()
+    void Active_canBlock()
     {
-        canBlock = true;
+        playerProperties.canBlock = true;
     }
 
     void PlayParticle()
     {
-        deflectPart.Play();
+        playerProperties.deflectPart.Play();
     }
 
 

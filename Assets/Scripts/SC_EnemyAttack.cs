@@ -38,9 +38,6 @@ public class SC_EnemyAttack : MonoBehaviour
     public float heavyAttackDash;
     public float heavyAttackPush;
     public float heavyTBA;
-
-
-    SC_CameraController cameraController;
     SC_EnemyMovement enemyMovement;
 
 
@@ -55,8 +52,6 @@ public class SC_EnemyAttack : MonoBehaviour
         enemyMovement = GetComponent<SC_EnemyMovement>();
         enemyAnim = GetComponent<Animator>();
         whatIsPlayer = LayerMask.GetMask("Player");
-        cameraController = FindObjectOfType<SC_CameraController>();
-
     }
 
     // Update is called once per frame
@@ -130,7 +125,7 @@ public class SC_EnemyAttack : MonoBehaviour
         if (attackTarget != null)
         {
             attackTarget.transform.position = new Vector2(attackPos.position.x, attackTarget.transform.position.y);
-            if (attackTarget.GetComponent<SC_PlayerBlock>().onDeflect)
+            if (attackTarget.GetComponent<SC_PlayerProperties>().onDeflect)
             {
                 GetComponent<SC_EnemyProperties>().Deflected(1);
                 Debug.Log("Deflect!");

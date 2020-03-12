@@ -76,21 +76,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: AllowAttack
+    functionName: Active_Movement
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: AllowMove
+    functionName: Active_canAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: AllowBlock
+    functionName: Active_canBlock
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

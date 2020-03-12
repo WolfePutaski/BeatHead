@@ -73,14 +73,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: NotAllowAttack
+    functionName: Deactive_Movement
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: NotAllowMove
+    functionName: Deactive_canAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

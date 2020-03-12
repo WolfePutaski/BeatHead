@@ -5,17 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(SC_PlayerProperties))]
 public class SC_PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D playerPhysics;
+    Rigidbody2D playerPhysics;
     Animator playerAnim;
-    public SC_PlayerProperties playerProperties;
-    SC_PlayerBlock playerBlock;
-
-    public float rollForce;
-    public float defaultSpeed = 0;
-    public float slowWalkSpeed = 0;
-    public float playerSpeed = 0;
-
-    public bool canMove;
+    SC_PlayerProperties playerProperties;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,13 +15,12 @@ public class SC_PlayerMovement : MonoBehaviour
         playerProperties = gameObject.GetComponent<SC_PlayerProperties>();
         playerPhysics = gameObject.GetComponent<Rigidbody2D>();
         playerAnim = gameObject.GetComponentInChildren<Animator>();
-        playerBlock = gameObject.GetComponent<SC_PlayerBlock>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        if (playerProperties.canMove)
         {
             Movement();
 
@@ -47,7 +38,7 @@ public class SC_PlayerMovement : MonoBehaviour
     void Roll()
     {
         playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
-        playerPhysics.AddForce(Vector2.right * transform.localScale.x * rollForce, ForceMode2D.Impulse);
+        playerPhysics.AddForce(Vector2.right * transform.localScale.x * playerProperties.rollForce, ForceMode2D.Impulse);
         playerAnim.SetTrigger("Pressed Roll");
         
 
@@ -56,16 +47,16 @@ public class SC_PlayerMovement : MonoBehaviour
     void Movement()
     {
 
-        if (playerBlock.isBlocking)
+        if (playerProperties.isBlocking)
         {
-            playerSpeed = slowWalkSpeed;
+            playerProperties.playerSpeed = playerProperties.slowWalkSpeed;
         }
         else
         {
-            playerSpeed = defaultSpeed;
+            playerProperties.playerSpeed = playerProperties.defaultSpeed;
         }
 
-        playerPhysics.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * playerSpeed * Time.deltaTime, playerPhysics.velocity.y);
+        playerPhysics.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * playerProperties.playerSpeed * Time.deltaTime, playerPhysics.velocity.y);
 
 
 
@@ -83,22 +74,22 @@ public class SC_PlayerMovement : MonoBehaviour
     }
 
 
-    void NotAllowMove()
+    void Active_Movement()
     {
-        canMove = false;
+        playerProperties.canMove = true;
     }
 
-    void AllowMove()
+    void Deactive_Movement()
     {
-        canMove = true;
+        playerProperties.canMove = false;
     }
 
-    void OnDodge()
+    void On_Dodge()
     {
         gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
     }
 
-    void ReturnDodge()
+    void End_Dodge()
     {
         gameObject.layer = LayerMask.NameToLayer("Player");
     }

@@ -10,9 +10,7 @@ public class SC_PlayerProperties : MonoBehaviour
     public bool OnBlock;
 
     Rigidbody2D playerPhysics;
-    SC_PlayerMovement playerMovement;
     SC_CameraController cameraController;
-    SC_PlayerBlock playerBlock;
     Animator playerAnim;
 
     [Header("Health")]
@@ -41,7 +39,38 @@ public class SC_PlayerProperties : MonoBehaviour
     float postureRegenRate;
     float postureRegenDelayCount;
 
-    GameObject postureBar;
+    public GameObject postureBar;
+
+    [Header("Movement")]
+
+    public float rollForce;
+    public float defaultSpeed = 0;
+    public float slowWalkSpeed = 0;
+    public float playerSpeed = 0;
+    public bool canMove;
+
+    [Header("Attacking")]
+    public bool canAttack = true;
+    public Transform attackPos;
+    public float attackDashForce;
+    public float attackPushForce;
+    public float startTimeBtwAttack;
+
+    public float attackRadius;
+    public float damage;
+    public Collider2D[] enemiesToDamage;
+
+
+    [Header("Blocking")]
+    public bool canBlock;
+    public bool isBlocking;
+
+    [Header("Deflection")]
+    [HideInInspector] public ParticleSystem deflectPart;
+    public float deflectionWindow;
+    public bool onDeflect;
+
+    public float deflectTimer;
 
 
     [Header("AttackRequest")]
@@ -57,9 +86,10 @@ public class SC_PlayerProperties : MonoBehaviour
     {
         playerPhysics = GetComponent<Rigidbody2D>();
         playerAnim = gameObject.GetComponentInChildren<Animator>();
-        playerBlock = gameObject.GetComponent<SC_PlayerBlock>();
-        playerMovement = GetComponent<SC_PlayerMovement>();
         cameraController = FindObjectOfType<SC_CameraController>();
+
+        GameObject deflectP = GameObject.Find("Deflect Part");
+        deflectPart = deflectP.GetComponent<ParticleSystem>();
 
         BigHP = maxBigHP;
         HP = maxHP;
@@ -70,6 +100,7 @@ public class SC_PlayerProperties : MonoBehaviour
         postureBar = GameObject.Find("Player_PostureBar");
         HPBar = GameObject.Find("Player_HPBar");
         HPBlock = GameObject.FindGameObjectsWithTag("Player_HPBlock");
+
     }
 
     // Update is called once per frame
@@ -103,18 +134,19 @@ public class SC_PlayerProperties : MonoBehaviour
         MeleeAttackers.Remove(requestor);
     }
 
-    public void Attacked(float damage,float postureDamage, float push)
+    public void Attacked(float damage,float postureDamage, float push) //get attacked
     {
-        if (playerBlock.isBlocking)
+        canMove = false;
+
+        if (isBlocking)
         {
-            if (playerBlock.onDeflect) //can deflect
+            if (onDeflect) //can deflect
             {
                 //Debug.Log("Deflect!");
                 //playerAnim.SetTrigger("Deflected");
             }
             else //weak block
             {
-                playerMovement.canMove = false;
                 posture -= postureDamage;
                 if (posture <= 0)
                 {
@@ -133,7 +165,6 @@ public class SC_PlayerProperties : MonoBehaviour
         }
         else //take damage
         {
-            playerMovement.canMove = false;
             playerAnim.SetTrigger("IsHurt");
             cameraController.Shake();
             playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
@@ -232,12 +263,12 @@ public class SC_PlayerProperties : MonoBehaviour
     void PostureRegen()
     {
         if (posture < maxPosture && postureRegenDelayCount <= 0
-            && !playerBlock.isBlocking)
+            && !isBlocking)
         {
             posture += Time.deltaTime * postureRegenRate;
         }
 
-        if (playerBlock.isBlocking)
+        if (isBlocking)
         {
             postureRegenRate = postureRegenRate_default / 2;
             postureRegenDelayCount = defaultRegenDelay;
@@ -317,5 +348,10 @@ public class SC_PlayerProperties : MonoBehaviour
         posture = maxPosture;
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRadius);
+    }
 
 }

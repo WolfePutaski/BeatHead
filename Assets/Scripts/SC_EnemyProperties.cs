@@ -183,12 +183,16 @@ public class SC_EnemyProperties : MonoBehaviour
         HPBar.transform.localScale = new Vector2(defaultHPBarLength * HP / defaultHP, HPBar.transform.localScale.y);
 
         //PostureBar
+
         if (postureBar.activeSelf == true)
         {
-            postureBar.transform.localScale = new Vector2(defaultpostureBarLength * posture / defaultPosture, postureBar.transform.localScale.y);
             if (defaultPosture <= 0)
             {
                 postureBar.transform.localScale = Vector2.zero;
+            }
+            else
+            {
+                postureBar.transform.localScale = new Vector2(defaultpostureBarLength * posture / defaultPosture, postureBar.transform.localScale.y);
             }
         }
 

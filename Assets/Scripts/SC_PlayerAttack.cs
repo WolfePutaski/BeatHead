@@ -9,7 +9,7 @@ public class SC_PlayerAttack : MonoBehaviour
 {
 
 
-    bool canAttack = true;
+    //bool canAttack = true;
 
 
     Animator playerAnim;
@@ -17,17 +17,17 @@ public class SC_PlayerAttack : MonoBehaviour
     SC_PlayerProperties playerProperties;
     SC_CameraController cameraController;
 
-    public float attackDashForce;
-    public float attackPushForce;
+
+    //public float attackDashForce;
+    //public float attackPushForce;
 
     float timeBtwAttack;
-    public float startTimeBtwAttack;
+    //public float startTimeBtwAttack;
 
-    public Transform attackPos;
     LayerMask whatIsEnemies;
-    public float attackRadius;
-    public float damage;
-    public Collider2D[] enemiesToDamage;
+    //public float attackRadius;
+    //public float damage;
+    Collider2D[] enemiesToDamage;
 
 
     // Start is called before the first frame update
@@ -36,9 +36,8 @@ public class SC_PlayerAttack : MonoBehaviour
         playerAnim = GetComponentInChildren<Animator>();
         playerPhysics = GetComponent<Rigidbody2D>();
         playerProperties = GetComponent<SC_PlayerProperties>();
-        attackPos = GameObject.Find("PlayerAttackPos").GetComponent<Transform>();
-        whatIsEnemies = LayerMask.GetMask("Enemies");
         cameraController = FindObjectOfType<SC_CameraController>();
+        whatIsEnemies = LayerMask.GetMask("Enemies");
         enemiesToDamage = null;
 
     }
@@ -49,13 +48,16 @@ public class SC_PlayerAttack : MonoBehaviour
 
         if (timeBtwAttack <= 0)
         {
-            if (canAttack && Input.GetMouseButtonDown(0))
+            playerProperties.canAttack = true;
+
+            if (playerProperties.canAttack && Input.GetMouseButtonDown(0))
             {
                 playerAnim.SetTrigger("Pressed Attack");
             }
         }
         else
         {
+            playerProperties.canAttack = false;
             timeBtwAttack -= Time.deltaTime;
         }
 
@@ -64,15 +66,17 @@ public class SC_PlayerAttack : MonoBehaviour
     void Attack()
     {
         enemiesToDamage = null;
+        playerProperties.canMove = false;
+        playerProperties.canBlock = false;
 
-        timeBtwAttack = startTimeBtwAttack;
+        timeBtwAttack = playerProperties.startTimeBtwAttack;
 
         Debug.Log("Pressed Attack");
         playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
-        playerPhysics.AddForce(Vector2.right * gameObject.transform.localScale.x * attackDashForce);
+        playerPhysics.AddForce(Vector2.right * gameObject.transform.localScale.x * playerProperties.attackDashForce);
 
         //Hitbox
-        enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRadius, whatIsEnemies);
+        enemiesToDamage = Physics2D.OverlapCircleAll(playerProperties.attackPos.position, playerProperties.attackRadius, whatIsEnemies);
         if (enemiesToDamage.Length > 0)
         {
             cameraController.Shake();
@@ -80,8 +84,8 @@ public class SC_PlayerAttack : MonoBehaviour
             foreach (Collider2D enemy in enemiesToDamage)
             {
                 Debug.Log("We hit " + enemy.name);
-                enemy.transform.position = new Vector2(attackPos.position.x, enemy.transform.position.y);
-                enemy.GetComponent<SC_EnemyProperties>().TakeDamage(damage,attackPushForce * gameObject.transform.localScale.x ); //getcomponent and takedamage
+                enemy.transform.position = new Vector2(playerProperties.attackPos.position.x, enemy.transform.position.y);
+                enemy.GetComponent<SC_EnemyProperties>().TakeDamage(playerProperties.damage, playerProperties.attackPushForce * gameObject.transform.localScale.x ); //getcomponent and takedamage
             }
         }
         
@@ -92,20 +96,13 @@ public class SC_PlayerAttack : MonoBehaviour
 
 
 
-    void NotAllowAttack()
+    void Active_canAttack()
     {
-        canAttack = false;
+        playerProperties.canAttack = false;
     }
 
-    void AllowAttack()
+    void Deactive_canAttack()
     {
-        canAttack = true;
+        playerProperties.canAttack = true;
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRadius);
-    }
-
 }

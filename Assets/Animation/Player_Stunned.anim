@@ -70,14 +70,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: NotAllowAttack
+    functionName: Deactive_canAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: NotAllowMove
+    functionName: Deactive_Movement
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -91,28 +91,28 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: NotAllowBlock
+    functionName: Deactive_canBlock
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1
-    functionName: AllowMove
+    functionName: Active_Movement
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1
-    functionName: AllowAttack
+    functionName: Active_canAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1
-    functionName: AllowBlock
+    functionName: Active_canBlock
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

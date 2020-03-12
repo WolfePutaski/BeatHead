@@ -70,7 +70,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048569837329598834}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 0.1
   simulationSpeed: 3
   stopAction: 0
   cullingMode: 0
@@ -145,7 +145,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -251,8 +251,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.95267296, b: 0.7971698, a: 1}
-      maxColor: {r: 0.99621314, g: 1, b: 0.9103774, a: 1}
+      minColor: {r: 1, g: 0.920895, b: 0.6556604, a: 1}
+      maxColor: {r: 0.9962703, g: 1, b: 0.9198113, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -313,8 +313,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
+      minMaxState: 1
+      scalar: 0.05
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -329,7 +329,7 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.33881316
+          time: 1
           value: 0
           inSlope: 0
           outSlope: 0
@@ -366,7 +366,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -419,7 +419,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -1005,7 +1005,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 50
+        scalar: 20
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -4953,14 +4953,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnBlock: 0
-  defaultHPBlock: 0
-  HPBlock: 0
+  maxBigHP: 5
+  BigHP: 0
+  BigHPRefill: 0
+  BigHPRefillCount: 0
+  BigHPDegenRate: 0.15
   HP: 10
-  maxHP: 0
+  maxHP: 10
   defaultRegenDelay: 2
-  maxPosture: 15
+  HPRegenRate: 1.5
+  mashCount: 0
+  HPBlock: []
+  maxPosture: 12
   posture: 0
-  MaxMeleeAttackers: 2
+  postureRegenRate_default: 2
+  postureBar: {fileID: 0}
+  rollForce: 8
+  defaultSpeed: 150
+  slowWalkSpeed: 100
+  playerSpeed: 0
+  canMove: 1
+  canAttack: 1
+  attackPos: {fileID: 4631270478274655734}
+  attackDashForce: 3
+  attackPushForce: 3
+  startTimeBtwAttack: 0.4
+  attackRadius: 0.4
+  damage: 1
+  enemiesToDamage: []
+  canBlock: 1
+  isBlocking: 0
+  deflectPart: {fileID: 0}
+  deflectionWindow: 0.25
+  onDeflect: 0
+  deflectTimer: 0
+  MaxMeleeAttackers: 1
   MeleeAttackers: []
   MaxRangedAttackers: 1
   RangedAttackers: []
@@ -4976,13 +5003,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337b60493cafeed42a18d1f29b5a9ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDashForce: 120
-  attackPushForce: 4
-  startTimeBtwAttack: 0
-  attackPos: {fileID: 4631270478274655734}
-  attackRadius: 0.5
-  damage: 1
-  enemiesToDamage: []
 --- !u!114 &7254024540026994619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4995,13 +5015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8579451e58d597347806150218eff371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPhysics: {fileID: 0}
-  playerProperties: {fileID: 0}
-  rollForce: 8
-  defaultSpeed: 200
-  slowWalkSpeed: 100
-  playerSpeed: 250
-  canMove: 0
 --- !u!114 &1611106378753813559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5014,8 +5027,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7269ac5fbde6442a1ced5ddba98322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBlock: 1
-  isBlocking: 0
-  deflectionWindow: 0.08
-  onDeflect: 0
-  deflectTimer: 0

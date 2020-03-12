@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\SC_CameraController.cs" />
+    <Compile Include="Assets\Scripts\SC_Door.cs" />
     <Compile Include="Assets\Scripts\SC_EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\SC_EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\SC_EnemyProperties.cs" />
