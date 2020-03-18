@@ -75,6 +75,12 @@ public class SC_PlayerBlock : MonoBehaviour
         }
     }
 
+    void Deflect()
+    {
+        playerAnim.SetTrigger("Deflected");
+        playerProperties.deflectTimer = 0;
+    }
+
     void Unblock()
     {
         playerProperties.isBlocking = false;

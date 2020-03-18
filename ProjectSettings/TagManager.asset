@@ -24,24 +24,24 @@ TagManager:
   - UI
   - 
   - 
-  - Platforms
+  - Ground
   - Player
-  - Volumes
-  - OneWayPlatforms
+  - 
+  - 
   - Projectiles
   - Enemies
-  - LevelBounds
-  - Ladders
+  - Enemies_ToExecute
+  - 
   - PlayerProjectiles
-  - MovingObjects
-  - MovingPlatforms
-  - Foreground
-  - MovingOneWayPlatforms
-  - NoCollision
+  - 
+  - 
+  - 
+  - 
+  - 
   - Background
-  - Friendlies
-  - Invulnerable
-  - PlatformsPlayerOnly
+  - 
+  - 
+  - 
   - 
   - 
   - 

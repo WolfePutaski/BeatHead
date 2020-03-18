@@ -129,7 +129,7 @@ public class SC_EnemyAttack : MonoBehaviour
             {
                 GetComponent<SC_EnemyProperties>().Deflected(1);
                 Debug.Log("Deflect!");
-                attackTarget.GetComponent<Animator>().SetTrigger("Deflected");
+                attackTarget.SendMessage("Deflect", SendMessageOptions.DontRequireReceiver);
             }
             else
             {

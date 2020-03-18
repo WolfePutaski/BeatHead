@@ -16,7 +16,7 @@ public class SC_PlayerAttack : MonoBehaviour
     Rigidbody2D playerPhysics;
     SC_PlayerProperties playerProperties;
     SC_CameraController cameraController;
-
+    bool isExecuting;
 
     //public float attackDashForce;
     //public float attackPushForce;
@@ -25,9 +25,11 @@ public class SC_PlayerAttack : MonoBehaviour
     //public float startTimeBtwAttack;
 
     LayerMask whatIsEnemies;
+    LayerMask executeLayer;
     //public float attackRadius;
     //public float damage;
     Collider2D[] enemiesToDamage;
+    Collider2D enemyToExecute;
 
 
     // Start is called before the first frame update
@@ -38,6 +40,7 @@ public class SC_PlayerAttack : MonoBehaviour
         playerProperties = GetComponent<SC_PlayerProperties>();
         cameraController = FindObjectOfType<SC_CameraController>();
         whatIsEnemies = LayerMask.GetMask("Enemies");
+        executeLayer = LayerMask.GetMask("Enemies_ToExecute");
         enemiesToDamage = null;
 
     }
@@ -52,7 +55,21 @@ public class SC_PlayerAttack : MonoBehaviour
 
             if (playerProperties.canAttack && Input.GetMouseButtonDown(0))
             {
-                playerAnim.SetTrigger("Pressed Attack");
+                //Check Execution
+                enemyToExecute = null;
+                if (Physics2D.OverlapCircle(playerProperties.attackPos.position, playerProperties.attackRadius, executeLayer))
+                {
+                    enemyToExecute = Physics2D.OverlapCircle(playerProperties.attackPos.position, playerProperties.attackRadius, executeLayer);
+                    TriggerExecuteAttack(enemyToExecute.gameObject);
+                }
+                //if not, play normal attack
+                else
+                {
+
+                    playerAnim.SetTrigger("Pressed Attack");
+
+                }
+
             }
         }
         else
@@ -72,28 +89,72 @@ public class SC_PlayerAttack : MonoBehaviour
         timeBtwAttack = playerProperties.startTimeBtwAttack;
 
         Debug.Log("Pressed Attack");
-        playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
-        playerPhysics.AddForce(Vector2.right * gameObject.transform.localScale.x * playerProperties.attackDashForce);
+        AttackDash();
 
         //Hitbox
-        enemiesToDamage = Physics2D.OverlapCircleAll(playerProperties.attackPos.position, playerProperties.attackRadius, whatIsEnemies);
-        if (enemiesToDamage.Length > 0)
+        if (isExecuting)
         {
-            cameraController.Shake();
-
-            foreach (Collider2D enemy in enemiesToDamage)
+            enemyToExecute = Physics2D.OverlapCircle(playerProperties.attackPos.position, playerProperties.attackRadius, executeLayer);
+            if (enemyToExecute != null)
             {
+                cameraController.Shake();
+
+                GameObject enemy = enemyToExecute.gameObject;
+
                 Debug.Log("We hit " + enemy.name);
                 enemy.transform.position = new Vector2(playerProperties.attackPos.position.x, enemy.transform.position.y);
-                enemy.GetComponent<SC_EnemyProperties>().TakeDamage(playerProperties.damage, playerProperties.attackPushForce * gameObject.transform.localScale.x ); //getcomponent and takedamage
+                enemy.GetComponent<SC_EnemyProperties>().TakeDamage(playerProperties.damage, playerProperties.attackPushForce * gameObject.transform.localScale.x,true); //getcomponent and takedamage
+
+                if (enemy.GetComponent<SC_EnemyProperties>().HP <= 0)
+                {
+                    playerProperties.BigHPRefillCount += 0.75f;
+                }
             }
         }
-        
+    
+        else
+        {
 
+        enemiesToDamage = Physics2D.OverlapCircleAll(playerProperties.attackPos.position, playerProperties.attackRadius, whatIsEnemies);
+            if (enemiesToDamage.Length > 0)
+            {
+                cameraController.Shake();
 
+                foreach (Collider2D enemy in enemiesToDamage)
+                {
+                    Debug.Log("We hit " + enemy.name);
+                    enemy.transform.position = new Vector2(playerProperties.attackPos.position.x, enemy.transform.position.y);
+                    enemy.GetComponent<SC_EnemyProperties>().TakeDamage(playerProperties.damage, playerProperties.attackPushForce * gameObject.transform.localScale.x,false); //getcomponent and takedamage
+                }
+            }
+        }
+
+        isExecuting = false;
+    }
+
+    void AttackDash()
+    {
+        playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
+        playerPhysics.AddForce(Vector2.right * transform.localScale.x * playerProperties.attackDashForce, ForceMode2D.Impulse);
+    }
+
+    void TriggerExecuteAttack(GameObject enemy)
+
+    {
+        cameraController.Zoom(1.5f);
+        isExecuting = true;
+        //cameraController
+        enemy.SendMessage("OnExecuted");
+        Debug.Log("Execute " + enemy.name);
+        enemy.transform.position = playerProperties.executionPos.transform.position;
+        playerAnim.SetTrigger("Execution");
 
     }
 
+    void Execution_End()
+    {
+        cameraController.Zoom(-1.5f);
+    }
 
 
     void Active_canAttack()

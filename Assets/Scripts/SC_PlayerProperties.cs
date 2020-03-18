@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class SC_PlayerProperties : MonoBehaviour
 {
 
@@ -16,7 +17,7 @@ public class SC_PlayerProperties : MonoBehaviour
     [Header("Health")]
     public int maxBigHP;
     public int BigHP;
-    public float BigHPRefill;
+    public float BigHPKillRefillAmount;
     public float BigHPRefillCount;
     public float BigHPDegenRate;
 
@@ -52,13 +53,14 @@ public class SC_PlayerProperties : MonoBehaviour
     [Header("Attacking")]
     public bool canAttack = true;
     public Transform attackPos;
+    public Transform executionPos;
     public float attackDashForce;
     public float attackPushForce;
     public float startTimeBtwAttack;
 
+
     public float attackRadius;
     public float damage;
-    public Collider2D[] enemiesToDamage;
 
 
     [Header("Blocking")]
@@ -87,7 +89,6 @@ public class SC_PlayerProperties : MonoBehaviour
         playerPhysics = GetComponent<Rigidbody2D>();
         playerAnim = gameObject.GetComponentInChildren<Animator>();
         cameraController = FindObjectOfType<SC_CameraController>();
-
         GameObject deflectP = GameObject.Find("Deflect Part");
         deflectPart = deflectP.GetComponent<ParticleSystem>();
 
@@ -193,7 +194,16 @@ public class SC_PlayerProperties : MonoBehaviour
                 BigHPRefillCount = 0;
             }
         }
+        else
+        {
+            BigHPRefillCount = 0;
+        }
         
+    }
+
+    void BigHPRefillUpdate()
+    {
+        BigHPRefillCount += BigHPKillRefillAmount;
     }
 
     void UpdateHealth()
@@ -212,6 +222,7 @@ public class SC_PlayerProperties : MonoBehaviour
         {
             HP = 0;
             BigHP--;
+            BigHPRefillCount = 0;
             isDowned = true;
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             playerAnim.SetTrigger("WentDown");
@@ -302,7 +313,6 @@ public class SC_PlayerProperties : MonoBehaviour
 
             if (i < BigHP) //active
             {
-                HPBlock[i].SetActive(true);
                 img.color = new Color(1f, 1f, 1f);
                 img.fillAmount = 1;
             }
@@ -315,7 +325,7 @@ public class SC_PlayerProperties : MonoBehaviour
             //more than last
             if (i > BigHP)
             {
-                HPBlock[i].SetActive(false);
+                img.fillAmount = 0;
             }
         }
         //Posture

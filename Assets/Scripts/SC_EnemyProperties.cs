@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnemyState
+{
+    Normal, OnExecution
+}
+
 public class SC_EnemyProperties : MonoBehaviour
 {
     [Header("Health")]
     public float defaultHP;
     [SerializeField]
-    float HP;
-    public int defaultDHP;
+    public float HP;
+    public int defaultDHP; //DHP = Deathblow HP
     int DHP;
 
     public GameObject HPBar;
@@ -33,6 +38,8 @@ public class SC_EnemyProperties : MonoBehaviour
     [SerializeField]
     bool harderned;
 
+    [Header("State")]
+    EnemyState enemyState;
 
     Rigidbody2D enemyPhysics;
     Animator enemyAnim;
@@ -102,17 +109,29 @@ public class SC_EnemyProperties : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage, float push)
+    public void TakeDamage(float damage, float push, bool Execute)
     {
         enemyMovement.CanMove = false;
         regenDelayCount = regenDelay;
-        HP -= damage;
+        if (Execute)
+        {
+            DHP -= 1;
+        }
+        else
+        {
+            HP -= damage;
+        }
 
         if (!harderned)
         {
             enemyAnim.SetTrigger("Hurt");
             enemyPhysics.velocity = new Vector2(0, enemyPhysics.velocity.y);
             enemyPhysics.AddForce(Vector2.right * push, ForceMode2D.Impulse);
+        }
+
+        if (DHP <= 0)
+        {
+            HP = 0;
         }
 
 
@@ -159,6 +178,7 @@ public class SC_EnemyProperties : MonoBehaviour
 
     void Stunned()
     {
+        gameObject.layer = LayerMask.NameToLayer("Enemies_ToExecute");
         enemyAnim.SetTrigger("Stunned");
         enemyPhysics.AddForce(Vector2.left * stunKnockback * transform.localScale.x, ForceMode2D.Impulse);
     }
@@ -209,6 +229,17 @@ public class SC_EnemyProperties : MonoBehaviour
             }
         }
 
+    }
+
+    public void OnExecuted()
+    {
+        enemyAnim.SetTrigger("Stunned");
+        //gameObject.layer = LayerMask.NameToLayer("Enemies");
+    }
+
+    void ReturnLayer()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Enemies");
     }
 
     void FindHUD()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(LineRenderer))]
 public class SC_Door : MonoBehaviour
 {
     public GameObject exitDoor;
@@ -14,8 +15,8 @@ public class SC_Door : MonoBehaviour
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.SetPosition(0, transform.position);
-        lineRenderer.SetPosition(1, exitDoor.transform.position);
+        lineRenderer.SetPosition(0, teleportPos.transform.position);
+        lineRenderer.SetPosition(1, exitDoor.GetComponent<SC_Door>().teleportPos.transform.position);
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class SC_Door : MonoBehaviour
     {
             lineRenderer.enabled = isActive;
 
-        if (isActive && Input.GetKeyDown(KeyCode.Space))
+        if (isActive && Input.GetKeyDown(KeyCode.E))
         {
             Teleport(player);
         }
@@ -31,7 +32,7 @@ public class SC_Door : MonoBehaviour
 
     void Teleport(GameObject obj)
     {
-        obj.transform.position = exitDoor.GetComponent<SC_Door>().teleportPos.transform.position;
+        obj.transform.position = exitDoor.transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
