@@ -7,25 +7,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8296466519088867939, guid: 3b9319ec191b36546b9f9fe8328f297c,
-        type: 3}
-      propertyPath: m_Name
-      value: Tough Variant
+    - target: {fileID: 17839888, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c2d8e5ba916821742b155a1a9a64ac60, type: 2}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: defaultHP
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 8296466519088867939, guid: 3b9319ec191b36546b9f9fe8328f297c,
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: defaultDHP
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: regenDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: defaultPosture
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845497328, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: DefaultSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714070790211081706, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: heavyTBA
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2154682792397614819, guid: 3b9319ec191b36546b9f9fe8328f297c,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7386593
+      objectReference: {fileID: 0}
+    - target: {fileID: 2154682792397614819, guid: 3b9319ec191b36546b9f9fe8328f297c,
+        type: 3}
+      propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
@@ -72,44 +101,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1714070790211081706, guid: 3b9319ec191b36546b9f9fe8328f297c,
+    - target: {fileID: 8296466519088867939, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
-      propertyPath: heavyTBA
-      value: 0.4
+      propertyPath: m_Name
+      value: Tough Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 1845497328, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
-      propertyPath: DefaultSpeed
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2154682792397614819, guid: 3b9319ec191b36546b9f9fe8328f297c,
+    - target: {fileID: 8296466519088867939, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
-      propertyPath: m_Color.g
-      value: 0.7386593
-      objectReference: {fileID: 0}
-    - target: {fileID: 2154682792397614819, guid: 3b9319ec191b36546b9f9fe8328f297c,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 17839888, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c2d8e5ba916821742b155a1a9a64ac60, type: 2}
-    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
-      propertyPath: defaultHP
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
-      propertyPath: defaultDHP
+      propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
-      propertyPath: regenDelay
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
-      propertyPath: defaultPosture
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}

@@ -24,7 +24,7 @@ public class SC_EnemyProperties : MonoBehaviour
     float regenDelayCount = 0;
     float regenRateCount = 0;
     public float regenPerSec;
-
+  
     [Header("Posture")]
     public float defaultPosture;
     [SerializeField]
@@ -35,8 +35,7 @@ public class SC_EnemyProperties : MonoBehaviour
     public GameObject postureBar;
     float defaultpostureBarLength;
 
-    [SerializeField]
-    bool harderned;
+    public bool harderned;
 
     [Header("State")]
     EnemyState enemyState;
@@ -102,11 +101,6 @@ public class SC_EnemyProperties : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             Destroy(gameObject, 1);
         }
-
-        if (posture > 0)
-        {
-            harderned = true;
-        }
     }
 
     public void TakeDamage(float damage, float push, bool Execute)
@@ -116,6 +110,10 @@ public class SC_EnemyProperties : MonoBehaviour
         if (Execute)
         {
             DHP -= 1;
+            if (DHP <= 0)
+            {
+                HP = 0;
+            }
         }
         else
         {
@@ -129,10 +127,7 @@ public class SC_EnemyProperties : MonoBehaviour
             enemyPhysics.AddForce(Vector2.right * push, ForceMode2D.Impulse);
         }
 
-        if (DHP <= 0)
-        {
-            HP = 0;
-        }
+
 
 
     }

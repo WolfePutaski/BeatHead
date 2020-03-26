@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SC_CameraController : MonoBehaviour
 {
+    
+
     Animator cameraAnim;
-    GameObject cam;
+    public GameObject cam;
     Transform playerPos;
     Vector3 playPos;
     Vector3 smoothPos;
     float camZoomTar;
     float camZoomPos;
+
+    public GameObject[] camList;
+    public string activeCam;
 
     public Vector3 offset;
     [Range(0, 100)]
@@ -22,8 +28,9 @@ public class SC_CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        cam = GameObject.Find("Main Camera");
-        cameraAnim = cam.GetComponent<Animator>();
+        Application.targetFrameRate = 60;
+        camList = GameObject.FindGameObjectsWithTag("MainCamera");
+
 
         GameObject player = GameObject.Find("Player");
         playerPos = player.GetComponent<Transform>();
@@ -36,28 +43,45 @@ public class SC_CameraController : MonoBehaviour
     void FixedUpdate()
     {
         FollowPlayer();
+        ActiveCamera();
+
         //CamZoom();
         //transform.position = new Vector3(playerPos.position.x, yOffset, transform.position.z);
 
 
     }
 
-    public void CamZoom()
+    public void ActiveCamera()
     {
-
-        var c = cam.GetComponent<Camera>();
-        camZoomTar = c.orthographicSize + zoomOffset;
-        camZoomPos = Mathf.Lerp(c.orthographicSize, camZoomTar, smoothSpeed * Time.deltaTime);
-        c.orthographicSize = camZoomPos;
-
+        foreach (GameObject a in camList)
+        {
+            if (a.name == activeCam)
+            {
+                a.SetActive(true);
+                cam = GameObject.Find(activeCam);
+                cameraAnim = cam.GetComponent<Animator>();
+            }
+            else
+            {
+                a.SetActive(false);
+            }
+        }
     }
+
+    //public void CamZoom()
+    //{
+
+    //    var c = cam.GetComponent<Camera>();
+    //    camZoomTar = c.orthographicSize + zoomOffset;
+    //    camZoomPos = Mathf.Lerp(c.orthographicSize, camZoomTar, smoothSpeed * Time.deltaTime);
+    //    c.orthographicSize = camZoomPos;
+
+    //}
 
     public void FollowPlayer()
     {
         playPos = playerPos.transform.position + offset;
         smoothPos = Vector3.Lerp(transform.position, playPos, smoothSpeed * Time.deltaTime);
-        //cam.GetComponent<Camera>().orthographicSize = 
-
         transform.position = smoothPos;
     }
 
@@ -66,10 +90,10 @@ public class SC_CameraController : MonoBehaviour
         cameraAnim.SetTrigger("Shake1");
     }
 
-    public void Zoom(float zoom)
-    {
-        var c = cam.GetComponent<Camera>();
-        offset.y -= zoom;
-        c.orthographicSize -= zoom;
-    }
+    //public void Zoom(float zoom)
+    //{
+    //    var c = cam.GetComponent<Camera>();
+    //    offset.y -= zoom;
+    //    c.orthographicSize -= zoom;
+    //}
 }

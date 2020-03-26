@@ -1,0 +1,521 @@
+fileFormatVersion: 2
+guid: d271afd9c27f6da42b52fe63b088c83d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: EnemyHandgun_Sheet_0
+  - first:
+      213: 21300002
+    second: EnemyHandgun_Sheet_1
+  - first:
+      213: 21300004
+    second: EnemyHandgun_Sheet_2
+  - first:
+      213: 21300006
+    second: EnemyHandgun_Sheet_3
+  - first:
+      213: 21300008
+    second: EnemyHandgun_Sheet_4
+  - first:
+      213: 21300010
+    second: EnemyHandgun_Sheet_5
+  - first:
+      213: 21300012
+    second: EnemyHandgun_Sheet_6
+  - first:
+      213: 21300014
+    second: EnemyHandgun_Sheet_7
+  - first:
+      213: 21300016
+    second: EnemyHandgun_Sheet_8
+  - first:
+      213: 21300018
+    second: EnemyHandgun_Sheet_9
+  - first:
+      213: 21300020
+    second: EnemyHandgun_Sheet_10
+  - first:
+      213: 21300022
+    second: EnemyHandgun_Sheet_11
+  - first:
+      213: 21300024
+    second: EnemyHandgun_Sheet_12
+  - first:
+      213: 21300026
+    second: EnemyHandgun_Sheet_13
+  - first:
+      213: 21300028
+    second: EnemyHandgun_Sheet_14
+  - first:
+      213: 21300030
+    second: EnemyHandgun_Sheet_15
+  - first:
+      213: 21300032
+    second: EnemyHandgun_Sheet_16
+  - first:
+      213: 21300034
+    second: EnemyHandgun_Sheet_17
+  - first:
+      213: 21300036
+    second: EnemyHandgun_Sheet_18
+  - first:
+      213: 21300038
+    second: EnemyHandgun_Sheet_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2853
+        width: 317
+        height: 868
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0abfce6ba624df4d924b0bb544d15af
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 2859
+        width: 327
+        height: 862
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219ecfc9d6cfd484997e39c3285b9fa9
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 2853
+        width: 263
+        height: 868
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e99ebfd8f08ed4983df5d133378406
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 2846
+        width: 277
+        height: 871
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c57c9ed35db1148a4e43734a7138a2
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 2828
+        width: 316
+        height: 893
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ef216914b4c574284a8527c28ebd38
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 2831
+        width: 424
+        height: 802
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97074f0347cc1c44e9c4776118bece7a
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1916
+        width: 350
+        height: 908
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff882fd3e35b4b4c9df5adc4fdb73d4
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1916
+        width: 538
+        height: 911
+      alignment: 9
+      pivot: {x: 0.328, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ea0bda6f7bb2444bfff07d2d976a6f
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1923
+        width: 537
+        height: 859
+      alignment: 9
+      pivot: {x: 0.328, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5f0a1b18593b041802cfc66671364b
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 902
+        width: 586
+        height: 878
+      alignment: 9
+      pivot: {x: 0.32, y: 0.0020006741}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41101fc4641ce1d4ab2cf90deb15d7c4
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 902
+        width: 698
+        height: 878
+      alignment: 9
+      pivot: {x: 0.27, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4425d361460b2b44dba563e7fc6fe0db
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 902
+        width: 578
+        height: 878
+      alignment: 9
+      pivot: {x: 0.33, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc834a285df947f47ae85dd268b295a5
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 902
+        width: 450
+        height: 898
+      alignment: 9
+      pivot: {x: 0.42, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a507f642804d742458489de26053f0b0
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2350
+        y: 902
+        width: 529
+        height: 878
+      alignment: 9
+      pivot: {x: 0.355, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca736d60b9fe2de4888482916143dc90
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 316
+        height: 905
+      alignment: 9
+      pivot: {x: 0.5371694, y: 0.011451704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f4c280b4ac48f44997619b981a1771
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 0
+        width: 559
+        height: 785
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e33b5cb38eb4ab47a45a2bcfd2d704b
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyHandgun_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 12
+        width: 870
+        height: 223
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13127375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c882e37e1dd88c0428a98d39af551e78
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 596ca58dc28463a4b957414b1f290aae
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

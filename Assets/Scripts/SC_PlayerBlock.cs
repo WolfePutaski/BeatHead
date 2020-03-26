@@ -16,7 +16,8 @@ public class SC_PlayerBlock : MonoBehaviour
     //public float deflectionWindow;
     //public bool onDeflect;
 
-    //public float deflectTimer;
+    public float deflectTimer;
+    public float deflectDelayTimer;
 
 
     // Start is called before the first frame update
@@ -36,8 +37,15 @@ public class SC_PlayerBlock : MonoBehaviour
                 {
                     playerProperties.canAttack = false;
                     playerProperties.isBlocking = true;
-                    playerProperties.deflectTimer = playerProperties.deflectionWindow;
-                    playerProperties.onDeflect = true;
+                    //if (deflectDelayTimer > 0)
+                    //{
+                    //    playerProperties.onDeflect = false;
+                    //}
+                    //else
+                    {
+                        deflectTimer = playerProperties.deflectionWindow;
+                        playerProperties.onDeflect = true;
+                    }
                 }
 
 
@@ -51,7 +59,7 @@ public class SC_PlayerBlock : MonoBehaviour
             playerProperties.canAttack = true;
             playerProperties.isBlocking = false;
             playerProperties.onDeflect = false;
-
+            deflectDelayTimer = playerProperties.deflectDelay;
         }
 
         DeflectCountdown();
@@ -60,11 +68,11 @@ public class SC_PlayerBlock : MonoBehaviour
 
     void DeflectCountdown()
     {
-        if (playerProperties.deflectTimer > 0)
+        if (deflectTimer > 0)
         {
-            playerProperties.deflectTimer -= Time.deltaTime;
+            deflectTimer -= Time.deltaTime;
         }
-        if (playerProperties.deflectTimer <= 0)
+        if (deflectTimer <= 0)
         {
             playerProperties.onDeflect = false;
         }
@@ -73,12 +81,18 @@ public class SC_PlayerBlock : MonoBehaviour
         {
             //gameObject.tag = "Deflect";
         }
+
+        if (deflectDelayTimer > 0)
+        {
+            deflectDelayTimer -= Time.deltaTime;
+        }
     }
 
     void Deflect()
     {
         playerAnim.SetTrigger("Deflected");
-        playerProperties.deflectTimer = 0;
+        deflectTimer = 0;
+        deflectDelayTimer = 0;
     }
 
     void Unblock()

@@ -7,6 +7,7 @@ public class SC_PlayerMovement : MonoBehaviour
 {
     Rigidbody2D playerPhysics;
     Animator playerAnim;
+    ParticleSystem dashPart;
     SC_PlayerProperties playerProperties;
 
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class SC_PlayerMovement : MonoBehaviour
         playerProperties = gameObject.GetComponent<SC_PlayerProperties>();
         playerPhysics = gameObject.GetComponent<Rigidbody2D>();
         playerAnim = gameObject.GetComponentInChildren<Animator>();
+        //dashPart = GameObject.Find("DashPart").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class SC_PlayerMovement : MonoBehaviour
     {
         playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
         playerPhysics.AddForce(Vector2.right * transform.localScale.x * playerProperties.rollForce, ForceMode2D.Impulse);
+        //dashPart.Play();
         playerAnim.SetTrigger("Pressed Roll");
         
 

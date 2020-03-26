@@ -1,66 +1,180 @@
 fileFormatVersion: 2
 guid: 9d227d5a673aeac4da1349c5ef05a8c9
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Master System - Streets of Rage 2 - Axel Stone 1_0
-    21300002: Master System - Streets of Rage 2 - Axel Stone 1_1
-    21300004: Master System - Streets of Rage 2 - Axel Stone 1_2
-    21300006: Master System - Streets of Rage 2 - Axel Stone 1_3
-    21300008: Master System - Streets of Rage 2 - Axel Stone 1_4
-    21300010: Master System - Streets of Rage 2 - Axel Stone 1_5
-    21300012: Master System - Streets of Rage 2 - Axel Stone 1_6
-    21300014: Master System - Streets of Rage 2 - Axel Stone 1_7
-    21300016: Master System - Streets of Rage 2 - Axel Stone 1_8
-    21300018: Master System - Streets of Rage 2 - Axel Stone 1_9
-    21300020: Master System - Streets of Rage 2 - Axel Stone 1_10
-    21300022: Master System - Streets of Rage 2 - Axel Stone 1_11
-    21300024: Master System - Streets of Rage 2 - Axel Stone 1_12
-    21300026: Master System - Streets of Rage 2 - Axel Stone 1_13
-    21300028: Master System - Streets of Rage 2 - Axel Stone 1_14
-    21300030: Master System - Streets of Rage 2 - Axel Stone 1_15
-    21300032: Master System - Streets of Rage 2 - Axel Stone 1_16
-    21300034: Master System - Streets of Rage 2 - Axel Stone 1_17
-    21300036: Master System - Streets of Rage 2 - Axel Stone 1_18
-    21300038: Master System - Streets of Rage 2 - Axel Stone 1_19
-    21300040: Master System - Streets of Rage 2 - Axel Stone 1_20
-    21300042: Master System - Streets of Rage 2 - Axel Stone 1_21
-    21300044: Master System - Streets of Rage 2 - Axel Stone 1_22
-    21300046: Master System - Streets of Rage 2 - Axel Stone 1_23
-    21300048: Master System - Streets of Rage 2 - Axel Stone 1_24
-    21300050: Master System - Streets of Rage 2 - Axel Stone 1_25
-    21300052: Master System - Streets of Rage 2 - Axel Stone 1_26
-    21300054: Master System - Streets of Rage 2 - Axel Stone 1_27
-    21300056: Master System - Streets of Rage 2 - Axel Stone 1_28
-    21300058: Master System - Streets of Rage 2 - Axel Stone 1_29
-    21300060: Master System - Streets of Rage 2 - Axel Stone 1_30
-    21300062: Master System - Streets of Rage 2 - Axel Stone 1_31
-    21300064: Master System - Streets of Rage 2 - Axel Stone 1_32
-    21300066: Master System - Streets of Rage 2 - Axel Stone 1_33
-    21300068: Master System - Streets of Rage 2 - Axel Stone 1_34
-    21300070: Master System - Streets of Rage 2 - Axel Stone 1_35
-    21300072: Master System - Streets of Rage 2 - Axel Stone 1_36
-    21300074: Master System - Streets of Rage 2 - Axel Stone 1_37
-    21300076: Master System - Streets of Rage 2 - Axel Stone 1_38
-    21300078: Master System - Streets of Rage 2 - Axel Stone 1_39
-    21300080: Master System - Streets of Rage 2 - Axel Stone 1_40
-    21300082: Master System - Streets of Rage 2 - Axel Stone 1_41
-    21300084: Master System - Streets of Rage 2 - Axel Stone 1_42
-    21300086: Master System - Streets of Rage 2 - Axel Stone 1_43
-    21300088: Master System - Streets of Rage 2 - Axel Stone 1_44
-    21300090: Master System - Streets of Rage 2 - Axel Stone 1_45
-    21300092: Master System - Streets of Rage 2 - Axel Stone 1_46
-    21300094: Master System - Streets of Rage 2 - Axel Stone 1_47
-    21300096: Master System - Streets of Rage 2 - Axel Stone 1_48
-    21300098: Master System - Streets of Rage 2 - Axel Stone 1_49
-    21300100: Master System - Streets of Rage 2 - Axel Stone 1_50
-    21300102: Master System - Streets of Rage 2 - Axel Stone 1_51
-    21300104: Master System - Streets of Rage 2 - Axel Stone 1_52
-    21300106: Master System - Streets of Rage 2 - Axel Stone 1_53
-    21300108: Master System - Streets of Rage 2 - Axel Stone 1_54
-    21300110: Master System - Streets of Rage 2 - Axel Stone 1_55
-    21300112: Master System - Streets of Rage 2 - Axel Stone 1_56
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Master System - Streets of Rage 2 - Axel Stone 1_0
+  - first:
+      213: 21300002
+    second: Master System - Streets of Rage 2 - Axel Stone 1_1
+  - first:
+      213: 21300004
+    second: Master System - Streets of Rage 2 - Axel Stone 1_2
+  - first:
+      213: 21300006
+    second: Master System - Streets of Rage 2 - Axel Stone 1_3
+  - first:
+      213: 21300008
+    second: Master System - Streets of Rage 2 - Axel Stone 1_4
+  - first:
+      213: 21300010
+    second: Master System - Streets of Rage 2 - Axel Stone 1_5
+  - first:
+      213: 21300012
+    second: Master System - Streets of Rage 2 - Axel Stone 1_6
+  - first:
+      213: 21300014
+    second: Master System - Streets of Rage 2 - Axel Stone 1_7
+  - first:
+      213: 21300016
+    second: Master System - Streets of Rage 2 - Axel Stone 1_8
+  - first:
+      213: 21300018
+    second: Master System - Streets of Rage 2 - Axel Stone 1_9
+  - first:
+      213: 21300020
+    second: Master System - Streets of Rage 2 - Axel Stone 1_10
+  - first:
+      213: 21300022
+    second: Master System - Streets of Rage 2 - Axel Stone 1_11
+  - first:
+      213: 21300024
+    second: Master System - Streets of Rage 2 - Axel Stone 1_12
+  - first:
+      213: 21300026
+    second: Master System - Streets of Rage 2 - Axel Stone 1_13
+  - first:
+      213: 21300028
+    second: Master System - Streets of Rage 2 - Axel Stone 1_14
+  - first:
+      213: 21300030
+    second: Master System - Streets of Rage 2 - Axel Stone 1_15
+  - first:
+      213: 21300032
+    second: Master System - Streets of Rage 2 - Axel Stone 1_16
+  - first:
+      213: 21300034
+    second: Master System - Streets of Rage 2 - Axel Stone 1_17
+  - first:
+      213: 21300036
+    second: Master System - Streets of Rage 2 - Axel Stone 1_18
+  - first:
+      213: 21300038
+    second: Master System - Streets of Rage 2 - Axel Stone 1_19
+  - first:
+      213: 21300040
+    second: Master System - Streets of Rage 2 - Axel Stone 1_20
+  - first:
+      213: 21300042
+    second: Master System - Streets of Rage 2 - Axel Stone 1_21
+  - first:
+      213: 21300044
+    second: Master System - Streets of Rage 2 - Axel Stone 1_22
+  - first:
+      213: 21300046
+    second: Master System - Streets of Rage 2 - Axel Stone 1_23
+  - first:
+      213: 21300048
+    second: Master System - Streets of Rage 2 - Axel Stone 1_24
+  - first:
+      213: 21300050
+    second: Master System - Streets of Rage 2 - Axel Stone 1_25
+  - first:
+      213: 21300052
+    second: Master System - Streets of Rage 2 - Axel Stone 1_26
+  - first:
+      213: 21300054
+    second: Master System - Streets of Rage 2 - Axel Stone 1_27
+  - first:
+      213: 21300056
+    second: Master System - Streets of Rage 2 - Axel Stone 1_28
+  - first:
+      213: 21300058
+    second: Master System - Streets of Rage 2 - Axel Stone 1_29
+  - first:
+      213: 21300060
+    second: Master System - Streets of Rage 2 - Axel Stone 1_30
+  - first:
+      213: 21300062
+    second: Master System - Streets of Rage 2 - Axel Stone 1_31
+  - first:
+      213: 21300064
+    second: Master System - Streets of Rage 2 - Axel Stone 1_32
+  - first:
+      213: 21300066
+    second: Master System - Streets of Rage 2 - Axel Stone 1_33
+  - first:
+      213: 21300068
+    second: Master System - Streets of Rage 2 - Axel Stone 1_34
+  - first:
+      213: 21300070
+    second: Master System - Streets of Rage 2 - Axel Stone 1_35
+  - first:
+      213: 21300072
+    second: Master System - Streets of Rage 2 - Axel Stone 1_36
+  - first:
+      213: 21300074
+    second: Master System - Streets of Rage 2 - Axel Stone 1_37
+  - first:
+      213: 21300076
+    second: Master System - Streets of Rage 2 - Axel Stone 1_38
+  - first:
+      213: 21300078
+    second: Master System - Streets of Rage 2 - Axel Stone 1_39
+  - first:
+      213: 21300080
+    second: Master System - Streets of Rage 2 - Axel Stone 1_40
+  - first:
+      213: 21300082
+    second: Master System - Streets of Rage 2 - Axel Stone 1_41
+  - first:
+      213: 21300084
+    second: Master System - Streets of Rage 2 - Axel Stone 1_42
+  - first:
+      213: 21300086
+    second: Master System - Streets of Rage 2 - Axel Stone 1_43
+  - first:
+      213: 21300088
+    second: Master System - Streets of Rage 2 - Axel Stone 1_44
+  - first:
+      213: 21300090
+    second: Master System - Streets of Rage 2 - Axel Stone 1_45
+  - first:
+      213: 21300092
+    second: Master System - Streets of Rage 2 - Axel Stone 1_46
+  - first:
+      213: 21300094
+    second: Master System - Streets of Rage 2 - Axel Stone 1_47
+  - first:
+      213: 21300096
+    second: Master System - Streets of Rage 2 - Axel Stone 1_48
+  - first:
+      213: 21300098
+    second: Master System - Streets of Rage 2 - Axel Stone 1_49
+  - first:
+      213: 21300100
+    second: Master System - Streets of Rage 2 - Axel Stone 1_50
+  - first:
+      213: 21300102
+    second: Master System - Streets of Rage 2 - Axel Stone 1_51
+  - first:
+      213: 21300104
+    second: Master System - Streets of Rage 2 - Axel Stone 1_52
+  - first:
+      213: 21300106
+    second: Master System - Streets of Rage 2 - Axel Stone 1_53
+  - first:
+      213: 21300108
+    second: Master System - Streets of Rage 2 - Axel Stone 1_54
+  - first:
+      213: 21300110
+    second: Master System - Streets of Rage 2 - Axel Stone 1_55
+  - first:
+      213: 21300112
+    second: Master System - Streets of Rage 2 - Axel Stone 1_56
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -114,8 +228,9 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,7 +241,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -137,6 +253,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -156,6 +273,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 383f71adcbe685d4480644fbe2595dc3
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -176,6 +294,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 494c330c59a5ef7469017a738bac0d27
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -196,6 +315,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bc922d2d4d82b3249ac12baa73495e48
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -216,6 +336,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 898bc97fef7c5b644a23903affbbf67d
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -236,6 +357,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9eaee2613d78c2a498685b07ff525a9d
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -256,6 +378,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 31f6580a790736440b8748c350c173d9
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -276,6 +399,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a0b3fe3ed281b144187ff6dec4b51d8b
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -296,6 +420,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ef408fd2737d7f14b9e624f9be6b7c29
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -316,6 +441,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 18d9f1ec7ff74b143b636ce831724672
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -336,6 +462,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d12a111fcbbacfa46b461790b3626f6d
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -356,6 +483,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f28ca55500b52f34aa2bd5bc5632a77b
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -376,6 +504,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 611c5705ad505444fb3516dce155995b
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -396,6 +525,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1999b3af73c0b5844b49689dc7e9065a
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -416,6 +546,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: aabbba09068750a49bd9cb5b74849506
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -436,6 +567,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 014108e178796284b9b7eef9a82030bb
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -456,6 +588,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a8ea425ae86f89c4ab2f3a937e321ecf
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
@@ -476,6 +609,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ba55412029a076b4497b0b160846ec54
+      internalID: 21300032
       vertices: []
       indices: 
       edges: []
@@ -496,6 +630,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c5cb8e9cf0e1a42429ab376eb7a61e7d
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
@@ -516,6 +651,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 78a4b5a09620f134491e88178e94b266
+      internalID: 21300036
       vertices: []
       indices: 
       edges: []
@@ -536,6 +672,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 53ac0b9c59e67c34e8f1e7db854b0e4e
+      internalID: 21300038
       vertices: []
       indices: 
       edges: []
@@ -556,6 +693,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ce5ce0025de286f418f81f6252ce8c25
+      internalID: 21300040
       vertices: []
       indices: 
       edges: []
@@ -576,6 +714,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 70adade26c72b6c48b01f86435684d3b
+      internalID: 21300042
       vertices: []
       indices: 
       edges: []
@@ -596,6 +735,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3423e18f196d99e49a55bafb96147e01
+      internalID: 21300044
       vertices: []
       indices: 
       edges: []
@@ -616,6 +756,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dfc4f091e35ebb14da8485ab822596fd
+      internalID: 21300046
       vertices: []
       indices: 
       edges: []
@@ -636,6 +777,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 13223ecc1816ea14aa5b721738755046
+      internalID: 21300048
       vertices: []
       indices: 
       edges: []
@@ -656,6 +798,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ff185c25af9ef2240bd373c4af212c02
+      internalID: 21300050
       vertices: []
       indices: 
       edges: []
@@ -676,6 +819,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: af15c351c7eeff94faaed78346f85dc9
+      internalID: 21300052
       vertices: []
       indices: 
       edges: []
@@ -696,6 +840,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7015b0431e922404495b72913e0ed314
+      internalID: 21300054
       vertices: []
       indices: 
       edges: []
@@ -716,6 +861,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4a2effda80cd88f49b55cd53b77164ef
+      internalID: 21300056
       vertices: []
       indices: 
       edges: []
@@ -736,6 +882,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fd5eba68416890f43bde948522cee67b
+      internalID: 21300058
       vertices: []
       indices: 
       edges: []
@@ -756,6 +903,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a17d6d17cd6770a4aabd6da902d9e0d1
+      internalID: 21300060
       vertices: []
       indices: 
       edges: []
@@ -776,6 +924,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fa9a7f07722ad314cb7268c7b910651e
+      internalID: 21300062
       vertices: []
       indices: 
       edges: []
@@ -796,6 +945,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ee21fcced8d2cf649afa12b5d6c12189
+      internalID: 21300064
       vertices: []
       indices: 
       edges: []
@@ -816,6 +966,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c6b7fe8a77971e94b959c6cc2b907150
+      internalID: 21300066
       vertices: []
       indices: 
       edges: []
@@ -836,6 +987,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c99e8a028a3dd774fb3f2cabcbf4e6fb
+      internalID: 21300068
       vertices: []
       indices: 
       edges: []
@@ -856,6 +1008,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e95b41824e0fc9945baa04c9d5e6e76b
+      internalID: 21300070
       vertices: []
       indices: 
       edges: []
@@ -876,6 +1029,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 271c36a420991d049a8ff5633453a93a
+      internalID: 21300072
       vertices: []
       indices: 
       edges: []
@@ -896,6 +1050,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e5b63e5cd8392c74b9a0f52ee4b37f5d
+      internalID: 21300074
       vertices: []
       indices: 
       edges: []
@@ -916,6 +1071,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bc48a4355b97ffd45b149fc788546260
+      internalID: 21300076
       vertices: []
       indices: 
       edges: []
@@ -936,6 +1092,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 04f2ade125008c44cb450f59de1fd6f5
+      internalID: 21300078
       vertices: []
       indices: 
       edges: []
@@ -956,6 +1113,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 424dfbfa23dc9f547a14f3bee7e9d531
+      internalID: 21300080
       vertices: []
       indices: 
       edges: []
@@ -976,6 +1134,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 354046d838c75f247850fc12d3ef76b2
+      internalID: 21300082
       vertices: []
       indices: 
       edges: []
@@ -996,6 +1155,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8f3538520114bab479e83b95480398dc
+      internalID: 21300084
       vertices: []
       indices: 
       edges: []
@@ -1016,6 +1176,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4066220363500ce49b5e165a45e1a81d
+      internalID: 21300086
       vertices: []
       indices: 
       edges: []
@@ -1036,6 +1197,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 78ca92f70562c534f9dec66d0def517c
+      internalID: 21300088
       vertices: []
       indices: 
       edges: []
@@ -1056,6 +1218,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 72f1f04b7a604c54785e0e13331bc38e
+      internalID: 21300090
       vertices: []
       indices: 
       edges: []
@@ -1076,6 +1239,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 08da0616d084967489d9555142893cc6
+      internalID: 21300092
       vertices: []
       indices: 
       edges: []
@@ -1096,6 +1260,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 867428080460bfd4dbe9354ad20af5a3
+      internalID: 21300094
       vertices: []
       indices: 
       edges: []
@@ -1116,6 +1281,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ae6439eeaeade3a4782d048001e52024
+      internalID: 21300096
       vertices: []
       indices: 
       edges: []
@@ -1136,6 +1302,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cfe2e0d9ada0c1045964d8c621c5c984
+      internalID: 21300098
       vertices: []
       indices: 
       edges: []
@@ -1156,6 +1323,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d86b4f53c39d0e5478e6c16699135a03
+      internalID: 21300100
       vertices: []
       indices: 
       edges: []
@@ -1176,6 +1344,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e53e39b140b2e274fb7154ef1164bc19
+      internalID: 21300102
       vertices: []
       indices: 
       edges: []
@@ -1196,6 +1365,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 40df72eeb772c2844bb9392b4400919e
+      internalID: 21300104
       vertices: []
       indices: 
       edges: []
@@ -1216,6 +1386,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a8bfd9f89bcdba94f95766daa0953af7
+      internalID: 21300106
       vertices: []
       indices: 
       edges: []
@@ -1236,6 +1407,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a94af8c074043e244b0154fa307ff4ff
+      internalID: 21300108
       vertices: []
       indices: 
       edges: []
@@ -1256,6 +1428,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cff32255574d49f4f82f185711f79b74
+      internalID: 21300110
       vertices: []
       indices: 
       edges: []
@@ -1276,6 +1449,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f0a886bd398d94c4fb140112b930306a
+      internalID: 21300112
       vertices: []
       indices: 
       edges: []
@@ -1284,10 +1458,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: b902391033425e549932a813a8cc5e7c
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

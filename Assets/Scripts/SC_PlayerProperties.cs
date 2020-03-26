@@ -68,11 +68,13 @@ public class SC_PlayerProperties : MonoBehaviour
     public bool isBlocking;
 
     [Header("Deflection")]
-    [HideInInspector] public ParticleSystem deflectPart;
+    public ParticleSystem deflectPart;
+    public ParticleSystem deflectSuccessPart;
     public float deflectionWindow;
+    public float deflectDelay;
     public bool onDeflect;
 
-    public float deflectTimer;
+    //public float deflectTimer;
 
 
     [Header("AttackRequest")]
@@ -113,6 +115,11 @@ public class SC_PlayerProperties : MonoBehaviour
         PostureRegen();
         HUDUpdate();
         
+    }
+
+    private void LateUpdate()
+    {
+        ColorUpdate();
     }
 
 
@@ -176,6 +183,21 @@ public class SC_PlayerProperties : MonoBehaviour
         }
     }
 
+    public void Shot(float damage) //get attacked
+    {
+        canMove = false;
+
+        {
+            playerAnim.SetTrigger("IsHurt");
+            cameraController.Shake();
+            playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
+            HP -= damage;
+            HPregenDelayCount = defaultRegenDelay;
+
+        }
+    }
+
+
     void BigHPRegen()
     {
         if (BigHP < maxBigHP)
@@ -218,9 +240,9 @@ public class SC_PlayerProperties : MonoBehaviour
             HPregenDelayCount -= Time.deltaTime;
         }
 
-        if (HP < 0)
+        if (HP <= 0)
         {
-            HP = 0;
+            HP = 0.01f;
             BigHP--;
             BigHPRefillCount = 0;
             isDowned = true;
@@ -252,6 +274,8 @@ public class SC_PlayerProperties : MonoBehaviour
                 StartCoroutine(GetUpDelay());
  
             }
+
+
         }
 
         if (onRecovering)
@@ -263,9 +287,8 @@ public class SC_PlayerProperties : MonoBehaviour
     IEnumerator GetUpDelay()
     {
 
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .5f);
         yield return new WaitForSeconds(3);
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
+ 
         onRecovering = false;
         gameObject.layer = LayerMask.NameToLayer("Player");
 
@@ -273,6 +296,10 @@ public class SC_PlayerProperties : MonoBehaviour
 
     void PostureRegen()
     {
+        if (posture < 0)
+        {
+            posture = 0;
+        }
         if (posture < maxPosture && postureRegenDelayCount <= 0
             && !isBlocking)
         {
@@ -348,6 +375,16 @@ public class SC_PlayerProperties : MonoBehaviour
         }
     }
 
+    void ColorUpdate()
+    {
+        if (onRecovering)
+        {
+            Color tmp = gameObject.GetComponent<SpriteRenderer>().color;
+            tmp.a = .5f;
+            gameObject.GetComponent<SpriteRenderer>().color = tmp; //beware, no function to return to default color yet
+        }
+    }
+
     void ResetHP()
     {
         HP = maxHP;
@@ -356,6 +393,21 @@ public class SC_PlayerProperties : MonoBehaviour
     void ResetPosture()
     {
         posture = maxPosture;
+    }
+
+    void Return_Camera()
+    {
+        cameraController.activeCam = "Main Camera";
+    }
+
+    void ResetAllAnimTrigger()
+    {
+        foreach (AnimatorControllerParameter p in playerAnim.parameters)
+        {
+
+            if (p.type == AnimatorControllerParameterType.Trigger)
+                playerAnim.ResetTrigger(p.name);
+        }
     }
 
     private void OnDrawGizmosSelected()

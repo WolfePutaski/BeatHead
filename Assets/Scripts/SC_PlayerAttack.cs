@@ -108,6 +108,7 @@ public class SC_PlayerAttack : MonoBehaviour
                 if (enemy.GetComponent<SC_EnemyProperties>().HP <= 0)
                 {
                     playerProperties.BigHPRefillCount += 0.75f;
+                    playerProperties.HP = playerProperties.maxHP;
                 }
             }
         }
@@ -122,9 +123,14 @@ public class SC_PlayerAttack : MonoBehaviour
 
                 foreach (Collider2D enemy in enemiesToDamage)
                 {
+                    var e = enemy.GetComponent<SC_EnemyProperties>();
                     Debug.Log("We hit " + enemy.name);
-                    enemy.transform.position = new Vector2(playerProperties.attackPos.position.x, enemy.transform.position.y);
-                    enemy.GetComponent<SC_EnemyProperties>().TakeDamage(playerProperties.damage, playerProperties.attackPushForce * gameObject.transform.localScale.x,false); //getcomponent and takedamage
+                    //if (!e.harderned)
+                    //{
+                    //    enemy.transform.position = new Vector2(playerProperties.attackPos.position.x, enemy.transform.position.y);
+                    //}
+
+                    e.TakeDamage(playerProperties.damage, playerProperties.attackPushForce * gameObject.transform.localScale.x,false); //getcomponent and takedamage
                 }
             }
         }
@@ -141,7 +147,7 @@ public class SC_PlayerAttack : MonoBehaviour
     void TriggerExecuteAttack(GameObject enemy)
 
     {
-        cameraController.Zoom(1.5f);
+        cameraController.activeCam = "Zoom Cam";
         isExecuting = true;
         //cameraController
         enemy.SendMessage("OnExecuted");
@@ -151,10 +157,7 @@ public class SC_PlayerAttack : MonoBehaviour
 
     }
 
-    void Execution_End()
-    {
-        cameraController.Zoom(-1.5f);
-    }
+
 
 
     void Active_canAttack()
