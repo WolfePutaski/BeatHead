@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class SC_PlayerProperties : MonoBehaviour
@@ -44,7 +45,9 @@ public class SC_PlayerProperties : MonoBehaviour
 
     [Header("Movement")]
 
-    public float rollForce;
+    public int dashCountMax;
+    public float dashRegenTime;
+    public float dashForce;
     public float defaultSpeed = 0;
     public float slowWalkSpeed = 0;
     public float playerSpeed = 0;
@@ -220,6 +223,7 @@ public class SC_PlayerProperties : MonoBehaviour
         {
             BigHPRefillCount = 0;
         }
+
         
     }
 
@@ -259,7 +263,7 @@ public class SC_PlayerProperties : MonoBehaviour
             {
                 mashCount -= Time.deltaTime;
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && BigHP > 0)
             {
                 mashCount += 1;
             }
@@ -269,7 +273,7 @@ public class SC_PlayerProperties : MonoBehaviour
                 isDowned = false;
                 onRecovering = true;
                 playerAnim.SetTrigger("GetUp");
-                HP = 10;
+                HP = maxHP;
                 mashCount = 0;
                 StartCoroutine(GetUpDelay());
  
@@ -372,6 +376,11 @@ public class SC_PlayerProperties : MonoBehaviour
             {
                 a.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 100);
             }
+        }
+
+        if (BigHP <= 0)
+        {
+            GameObject.Find("GAME OVER").GetComponent<TextMeshProUGUI>().enabled = true;
         }
     }
 

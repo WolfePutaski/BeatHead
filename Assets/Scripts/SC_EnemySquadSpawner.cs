@@ -11,6 +11,9 @@ public class SC_EnemySquadSpawner : MonoBehaviour
     public int enemyCount;
     public int maxEnemeies;
 
+    public int squadListCount;
+
+    public List<int> squadList; //this contain what squad to spawn;
 
     [System.Serializable]
     public class EnemySquad
@@ -33,6 +36,7 @@ public class SC_EnemySquadSpawner : MonoBehaviour
     {
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
+        if (squadListCount < squadList.Capacity)
         if (spawnCooldownCount <= 0)
         {
             SpawnSquad();
@@ -47,7 +51,7 @@ public class SC_EnemySquadSpawner : MonoBehaviour
 
     public void SpawnSquad()
     {
-        squadToSpawn = Random.Range(0, squadType.Length);
+        squadToSpawn = squadList[squadListCount];
 
         //spawn everything in EnemyToSpawn
         foreach (GameObject nme in squadType[squadToSpawn].enemyToSpawns)
@@ -59,6 +63,7 @@ public class SC_EnemySquadSpawner : MonoBehaviour
         }
 
         spawnCooldownCount = spawnCooldown;
+        squadListCount++;
 
     }
 }

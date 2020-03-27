@@ -27,6 +27,10 @@ public class SC_PlayerBlock : MonoBehaviour
         playerAnim = GetComponent<Animator>();
     }
 
+    //Howw Delay Works
+    //If player release block when deflect timer is not over, start delay; if player start holding block before the delay is over, the deflect will not active and delay start again. This prevent spamming
+
+
     // Update is called once per frame
     void Update()
     {
@@ -37,11 +41,11 @@ public class SC_PlayerBlock : MonoBehaviour
                 {
                     playerProperties.canAttack = false;
                     playerProperties.isBlocking = true;
-                    //if (deflectDelayTimer > 0)
-                    //{
-                    //    playerProperties.onDeflect = false;
-                    //}
-                    //else
+                    if (deflectDelayTimer > 0)
+                    {
+                        deflectDelayTimer = playerProperties.deflectDelay;
+                    }
+                    else
                     {
                         deflectTimer = playerProperties.deflectionWindow;
                         playerProperties.onDeflect = true;
@@ -59,7 +63,10 @@ public class SC_PlayerBlock : MonoBehaviour
             playerProperties.canAttack = true;
             playerProperties.isBlocking = false;
             playerProperties.onDeflect = false;
+            if(deflectTimer > 0)
+            {
             deflectDelayTimer = playerProperties.deflectDelay;
+            }
         }
 
         DeflectCountdown();
@@ -86,6 +93,10 @@ public class SC_PlayerBlock : MonoBehaviour
         {
             deflectDelayTimer -= Time.deltaTime;
         }
+        else
+        {
+            deflectDelayTimer = 0;
+        }
     }
 
     void Deflect()
@@ -93,6 +104,12 @@ public class SC_PlayerBlock : MonoBehaviour
         playerAnim.SetTrigger("Deflected");
         deflectTimer = 0;
         deflectDelayTimer = 0;
+        PlayParticle();
+    }
+
+    void DeflectSuccess()
+    {
+        playerProperties.deflectSuccessPart.Play();
     }
 
     void Unblock()

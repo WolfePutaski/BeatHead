@@ -101,14 +101,14 @@ public class SC_PlayerAttack : MonoBehaviour
 
                 GameObject enemy = enemyToExecute.gameObject;
 
-                Debug.Log("We hit " + enemy.name);
+                Debug.Log("We execute " + enemy.name);
                 enemy.transform.position = new Vector2(playerProperties.attackPos.position.x, enemy.transform.position.y);
                 enemy.GetComponent<SC_EnemyProperties>().TakeDamage(playerProperties.damage, playerProperties.attackPushForce * gameObject.transform.localScale.x,true); //getcomponent and takedamage
 
                 if (enemy.GetComponent<SC_EnemyProperties>().HP <= 0)
                 {
-                    playerProperties.BigHPRefillCount += 0.75f;
-                    playerProperties.HP = playerProperties.maxHP;
+                    playerProperties.BigHPRefillCount += 0.4f;
+                    playerProperties.HP = Mathf.Clamp(playerProperties.HP + 1.5f, playerProperties.maxHP/2, playerProperties.maxHP);
                 }
             }
         }

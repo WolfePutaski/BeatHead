@@ -28,7 +28,7 @@ public class SC_EnemyProperties : MonoBehaviour
     [Header("Posture")]
     public float defaultPosture;
     [SerializeField]
-    float posture;
+    public float posture;
     public float stunKnockback;
     Transform statusGroup;
 
@@ -109,10 +109,18 @@ public class SC_EnemyProperties : MonoBehaviour
         regenDelayCount = regenDelay;
         if (Execute)
         {
-            DHP -= 1;
+            if (DHP > 0)
+            {
+                DHP -= 1;
+            }
+
             if (DHP <= 0)
             {
                 HP = 0;
+            }
+            else
+            {
+                StartCoroutine(ResetPosture());
             }
         }
         else
@@ -178,8 +186,14 @@ public class SC_EnemyProperties : MonoBehaviour
         enemyPhysics.AddForce(Vector2.left * stunKnockback * transform.localScale.x, ForceMode2D.Impulse);
     }
 
-    void ResetPosture()
+    //void ResetPosture()
+    //{
+    //    posture = defaultPosture;
+    //}
+
+    private IEnumerator ResetPosture()
     {
+        yield return new WaitForSeconds(.5f);
         posture = defaultPosture;
     }
 

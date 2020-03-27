@@ -15,6 +15,7 @@ TagManager:
   - Player_PostureBar
   - Player_HPBar
   - Door
+  - Player_DashArrow
   layers:
   - Default
   - TransparentFX

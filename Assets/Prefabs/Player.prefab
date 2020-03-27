@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8022937037390842731
 Transform:
   m_ObjectHideFlags: 0
@@ -5053,12 +5053,19 @@ MonoBehaviour:
   defaultRegenDelay: 2
   HPRegenRate: 1.5
   mashCount: 0
-  HPBlock: []
+  HPBlock:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   maxPosture: 12
   posture: 0
   postureRegenRate_default: 2
   postureBar: {fileID: 0}
-  rollForce: 8
+  dashCountMax: 3
+  dashRegenTime: 1
+  dashForce: 0
   defaultSpeed: 150
   slowWalkSpeed: 100
   playerSpeed: 0
@@ -5076,9 +5083,8 @@ MonoBehaviour:
   deflectPart: {fileID: 5350122000386700494}
   deflectSuccessPart: {fileID: 1892782405211299442}
   deflectionWindow: 0.25
-  deflectionSmallWindow: 0.1
+  deflectDelay: 0
   onDeflect: 0
-  deflectTimer: 0
   MaxMeleeAttackers: 1
   MeleeAttackers: []
   MaxRangedAttackers: 1
@@ -5107,6 +5113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8579451e58d597347806150218eff371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashCount: 0
 --- !u!114 &1611106378753813559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5120,6 +5127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deflectTimer: 0
+  deflectDelayTimer: 0
 --- !u!1 &5842198659262846025
 GameObject:
   m_ObjectHideFlags: 0

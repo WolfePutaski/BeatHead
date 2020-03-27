@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(SC_PlayerProperties))]
 public class SC_PlayerMovement : MonoBehaviour
@@ -9,6 +10,10 @@ public class SC_PlayerMovement : MonoBehaviour
     Animator playerAnim;
     ParticleSystem dashPart;
     SC_PlayerProperties playerProperties;
+    GameObject[] dashArrows;
+
+    public int dashCount;
+    float dashRegenTimer;
 
     // Start is called before the first frame update
     void Awake()
@@ -16,7 +21,11 @@ public class SC_PlayerMovement : MonoBehaviour
         playerProperties = gameObject.GetComponent<SC_PlayerProperties>();
         playerPhysics = gameObject.GetComponent<Rigidbody2D>();
         playerAnim = gameObject.GetComponentInChildren<Animator>();
+
+        dashCount = playerProperties.dashCountMax;
         //dashPart = GameObject.Find("DashPart").GetComponent<ParticleSystem>();
+
+        dashArrows = GameObject.FindGameObjectsWithTag("Player_DashArrow");
     }
 
     // Update is called once per frame
@@ -26,13 +35,14 @@ public class SC_PlayerMovement : MonoBehaviour
         {
             Movement();
 
-            if (Input.GetKeyDown(KeyCode.V)
-    && Input.GetAxisRaw("Horizontal") != 0
-    )
+            if (Input.GetKeyDown(KeyCode.V) && Input.GetAxisRaw("Horizontal") != 0 && dashCount > 0)
             {
                 Roll();
             }
         }
+
+        DashRegen();
+        HUDUpdate();
 
 
     }
@@ -40,10 +50,32 @@ public class SC_PlayerMovement : MonoBehaviour
     void Roll()
     {
         playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
-        playerPhysics.AddForce(Vector2.right * transform.localScale.x * playerProperties.rollForce, ForceMode2D.Impulse);
+        playerPhysics.AddForce(Vector2.right * transform.localScale.x * playerProperties.dashForce, ForceMode2D.Impulse);
         //dashPart.Play();
         playerAnim.SetTrigger("Pressed Roll");
-        
+
+        dashCount--;
+        dashRegenTimer = playerProperties.dashRegenTime;
+
+
+    }
+
+    void DashRegen()
+    {
+            if (dashRegenTimer <= 0)
+            {
+                dashRegenTimer = playerProperties.dashRegenTime;
+                dashCount = Mathf.Clamp(dashCount + 1, 0, playerProperties.dashCountMax);
+            }
+            else
+            {
+                if (dashCount < playerProperties.dashCountMax)
+                {
+                    dashRegenTimer -= Time.deltaTime;
+                }
+            }
+       
+
 
     }
 
@@ -76,6 +108,22 @@ public class SC_PlayerMovement : MonoBehaviour
         playerAnim.SetFloat("Moving", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
     }
 
+    void HUDUpdate()
+    {
+        for (int i = 0; i < dashArrows.Length; i++)
+        {
+            if (i+1 <= dashCount)
+            {
+
+                dashArrows[i].GetComponent<Image>().color = new Color(1,1,1,1);
+
+            }
+            else
+            {
+                dashArrows[i].GetComponent<Image>().color = new Color(0.6f, 0.6f, 0.6f, 0.3f);
+            }
+        }
+    }
 
     void Active_Movement()
     {

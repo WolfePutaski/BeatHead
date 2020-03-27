@@ -5,6 +5,7 @@ using UnityEngine;
 public class SC_EnemyAttack : MonoBehaviour
 {
     Animator enemyAnim;
+    SC_EnemyProperties enemyProperties;
 
     public bool OnScanning = true;
     public bool isAttacking= false;
@@ -48,6 +49,7 @@ public class SC_EnemyAttack : MonoBehaviour
     void Start()
     {
         Target = GameObject.Find("Player");
+        enemyProperties = GetComponent<SC_EnemyProperties>();
         enemyPhysics = GetComponent<Rigidbody2D>();
         enemyMovement = GetComponent<SC_EnemyMovement>();
         enemyAnim = GetComponent<Animator>();
@@ -127,9 +129,13 @@ public class SC_EnemyAttack : MonoBehaviour
             attackTarget.transform.position = new Vector2(attackPos.position.x, attackTarget.transform.position.y);
             if (attackTarget.GetComponent<SC_PlayerProperties>().onDeflect)
             {
-                GetComponent<SC_EnemyProperties>().Deflected(1);
+                enemyProperties.Deflected(1);
                 Debug.Log("Deflect!");
                 attackTarget.SendMessage("Deflect", SendMessageOptions.DontRequireReceiver);
+                if (enemyProperties.posture <= 0)
+                {
+                    attackTarget.SendMessage("DeflectSuccess", SendMessageOptions.DontRequireReceiver);
+                }
             }
             else
             {

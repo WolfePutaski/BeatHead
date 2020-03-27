@@ -5,6 +5,7 @@ using UnityEngine;
 public class SC_EnemyMovement : MonoBehaviour
 {
     Animator enemyAnim;
+    SC_EnemyProperties enemyProperties;
 
     [Header("Movement")]
     public bool CanMove = true;
@@ -17,6 +18,16 @@ public class SC_EnemyMovement : MonoBehaviour
     public float closeDistance;
     public float distanceFromTarget;
 
+    [Header("RandomFreeze")]
+    public float FreezeDistance; //Minimum distance to freeze
+    public float FreezeTimer;
+    public float StayFreezeMin;
+    public float StayFreezeMax;
+    public float FreezeRate;
+    public float FreezeRateMax;
+    public float FreezeRateMin;
+    public bool isFreezingMove;
+
     [Header("Attacking")]
 
     Rigidbody2D enemyPhysics;
@@ -26,12 +37,15 @@ public class SC_EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyProperties = gameObject.GetComponent<SC_EnemyProperties>();
         farDistance = Random.Range(farDistanceMin, farDistanceMax);
         Target = GameObject.Find("Player");
         enemyPhysics = GetComponent<Rigidbody2D>();
         enemyAnim = GetComponent<Animator>();
         defaultScaleX = transform.localScale.x;
         DefaultSpeed = Random.Range(DefaultSpeed - speedVariable, DefaultSpeed + speedVariable);
+        FreezeRate = Random.Range(FreezeRateMin, FreezeRateMax);
+        
     }
 
     // Update is called once per frame
@@ -53,11 +67,17 @@ public class SC_EnemyMovement : MonoBehaviour
                 FollowPlayer();
             }
 
+            if (!isFreezingMove)
+            {
+
+            }
             if (IsEngaging)
             {
                 MoveToAttack();
             }
         }
+
+        FreezingMovement();
 
     }
 
@@ -71,6 +91,42 @@ public class SC_EnemyMovement : MonoBehaviour
         CanMove = false;
     }
 
+    //Freezing Movement
+    public void FreezingMovement()
+    {
+        if (Mathf.Abs(distanceFromTarget) < FreezeDistance && FreezeRate > 0)
+        {
+            FreezeRate -= Time.deltaTime;
+        }
+
+        if (FreezeRate < 0)
+        {
+            FreezeRate = 0;
+            FreezeTimer = Random.Range(StayFreezeMin, StayFreezeMax);
+        }
+
+        if (FreezeTimer > 0)
+        {
+            FreezeTimer -= Time.deltaTime;
+        }
+
+        if (FreezeTimer < 0)
+        {
+            FreezeTimer = 0;
+            FreezeRate = Random.Range(FreezeRateMin, FreezeRateMax);
+        }
+
+        //if (enemyProperties.HP == enemyProperties.defaultHP)
+        {
+            isFreezingMove = (FreezeTimer > 0);
+
+        }
+        //else
+        //{
+        //    isFreezingMove = false;
+        //}
+
+    }
     //Attack Requesting
     public void RequestAttack()
     {
@@ -94,6 +150,7 @@ public class SC_EnemyMovement : MonoBehaviour
     public void FollowPlayer()
     {
         float btwFarDistance = Random.Range(farDistanceMin, farDistanceMax);
+
         if (distanceFromTarget < 0)
         {
             transform.localScale = new Vector2(defaultScaleX, transform.localScale.y);
@@ -103,16 +160,26 @@ public class SC_EnemyMovement : MonoBehaviour
             transform.localScale = new Vector2(-defaultScaleX, transform.localScale.y);
         }
 
-        if (Mathf.Abs(distanceFromTarget) > farDistance + btwFarDistance) //walk towards
+        if (!isFreezingMove)
         {
-            enemyPhysics.velocity = new Vector2(transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
-            enemyAnim.SetFloat("MoveDir", 1);
+            if (Mathf.Abs(distanceFromTarget) > farDistance + btwFarDistance) //walk towards
+            {
+                enemyPhysics.velocity = new Vector2(transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
+                enemyAnim.SetFloat("MoveDir", 1);
+            }
+            if (Mathf.Abs(distanceFromTarget) < farDistance - btwFarDistance) //walk back
+            {
+                enemyPhysics.velocity = new Vector2(-transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
+                enemyAnim.SetFloat("MoveDir", -1);
+            }
         }
-        if (Mathf.Abs(distanceFromTarget) < farDistance - btwFarDistance) //walk back
+        else
         {
-            enemyPhysics.velocity = new Vector2(-transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
-            enemyAnim.SetFloat("MoveDir", -1);
+            enemyPhysics.velocity = new Vector2(0, enemyPhysics.velocity.y);
+            enemyAnim.SetFloat("MoveDir", 0);
+
         }
+
 
         if (enemyPhysics.velocity.x == 0)
         {
@@ -133,18 +200,30 @@ public class SC_EnemyMovement : MonoBehaviour
             transform.localScale = new Vector2(-defaultScaleX, transform.localScale.y);
         }
 
-        if (Mathf.Abs(distanceFromTarget) > closeDistance)
+        if (!isFreezingMove)
         {
-            enemyPhysics.velocity = new Vector2(transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
-            enemyAnim.SetFloat("MoveDir", 1);
+
+
+            if (Mathf.Abs(distanceFromTarget) > closeDistance)
+            {
+                enemyPhysics.velocity = new Vector2(transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
+                enemyAnim.SetFloat("MoveDir", 1);
+
+            }
+            if (Mathf.Abs(distanceFromTarget) < closeDistance - 0.2f)
+            {
+                enemyPhysics.velocity = new Vector2(-transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
+                enemyAnim.SetFloat("MoveDir", -1);
+
+            }
+        }
+        else
+        {
+            enemyPhysics.velocity = new Vector2(0, enemyPhysics.velocity.y);
+            enemyAnim.SetFloat("MoveDir", 0);
 
         }
-        if (Mathf.Abs(distanceFromTarget) < closeDistance - 0.2f)
-        {
-            enemyPhysics.velocity = new Vector2(-transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
-            enemyAnim.SetFloat("MoveDir", -1);
 
-        }
         if (enemyPhysics.velocity.x == 0)
         {
             enemyAnim.SetFloat("MoveDir", 0);

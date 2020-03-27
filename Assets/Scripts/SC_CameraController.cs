@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class SC_CameraController : MonoBehaviour
@@ -28,7 +29,7 @@ public class SC_CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Application.targetFrameRate = 60;
+
         camList = GameObject.FindGameObjectsWithTag("MainCamera");
 
 
@@ -39,9 +40,19 @@ public class SC_CameraController : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        //QualitySettings.vSyncCount = 2;
+        Application.targetFrameRate = 60;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         FollowPlayer();
         ActiveCamera();
 
