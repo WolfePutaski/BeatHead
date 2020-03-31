@@ -30,11 +30,9 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationBlendTree.Node
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateMachineNode
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -88,49 +86,49 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11246}
+      Script: {instanceID: 11268}
     - Class: 114
-      Script: {instanceID: 11254}
+      Script: {instanceID: 11276}
     - Class: 114
-      Script: {instanceID: 11464}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 11510}
+      Script: {instanceID: 11532}
     - Class: 114
-      Script: {instanceID: 11524}
+      Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 11868}
+      Script: {instanceID: 11890}
     - Class: 114
-      Script: {instanceID: 12024}
+      Script: {instanceID: 12046}
     - Class: 114
-      Script: {instanceID: 12058}
+      Script: {instanceID: 12080}
     - Class: 114
-      Script: {instanceID: 12420}
+      Script: {instanceID: 12442}
     - Class: 114
-      Script: {instanceID: 12638}
+      Script: {instanceID: 12660}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12830}
     - Class: 114
-      Script: {instanceID: 12826}
+      Script: {instanceID: 12848}
     - Class: 114
-      Script: {instanceID: 12900}
+      Script: {instanceID: 12922}
     - Class: 114
-      Script: {instanceID: 12910}
+      Script: {instanceID: 12932}
     - Class: 114
-      Script: {instanceID: 13062}
+      Script: {instanceID: 13084}
     - Class: 114
-      Script: {instanceID: 13140}
+      Script: {instanceID: 13162}
     - Class: 114
-      Script: {instanceID: 13190}
+      Script: {instanceID: 13212}
     - Class: 114
-      Script: {instanceID: 13278}
+      Script: {instanceID: 13300}
     - Class: 114
-      Script: {instanceID: 13346}
+      Script: {instanceID: 13368}
     - Class: 114
-      Script: {instanceID: 13416}
+      Script: {instanceID: 13438}
     - Class: 114
-      Script: {instanceID: 13592}
+      Script: {instanceID: 13614}
     - Class: 114
-      Script: {instanceID: 13612}
+      Script: {instanceID: 13634}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -226,7 +224,7 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: df59cfac4b7d97fb3067665cf0df1c3b
+      Hash: f8bf028e826f73dccefe186916e10f39
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SC_EnemyMovement
@@ -652,7 +650,7 @@ ScriptsOnlyBuild:
     className: SC_PlayerBlock
   - hash:
       serializedVersion: 2
-      Hash: 6de6430d9bbe92578624b499ed741303
+      Hash: 47ff58c94ef227d077f64cf8606a53df
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SC_EnemyRanged
@@ -688,7 +686,7 @@ ScriptsOnlyBuild:
     className: NetworkAnimator
   - hash:
       serializedVersion: 2
-      Hash: 0d4ad6afc8d2a0ac9a8d6e1b7e146677
+      Hash: 54434abb1f0ee19a13375bcd79823b98
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SC_PlayerMovement
@@ -815,4 +813,5 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Arena.unity
-  playerPath: D:/IDD/2019-2/IDD391 Project/Build/Pre-Alpha/Beat Head.exe
+  playerPath: D:/IDD/2019-2/IDD391 Project/Build/Beat Head - Pre-Alpha v0.12/Beat
+    Head.exe

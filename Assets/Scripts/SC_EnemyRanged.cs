@@ -12,7 +12,6 @@ public class SC_EnemyRanged : MonoBehaviour
     SC_EnemyProperties enemyProperties;
     Animator enemyAnim;
     SC_EnemyMovement enemyMovement;
-    public GameObject bullet;
     
     public float shootDamage;
     public float timeBtwShot;
@@ -93,7 +92,16 @@ public class SC_EnemyRanged : MonoBehaviour
     {
         if (isAiming)
         {
-            Debug.DrawLine(gameObject.transform.position + Vector3.up, gameObject.transform.position + Vector3.right * transform.localScale.x * minShootRange, Color.cyan);
+            if (enemyMovement.distanceFromTarget < 0)
+            {
+                transform.localScale = new Vector2(enemyMovement.defaultScaleX, transform.localScale.y);
+            }
+            if (enemyMovement.distanceFromTarget > 0)
+            {
+                transform.localScale = new Vector2(-enemyMovement.defaultScaleX, transform.localScale.y);
+            }
+
+            Debug.DrawLine(gameObject.transform.position + Vector3.up, gameObject.transform.position + Vector3.up + Vector3.right * transform.localScale.x * minShootRange, Color.cyan);
             enemyMovement.CanMove = false;
 
             if (timeBtwShotCount <= 0)

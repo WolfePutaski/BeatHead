@@ -10,7 +10,7 @@ public class SC_PlayerMovement : MonoBehaviour
     Animator playerAnim;
     ParticleSystem dashPart;
     SC_PlayerProperties playerProperties;
-    GameObject[] dashArrows;
+    public List<GameObject> dashArrows;
 
     public int dashCount;
     float dashRegenTimer;
@@ -25,7 +25,8 @@ public class SC_PlayerMovement : MonoBehaviour
         dashCount = playerProperties.dashCountMax;
         //dashPart = GameObject.Find("DashPart").GetComponent<ParticleSystem>();
 
-        dashArrows = GameObject.FindGameObjectsWithTag("Player_DashArrow");
+        //dashArrows = new List<GameObject>();
+        //dashArrows.AddRange(GameObject.FindGameObjectsWithTag("Player_DashArrow"));
     }
 
     // Update is called once per frame
@@ -110,7 +111,7 @@ public class SC_PlayerMovement : MonoBehaviour
 
     void HUDUpdate()
     {
-        for (int i = 0; i < dashArrows.Length; i++)
+        for (int i = 0; i < dashArrows.Count; i++)
         {
             if (i+1 <= dashCount)
             {

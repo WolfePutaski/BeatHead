@@ -32,7 +32,7 @@ public class SC_EnemyMovement : MonoBehaviour
 
     Rigidbody2D enemyPhysics;
     public GameObject Target;
-    private float defaultScaleX;
+    [HideInInspector]public float defaultScaleX;
 
     // Start is called before the first frame update
     void Start()

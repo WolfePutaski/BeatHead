@@ -32,7 +32,7 @@ public class SC_PlayerProperties : MonoBehaviour
     bool onRecovering;
 
     GameObject HPBar;
-    public GameObject[] HPBlock;
+    public List<GameObject> HPBlock;
 
     [Header("Posture")]
     public float maxPosture;
@@ -105,7 +105,8 @@ public class SC_PlayerProperties : MonoBehaviour
         //HUD
         postureBar = GameObject.Find("Player_PostureBar");
         HPBar = GameObject.Find("Player_HPBar");
-        HPBlock = GameObject.FindGameObjectsWithTag("Player_HPBlock");
+        //HPBlock = new List<GameObject>();
+        //HPBlock.AddRange(GameObject.FindGameObjectsWithTag("Player_HPBlock"));
 
     }
 
