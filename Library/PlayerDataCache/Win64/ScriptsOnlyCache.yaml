@@ -33,6 +33,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateMachineNode
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -72,6 +73,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -147,6 +152,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
+    - Class: 221
+      Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
     - Class: 223
@@ -155,10 +162,16 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
+      Script: {instanceID: 0}
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: e0065be64e3c313dfd037bb965357952
+      Hash: d58f4f149d6af61d936b70a689c14da0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SC_PlayerProperties
@@ -758,7 +771,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 37b1dfdf0a438fc800f8763235869e50
+      Hash: ef3e9af977e3dc25ecc2b11e95c0013b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SC_EnemyProperties
@@ -813,5 +826,5 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Arena.unity
-  playerPath: D:/IDD/2019-2/IDD391 Project/Build/Beat Head - Pre-Alpha v0.12/Beat
+  playerPath: D:/IDD/2019-2/IDD391 Project/Build/Beat Head - Pre-Alpha v0.14/Beat
     Head.exe

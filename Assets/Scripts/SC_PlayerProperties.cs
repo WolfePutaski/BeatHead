@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 using TMPro;
 
 
@@ -14,6 +15,7 @@ public class SC_PlayerProperties : MonoBehaviour
     Rigidbody2D playerPhysics;
     SC_CameraController cameraController;
     Animator playerAnim;
+    AudioSource audioSource;
 
     [Header("Health")]
     public int maxBigHP;
@@ -77,6 +79,8 @@ public class SC_PlayerProperties : MonoBehaviour
     public float deflectDelay;
     public bool onDeflect;
 
+    [Header("Audio")]
+    public List<AudioClip> audioClips;
     //public float deflectTimer;
 
 
@@ -94,6 +98,7 @@ public class SC_PlayerProperties : MonoBehaviour
         playerPhysics = GetComponent<Rigidbody2D>();
         playerAnim = gameObject.GetComponentInChildren<Animator>();
         cameraController = FindObjectOfType<SC_CameraController>();
+        audioSource = GetComponent<AudioSource>();
         GameObject deflectP = GameObject.Find("Deflect Part");
         deflectPart = deflectP.GetComponent<ParticleSystem>();
 
@@ -162,6 +167,7 @@ public class SC_PlayerProperties : MonoBehaviour
                 posture -= postureDamage;
                 if (posture <= 0)
                 {
+                    PlaySound("Player_GuardBreak");
                     playerAnim.SetTrigger("Stunned");
                     //posture = maxPosture / 3;
                 }
@@ -177,6 +183,7 @@ public class SC_PlayerProperties : MonoBehaviour
         }
         else //take damage
         {
+            PlaySound("ExecutionHit");
             playerAnim.SetTrigger("IsHurt");
             cameraController.Shake();
             playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
@@ -192,6 +199,7 @@ public class SC_PlayerProperties : MonoBehaviour
         canMove = false;
 
         {
+            PlaySound("Player_Shot");
             playerAnim.SetTrigger("IsHurt");
             cameraController.Shake();
             playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
@@ -418,6 +426,11 @@ public class SC_PlayerProperties : MonoBehaviour
             if (p.type == AnimatorControllerParameterType.Trigger)
                 playerAnim.ResetTrigger(p.name);
         }
+    }
+
+    public void PlaySound(string audioName)
+    {
+        audioSource.PlayOneShot(audioClips.Find(x => x.name == audioName));
     }
 
     private void OnDrawGizmosSelected()

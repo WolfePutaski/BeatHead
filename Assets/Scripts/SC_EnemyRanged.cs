@@ -43,7 +43,7 @@ public class SC_EnemyRanged : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //enemyProperties = GetComponent<SC_EnemyProperties>();
+        enemyProperties = GetComponent<SC_EnemyProperties>();
         enemyAnim = GetComponent<Animator>();
         enemyMovement = GetComponent<SC_EnemyMovement>();
         minShootRange -= Random.Range(0, minShootRangeRandom);
@@ -69,6 +69,8 @@ public class SC_EnemyRanged : MonoBehaviour
                 if (isAiming == false)
                 {
                     isAiming = true;
+                    enemyProperties.PlaySound("EnemyHandgun_Ready");
+
                 }
             }
             else

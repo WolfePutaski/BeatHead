@@ -5184,6 +5184,22 @@ PrefabInstance:
       propertyPath: defaultHP
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: audioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: dc07d3c1381eb03409ab8368affc827a, type: 3}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: audioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: eb1f0d211a914c846a805d5881b25ae0, type: 3}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: audioClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 707d9ca4e38d1ab4fabd0c6da1f8caba, type: 3}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: audioClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e1f0dc592cd16a40b7a2b91a574aea9, type: 3}
     - target: {fileID: 1714070790211081706, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: startTimeBtwAttack

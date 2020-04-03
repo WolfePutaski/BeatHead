@@ -9,6 +9,7 @@ public enum EnemyState
 
 public class SC_EnemyProperties : MonoBehaviour
 {
+    
     [Header("Health")]
     public float defaultHP;
     [SerializeField]
@@ -40,6 +41,10 @@ public class SC_EnemyProperties : MonoBehaviour
     [Header("State")]
     EnemyState enemyState;
 
+    [Header("SoundFX")]
+    public List<AudioClip> audioClips;
+
+    AudioSource audioSource;
     Rigidbody2D enemyPhysics;
     Animator enemyAnim;
     SC_EnemyMovement enemyMovement;
@@ -50,6 +55,7 @@ public class SC_EnemyProperties : MonoBehaviour
         enemyPhysics = gameObject.GetComponent<Rigidbody2D>();
         enemyAnim = GetComponent<Animator>();
         enemyMovement = GetComponent<SC_EnemyMovement>();
+        audioSource = GetComponent<AudioSource>();
         HP = defaultHP;
         posture = defaultPosture;
         DHP = defaultDHP;
@@ -160,6 +166,11 @@ public class SC_EnemyProperties : MonoBehaviour
        Destroy(gameObject);
     }
 
+    public void PlaySound(string audioName)
+    {
+        audioSource.PlayOneShot(audioClips.Find(x => x.name == audioName));
+
+    }
     void Harderned()
     {
         harderned = true;

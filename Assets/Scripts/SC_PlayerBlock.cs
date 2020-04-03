@@ -109,6 +109,7 @@ public class SC_PlayerBlock : MonoBehaviour
 
     void DeflectSuccess()
     {
+        playerProperties.PlaySound("Player_DeflectSuccess");
         playerProperties.deflectSuccessPart.Play();
     }
 
