@@ -16,6 +16,7 @@ TagManager:
   - Player_HPBar
   - Door
   - Player_DashArrow
+  - InteractableObject
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - 
   - Ground
   - Player
-  - 
+  - InteractableObjects
   - 
   - Projectiles
   - Enemies
@@ -55,6 +56,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Object
+    uniqueID: 606482511
     locked: 0
   - name: Between
     uniqueID: 606350985

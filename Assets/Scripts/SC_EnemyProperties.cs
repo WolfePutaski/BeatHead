@@ -266,4 +266,9 @@ public class SC_EnemyProperties : MonoBehaviour
     {
 
     }
+
+    public void UpdateObjective()
+    {
+        FindObjectOfType<SC_PlayerObjective>().EnemyDie();
+    }
 }

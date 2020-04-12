@@ -23,7 +23,7 @@ AnimationClip:
       value: {fileID: 21300010, guid: 07550b8d95d03c348b7cc67cd955f3b2, type: 3}
     - time: 0.1
       value: {fileID: 21300012, guid: 07550b8d95d03c348b7cc67cd955f3b2, type: 3}
-    - time: 0.6
+    - time: 1.5
       value: {fileID: 21300012, guid: 07550b8d95d03c348b7cc67cd955f3b2, type: 3}
     attribute: m_Sprite
     path: 
@@ -52,7 +52,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.70000005
+    m_StopTime: 1.6
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -73,6 +73,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
+    functionName: NotAllowtoAttack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
     functionName: CancelAttack
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -87,13 +94,13 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: NotAllowtoAttack
+    functionName: UpdateObjective
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.6
+  - time: 1.5
     functionName: Die
     data: 
     objectReferenceParameter: {fileID: 0}

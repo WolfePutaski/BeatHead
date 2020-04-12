@@ -88,7 +88,7 @@ public class SC_PlayerAttack : MonoBehaviour
 
         timeBtwAttack = playerProperties.startTimeBtwAttack;
 
-        Debug.Log("Pressed Attack");
+        //Debug.Log("Pressed Attack");
         AttackDash();
 
         //Hitbox
@@ -97,11 +97,12 @@ public class SC_PlayerAttack : MonoBehaviour
             enemyToExecute = Physics2D.OverlapCircle(playerProperties.attackPos.position, playerProperties.attackRadius, executeLayer);
             if (enemyToExecute != null)
             {
+                playerProperties.PlaySound("ExecutionHit");
                 cameraController.Shake();
 
                 GameObject enemy = enemyToExecute.gameObject;
 
-                Debug.Log("We execute " + enemy.name);
+                //Debug.Log("We execute " + enemy.name);
                 enemy.transform.position = new Vector2(playerProperties.attackPos.position.x, enemy.transform.position.y);
                 enemy.GetComponent<SC_EnemyProperties>().TakeDamage(playerProperties.damage, playerProperties.attackPushForce * gameObject.transform.localScale.x,true); //getcomponent and takedamage
 
@@ -120,11 +121,12 @@ public class SC_PlayerAttack : MonoBehaviour
             if (enemiesToDamage.Length > 0)
             {
                 cameraController.Shake();
+                playerProperties.PlaySound("ExecutionHit");
 
                 foreach (Collider2D enemy in enemiesToDamage)
                 {
                     var e = enemy.GetComponent<SC_EnemyProperties>();
-                    Debug.Log("We hit " + enemy.name);
+                    //Debug.Log("We hit " + enemy.name);
                     //if (!e.harderned)
                     //{
                     //    enemy.transform.position = new Vector2(playerProperties.attackPos.position.x, enemy.transform.position.y);
@@ -151,7 +153,7 @@ public class SC_PlayerAttack : MonoBehaviour
         isExecuting = true;
         //cameraController
         enemy.SendMessage("OnExecuted");
-        Debug.Log("Execute " + enemy.name);
+        //Debug.Log("Execute " + enemy.name);
         enemy.transform.position = playerProperties.executionPos.transform.position;
         playerAnim.SetTrigger("Execution");
 

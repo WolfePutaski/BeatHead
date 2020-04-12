@@ -229,4 +229,12 @@ public class SC_EnemyMovement : MonoBehaviour
             enemyAnim.SetFloat("MoveDir", 0);
         }
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+        {
+            enemyPhysics.velocity = Vector2.zero;
+        }
+    }
 }

@@ -17,12 +17,17 @@ public class SC_PlayerProperties : MonoBehaviour
     Animator playerAnim;
     AudioSource audioSource;
 
+    public GameObject interactionObject;
+
     [Header("Health")]
     public int maxBigHP;
     public int BigHP;
     public float BigHPKillRefillAmount;
     public float BigHPRefillCount;
     public float BigHPDegenRate;
+    public float getUpTimerDefault;
+    public float downTimer = 0;
+    public GameObject getUpBar; 
 
     public float HP; //execution will gain health or when all enemy is gone;
     public float maxHP;
@@ -267,6 +272,13 @@ public class SC_PlayerProperties : MonoBehaviour
         //Downed
         if (isDowned)
         {
+
+            downTimer += Time.deltaTime;
+
+            if (downTimer > getUpTimerDefault && BigHP > 0)
+            {
+                BigHP = 0;
+            }
             
             if (mashCount > 0)
             {
@@ -280,6 +292,7 @@ public class SC_PlayerProperties : MonoBehaviour
             if (mashCount >= 10)
             {
                 isDowned = false;
+                downTimer = 0;
                 onRecovering = true;
                 playerAnim.SetTrigger("GetUp");
                 HP = maxHP;
@@ -337,11 +350,13 @@ public class SC_PlayerProperties : MonoBehaviour
         //HP
         if (!isDowned)
         {
+            getUpBar.GetComponent<Image>().fillAmount = 0;
             float HPPercentage = (HP / maxHP);
             HPBar.GetComponent<Image>().fillAmount = HPPercentage;
         }
         if (isDowned)
         {
+            getUpBar.GetComponent<Image>().fillAmount = 1 - downTimer / getUpTimerDefault;
             HPBar.GetComponent<Image>().fillAmount = mashCount/10;
         }
 
@@ -438,5 +453,6 @@ public class SC_PlayerProperties : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRadius);
     }
+
 
 }

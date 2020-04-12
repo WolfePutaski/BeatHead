@@ -87,7 +87,7 @@ public class SC_EnemyAttack : MonoBehaviour
         {
             isAttacking = true;
             enemyAnim.SetTrigger("Attack");
-            Debug.Log("Enemy Attack Triggered");
+            //Debug.Log("Enemy Attack Triggered");
 
         }
     }
@@ -130,7 +130,7 @@ public class SC_EnemyAttack : MonoBehaviour
             if (attackTarget.GetComponent<SC_PlayerProperties>().onDeflect)
             {
                 enemyProperties.Deflected(1);
-                Debug.Log("Deflect!");
+                //Debug.Log("Deflect!");
                 attackTarget.SendMessage("Deflect", SendMessageOptions.DontRequireReceiver);
                 if (enemyProperties.posture <= 0)
                 {
@@ -141,7 +141,7 @@ public class SC_EnemyAttack : MonoBehaviour
             {
                 attackTarget.transform.position = new Vector2(attackPos.position.x, attackTarget.transform.position.y);
                 attackTarget.GetComponent<SC_PlayerProperties>().Attacked(damage, postureDamage, attackPush * transform.localScale.x); //getcomponent and takedamage
-                Debug.Log("Player Attacked");
+                //Debug.Log("Player Attacked");
             }
 
         }
