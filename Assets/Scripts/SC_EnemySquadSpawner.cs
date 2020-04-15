@@ -9,7 +9,9 @@ public class SC_EnemySquadSpawner : MonoBehaviour
     public float spawnCooldownCount;
 
     public int enemyCount;
+    public int enemyRangedCount;
     public int maxEnemeies;
+    public int maxRangedEnemy;
 
     public int squadListCount;
 
@@ -35,6 +37,7 @@ public class SC_EnemySquadSpawner : MonoBehaviour
     void Update()
     {
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        enemyRangedCount = GameObject.FindObjectsOfType<SC_EnemyRanged>().Length;
 
         if (squadListCount < squadList.Capacity)
         if (spawnCooldownCount <= 0)
@@ -52,18 +55,31 @@ public class SC_EnemySquadSpawner : MonoBehaviour
     public void SpawnSquad()
     {
         squadToSpawn = squadList[squadListCount];
-
+        int spawnerPoint = Random.Range(0, spawners.Count);
         //spawn everything in EnemyToSpawn
-        foreach (GameObject nme in squadType[squadToSpawn].enemyToSpawns)
-        {
-            Instantiate(nme);
-            nme.transform.parent = null;
-            nme.transform.position = spawners[Random.Range(0, spawners.Count)].transform.position;
+            StartCoroutine(SpawnEnemy(spawnerPoint));
+            //nme.transform.parent = null;
+            //nme.transform.position = spawners[Random.Range(0, spawners.Count)].transform.position;
 
-        }
+        
 
         spawnCooldownCount = spawnCooldown;
         squadListCount++;
 
     }
+
+    IEnumerator SpawnEnemy(int spwnPoint)
+    {
+        foreach (GameObject enemy in squadType[squadToSpawn].enemyToSpawns)
+        {
+            Instantiate(enemy);
+            enemy.transform.parent = null;
+            enemy.transform.position = spawners[spwnPoint].transform.position;
+            yield return new WaitForSeconds(3);
+
+        }
+
+    }
 }
+
+

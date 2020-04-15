@@ -4937,7 +4937,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 940224915
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Time: 0.1
   m_Parameters:
@@ -5244,7 +5244,7 @@ PrefabInstance:
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}

@@ -107,8 +107,8 @@ public class SC_EnemyProperties : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             Destroy(gameObject, 1);
         }
-    }
 
+    }
     public void TakeDamage(float damage, float push, bool Execute)
     {
         enemyMovement.CanMove = false;
@@ -140,8 +140,6 @@ public class SC_EnemyProperties : MonoBehaviour
             enemyPhysics.velocity = new Vector2(0, enemyPhysics.velocity.y);
             enemyPhysics.AddForce(Vector2.right * push, ForceMode2D.Impulse);
         }
-
-
 
 
     }
@@ -271,4 +269,42 @@ public class SC_EnemyProperties : MonoBehaviour
     {
         FindObjectOfType<SC_PlayerObjective>().EnemyDie();
     }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        //if (enemyPhysics.velocity.y != 0)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+            {
+                if (gameObject.transform.position.y > collision.transform.position.y)
+                {
+                    gameObject.transform.position =  collision.transform.position;
+                    collision.gameObject.GetComponent<SC_EnemyProperties>().TakeDamage(0, 0, false);
+                }
+                //if (gameObject.transform.position.y != collision.transform.position.y)
+                {
+
+                }
+                //if (enemyPhysics.velocity.y == 0)
+                //{
+                //    Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collision.collider, false);
+
+                //}
+
+
+
+            }
+        }
+        //else
+        //{
+        //    if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+        //    {
+        //        Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), collision.collider, false);
+        //    }
+        //}
+
+
+    }
+
+   
 }

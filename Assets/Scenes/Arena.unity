@@ -1905,7 +1905,7 @@ PrefabInstance:
     - target: {fileID: 6000420473792428581, guid: 4cae15a518a9c3d47be8f79ed8d1b2bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6000420473792428581, guid: 4cae15a518a9c3d47be8f79ed8d1b2bc,
         type: 3}
@@ -1915,7 +1915,7 @@ PrefabInstance:
     - target: {fileID: 6000420473825875000, guid: 4cae15a518a9c3d47be8f79ed8d1b2bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6000420473825875000, guid: 4cae15a518a9c3d47be8f79ed8d1b2bc,
         type: 3}
@@ -1941,7 +1941,7 @@ PrefabInstance:
     - target: {fileID: 6000420474941697340, guid: 4cae15a518a9c3d47be8f79ed8d1b2bc,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6000420474941697341, guid: 4cae15a518a9c3d47be8f79ed8d1b2bc,
         type: 3}
@@ -2022,7 +2022,9 @@ MonoBehaviour:
   spawnCooldown: 3
   spawnCooldownCount: 0
   enemyCount: 0
+  enemyRangedCount: 0
   maxEnemeies: 3
+  maxRangedEnemy: 0
   squadListCount: 0
   squadList: 0000000000000000000000000200000001000000020000000200000001000000020000000100000003000000
   squadType:

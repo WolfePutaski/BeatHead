@@ -21,7 +21,7 @@ public class SC_InteractableObject : MonoBehaviour
     public float secondsToActive;
     public string toFixText;
     public float secondsToFix;
-    float secondsHeldMax = 0;
+    float secondsHeldMax = 99;
     float secondsHeld = 0;
     bool triggerUse = false;
     public bool interactable;
