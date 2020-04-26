@@ -5001,8 +5001,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2109475017
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300072, guid: 9d227d5a673aeac4da1349c5ef05a8c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5052,7 +5052,7 @@ MonoBehaviour:
   BigHPKillRefillAmount: 0.7
   BigHPRefillCount: 0
   BigHPDegenRate: 0.05
-  getUpTimerDefault: 2
+  getUpTimerDefault: 5
   downTimer: 0
   getUpBar: {fileID: 0}
   HP: 10
@@ -5060,6 +5060,7 @@ MonoBehaviour:
   defaultRegenDelay: 2
   HPRegenRate: 0.5
   mashCount: 0
+  isDowned: 0
   HPBlock:
   - {fileID: 0}
   - {fileID: 0}
@@ -5077,12 +5078,28 @@ MonoBehaviour:
   slowWalkSpeed: 100
   playerSpeed: 0
   canMove: 1
+  interactionObject: {fileID: 0}
+  interactableObjectLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   canAttack: 1
   attackPos: {fileID: 4631270478274655734}
   executionPos: {fileID: 17985806665220429}
   attackDashForce: 2
-  attackPushForce: 5
-  startTimeBtwAttack: 0.4
+  attackPushForce: 2
+  startTimeBtwAttack: 0
+  currentPlayerAttackProperties:
+    attackDashForce: 0
+    attackPushForce: 0
+  jabAttack:
+    attackDashForce: 2
+    attackPushForce: 2
+  pushAttack:
+    attackDashForce: 2
+    attackPushForce: 6
+  kickAttack:
+    attackDashForce: 2
+    attackPushForce: 7
   attackRadius: 0.4
   damage: 1
   canBlock: 1
@@ -5103,10 +5120,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 707d9ca4e38d1ab4fabd0c6da1f8caba, type: 3}
   - {fileID: 8300000, guid: ffd1c8e93648d37468842dd08a421b51, type: 3}
   - {fileID: 8300000, guid: 87fd3c79d7529fb48a1f930f011294a7, type: 3}
-  MaxMeleeAttackers: 1
-  MeleeAttackers: []
-  MaxRangedAttackers: 1
-  RangedAttackers: []
+  - {fileID: 8300000, guid: ca959c1177c4c434a905072a05c292ae, type: 3}
+  - {fileID: 8300000, guid: 0aaf8d97d80853e4da13c849837e2120, type: 3}
 --- !u!114 &252442494271667810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5119,6 +5134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337b60493cafeed42a18d1f29b5a9ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isExecuting: 0
 --- !u!114 &7254024540026994619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5162,11 +5178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025dd3c1bc3dd4f43a7dc6231a0d05e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentObjective:
-    scriptName: 
-    description: 
-  currentObjectiveName: 
+  newObjectiveScriptName: KillBoss1
+  hasObjective: 0
   objectiveText: {fileID: 0}
+  isShowingNewObjective: 0
+  showObjective: 0
 --- !u!96 &6923604577555321260
 TrailRenderer:
   serializedVersion: 2

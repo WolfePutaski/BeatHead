@@ -1057,10 +1057,10 @@ GameObject:
   - component: {fileID: 17839887}
   - component: {fileID: 17839886}
   - component: {fileID: 17839888}
+  - component: {fileID: 477685895994798803}
   - component: {fileID: 17839889}
   - component: {fileID: 1845497328}
   - component: {fileID: 1714070790211081706}
-  - component: {fileID: 477685895994798803}
   m_Layer: 13
   m_Name: Enemy_Base
   m_TagString: Enemy
@@ -1201,101 +1201,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &17839889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296466519088867939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5231642fa56672f41a966a64f9cc7b15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultHP: 5
-  HP: 0
-  defaultDHP: 0
-  HPBar: {fileID: 4141864064696513782}
-  DHPBlock: []
-  regenDelay: 2
-  regenPerSec: 1
-  defaultPosture: 0
-  posture: 0
-  stunKnockback: 2
-  postureBar: {fileID: 1560002035980621118}
-  harderned: 0
-  audioClips:
-  - {fileID: 8300000, guid: 215b82a034b6a4a4bae77a771e82b416, type: 3}
-  - {fileID: 8300000, guid: 3c85ba40a8ae83a4cafbd48490d8ffed, type: 3}
-  - {fileID: 8300000, guid: 707d9ca4e38d1ab4fabd0c6da1f8caba, type: 3}
-  - {fileID: 8300000, guid: 6e1f0dc592cd16a40b7a2b91a574aea9, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &1845497328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296466519088867939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af515a1111556545994056fdce62e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanMove: 1
-  IsEngaging: 1
-  DefaultSpeed: 2
-  speedVariable: 0.3
-  farDistanceMin: 1.5
-  farDistanceMax: 3
-  closeDistance: 1
-  distanceFromTarget: 0
-  FreezeDistance: 12
-  FreezeTimer: 0
-  StayFreezeMin: 0.5
-  StayFreezeMax: 3
-  FreezeRate: 0
-  FreezeRateMax: 1
-  FreezeRateMin: 3
-  isFreezingMove: 0
-  Target: {fileID: 0}
-  defaultScaleX: 0
---- !u!114 &1714070790211081706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296466519088867939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0adf8ee1311500c459972ba2a2d77f74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnScanning: 0
-  isAttacking: 0
-  timeBtwAttack: 0
-  startTimeBtwAttack: 0
-  attackRadius: 0.4
-  Target: {fileID: 0}
-  attackPos: {fileID: 5630773661671206140}
-  attackTarget: {fileID: 0}
-  lightDamage: 1
-  lightPostureDmg: 1
-  lightAttackDash: 2
-  lightAttackPush: 2
-  lightTBA: 0
-  heavyDamage: 3
-  heavyPostureDmg: 5
-  heavyAttackDash: 3
-  heavyAttackPush: 5
-  heavyTBA: 1
 --- !u!82 &477685895994798803
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1392,6 +1297,102 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &17839889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296466519088867939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5231642fa56672f41a966a64f9cc7b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultHP: 5
+  HP: 0
+  defaultDHP: 0
+  DHP: 0
+  HPBar: {fileID: 4141864064696513782}
+  DHPBlock: []
+  regenDelay: 2
+  regenPerSec: 1
+  defaultPosture: 0
+  posture: 0
+  stunKnockback: 2
+  postureBar: {fileID: 1560002035980621118}
+  harderned: 0
+  audioClips:
+  - {fileID: 8300000, guid: 215b82a034b6a4a4bae77a771e82b416, type: 3}
+  - {fileID: 8300000, guid: 3c85ba40a8ae83a4cafbd48490d8ffed, type: 3}
+  - {fileID: 8300000, guid: 707d9ca4e38d1ab4fabd0c6da1f8caba, type: 3}
+  - {fileID: 8300000, guid: 6e1f0dc592cd16a40b7a2b91a574aea9, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1845497328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296466519088867939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af515a1111556545994056fdce62e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanMove: 1
+  IsEngaging: 1
+  DefaultSpeed: 2
+  speedVariable: 0.3
+  farDistanceMin: 1.5
+  farDistanceMax: 3
+  closeDistance: 1
+  distanceFromTarget: 0
+  FreezeDistance: 12
+  FreezeTimer: 0
+  StayFreezeMin: 0.5
+  StayFreezeMax: 3
+  FreezeRate: 0
+  FreezeRateMax: 1
+  FreezeRateMin: 3
+  isFreezingMove: 0
+  Target: {fileID: 0}
+  defaultScaleX: 0
+--- !u!114 &1714070790211081706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296466519088867939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0adf8ee1311500c459972ba2a2d77f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnScanning: 0
+  isAttacking: 0
+  timeBtwAttack: 0
+  startTimeBtwAttack: 0
+  attackRadius: 0.4
+  Target: {fileID: 0}
+  attackPos: {fileID: 5630773661671206140}
+  attackTarget: {fileID: 0}
+  lightDamage: 1
+  lightPostureDmg: 1
+  lightAttackDash: 2
+  lightAttackPush: 2
+  lightTBA: 0
+  heavyDamage: 3
+  heavyPostureDmg: 5
+  heavyAttackDash: 3
+  heavyAttackPush: 5
+  heavyTBA: 1
 --- !u!1 &8842114506337696220
 GameObject:
   m_ObjectHideFlags: 0

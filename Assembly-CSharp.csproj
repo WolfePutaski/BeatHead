@@ -62,19 +62,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\SC_BriefingScreen.cs" />
+    <Compile Include="Assets\Scripts\Interactable\SC_InteractableObject_Computer.cs" />
+    <Compile Include="Assets\Scripts\Interactable\SC_InteractableObject_Syringe.cs" />
+    <Compile Include="Assets\Scripts\Objectives\SC_Objective_HackComputer.cs" />
+    <Compile Include="Assets\Scripts\Objectives\SC_Objective_KillAll.cs" />
+    <Compile Include="Assets\Scripts\Objectives\SC_Objective_KillBoss1.cs" />
     <Compile Include="Assets\Scripts\SC_CameraController.cs" />
     <Compile Include="Assets\Scripts\SC_Door.cs" />
     <Compile Include="Assets\Scripts\SC_EnemyAttack.cs" />
+    <Compile Include="Assets\Scripts\SC_EnemyBossDrugGuy_Properties.cs" />
     <Compile Include="Assets\Scripts\SC_EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\SC_EnemyProperties.cs" />
     <Compile Include="Assets\Scripts\SC_EnemyRanged.cs" />
     <Compile Include="Assets\Scripts\SC_EnemySquadSpawner.cs" />
     <Compile Include="Assets\Scripts\SC_FPSDisplay.cs" />
-    <Compile Include="Assets\Scripts\SC_InteractableObject.cs" />
+    <Compile Include="Assets\Scripts\SC_LevelController.cs" />
     <Compile Include="Assets\Scripts\SC_PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\SC_PlayerBlock.cs" />
     <Compile Include="Assets\Scripts\SC_PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\SC_PlayerObjective.cs" />
+    <Compile Include="Assets\Scripts\SC_PlayerObjectiveController.cs" />
     <Compile Include="Assets\Scripts\SC_PlayerProperties.cs" />
     <Compile Include="Assets\Scripts\SC_PostureBar.cs" />
     <Compile Include="Assets\Scripts\SC_SpawnerEnemy.cs" />
@@ -98,6 +105,9 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/IDD/2019-2/IDD391 Project/BeatHead/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>D:/IDD/2019-2/IDD391 Project/BeatHead/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>D:/IDD/2019-2/IDD391 Project/BeatHead/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
@@ -134,6 +144,9 @@
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>D:/IDD/2019-2/IDD391 Project/BeatHead/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/IDD/2019-2/IDD391 Project/BeatHead/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>D:/IDD/2019-2/IDD391 Project/BeatHead/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>

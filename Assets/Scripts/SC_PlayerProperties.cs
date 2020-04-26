@@ -15,9 +15,9 @@ public class SC_PlayerProperties : MonoBehaviour
     Rigidbody2D playerPhysics;
     SC_CameraController cameraController;
     Animator playerAnim;
+    RuntimeAnimatorController defaultAnimator;
     AudioSource audioSource;
 
-    public GameObject interactionObject;
 
     [Header("Health")]
     public int maxBigHP;
@@ -34,7 +34,7 @@ public class SC_PlayerProperties : MonoBehaviour
     public float defaultRegenDelay;
     public float HPRegenRate;
     public float mashCount;
-    bool isDowned;
+    public bool isDowned;
     float HPregenDelayCount;
     bool onRecovering;
 
@@ -60,6 +60,17 @@ public class SC_PlayerProperties : MonoBehaviour
     public float playerSpeed = 0;
     public bool canMove;
 
+    [Header("Interaction")]
+    public GameObject interactionObject;
+    public LayerMask interactableObjectLayer;
+
+    [System.Serializable]
+    public struct PlayerAttackProperties
+    {
+        public float attackDashForce;
+        public float attackPushForce;
+    }
+
     [Header("Attacking")]
     public bool canAttack = true;
     public Transform attackPos;
@@ -68,10 +79,26 @@ public class SC_PlayerProperties : MonoBehaviour
     public float attackPushForce;
     public float startTimeBtwAttack;
 
+    public PlayerAttackProperties currentPlayerAttackProperties;
+
+    public PlayerAttackProperties jabAttack;
+    public PlayerAttackProperties pushAttack;
+    public PlayerAttackProperties kickAttack;
 
     public float attackRadius;
     public float damage;
 
+    public float attackSpeed;
+    public float attackDefaultSpeed;
+    public float attackSlowSpeed;
+
+    public float maxStamina;
+    public float stamina;
+    public float staminaRegenCountdown;
+    public bool isTired;
+    public GameObject staminaFillBar;
+    public Color normalStaminaColor;
+    public Color alertStaminaColor;
 
     [Header("Blocking")]
     public bool canBlock;
@@ -88,15 +115,6 @@ public class SC_PlayerProperties : MonoBehaviour
     public List<AudioClip> audioClips;
     //public float deflectTimer;
 
-
-    [Header("AttackRequest")]
-
-    public int MaxMeleeAttackers = 1;
-    public List<GameObject> MeleeAttackers;
-
-    public int MaxRangedAttackers = 1;
-    public List<GameObject> RangedAttackers;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +122,7 @@ public class SC_PlayerProperties : MonoBehaviour
         playerAnim = gameObject.GetComponentInChildren<Animator>();
         cameraController = FindObjectOfType<SC_CameraController>();
         audioSource = GetComponent<AudioSource>();
+        defaultAnimator = playerAnim.runtimeAnimatorController;
         GameObject deflectP = GameObject.Find("Deflect Part");
         deflectPart = deflectP.GetComponent<ParticleSystem>();
 
@@ -111,10 +130,11 @@ public class SC_PlayerProperties : MonoBehaviour
         HP = maxHP;
         posture = Mathf.Clamp(maxPosture,0, maxPosture);
         postureRegenRate = postureRegenRate_default;
-
+        stamina = maxStamina;
         //HUD
         postureBar = GameObject.Find("Player_PostureBar");
         HPBar = GameObject.Find("Player_HPBar");
+        staminaFillBar = GameObject.Find("Player_StaminaBar");
         //HPBlock = new List<GameObject>();
         //HPBlock.AddRange(GameObject.FindGameObjectsWithTag("Player_HPBlock"));
 
@@ -127,8 +147,12 @@ public class SC_PlayerProperties : MonoBehaviour
         BigHPRegen();
         UpdateHealth();
         PostureRegen();
+        StaminaRegen();
+        ItemInteraction();
         HUDUpdate();
-        
+        UpdateAttackProperties();
+
+
     }
 
     private void LateUpdate()
@@ -136,28 +160,34 @@ public class SC_PlayerProperties : MonoBehaviour
         ColorUpdate();
     }
 
-
-    public void GetAttackRequest(GameObject requestor)
+    public void ItemInteraction()
     {
-        MeleeAttackers.RemoveAll(item => item == null);
-        if (MeleeAttackers.Count < MaxMeleeAttackers)
+        if (!isDowned)
         {
-            if (!MeleeAttackers.Contains(requestor))
+            if (interactionObject != null)
             {
-                requestor.SendMessage("AllowtoAttack");
-                MeleeAttackers.Add(requestor);
-                Debug.Log("Attack Allowing");
+                if (Input.GetKey(KeyCode.E))
+                {
+                    interactionObject.SendMessage("PlayerInteract", SendMessageOptions.DontRequireReceiver);
+                    canMove = false;
+                    playerAnim.SetFloat("Moving", 0);
+                }
+
+                
             }
         }
-        else { }
+
+
     }
-    public void CancelAttacker(GameObject requestor)
-    {
-        MeleeAttackers.Remove(requestor);
-    }
+
 
     public void Attacked(float damage,float postureDamage, float push) //get attacked
     {
+        if (interactionObject != null)
+        {
+            interactionObject.SendMessage("ResetHold", SendMessageOptions.DontRequireReceiver);
+
+        }
         canMove = false;
 
         if (isBlocking)
@@ -201,6 +231,11 @@ public class SC_PlayerProperties : MonoBehaviour
 
     public void Shot(float damage) //get attacked
     {
+        if (interactionObject != null)
+        {
+            interactionObject.SendMessage("ResetHold", SendMessageOptions.DontRequireReceiver);
+
+        }
         canMove = false;
 
         {
@@ -310,6 +345,44 @@ public class SC_PlayerProperties : MonoBehaviour
         }
     }
 
+    void StaminaRegen()
+    {
+        if (staminaRegenCountdown > 0)
+        {
+            staminaRegenCountdown -= Time.deltaTime;
+        }
+        if (staminaRegenCountdown <= 0)
+        {
+            if (stamina < maxStamina)
+            {
+                stamina = Mathf.Clamp(stamina + Time.deltaTime * 2, 0, maxStamina);
+            }
+
+
+        }
+
+        if (stamina == 0)
+        {
+            isTired = true;
+        }
+        if (stamina == maxStamina)
+        {
+            isTired = false;
+        }
+
+
+        if (isTired)
+        {
+            playerAnim.SetFloat("AttackSpeedModifier", attackSlowSpeed);
+        }
+        else
+        {
+            playerAnim.SetFloat("AttackSpeedModifier", attackDefaultSpeed);
+
+        }
+
+    }
+
     IEnumerator GetUpDelay()
     {
 
@@ -391,14 +464,44 @@ public class SC_PlayerProperties : MonoBehaviour
         {
             foreach (GameObject a in GameObject.FindGameObjectsWithTag("Player_PostureBar"))
             {
-                a.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
+                a.GetComponent<RectTransform>().sizeDelta = new Vector2(100, a.GetComponent<RectTransform>().sizeDelta.y);
             }
         }
         else
         {
             foreach (GameObject a in GameObject.FindGameObjectsWithTag("Player_PostureBar"))
             {
-                a.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 100);
+                a.GetComponent<RectTransform>().sizeDelta = new Vector2(0, a.GetComponent<RectTransform>().sizeDelta.y);
+            }
+        }
+
+        staminaFillBar.GetComponent<Image>().fillAmount = 1 - (stamina / maxStamina);
+
+        if (stamina < maxStamina)
+        {
+            foreach (GameObject a in GameObject.FindGameObjectsWithTag("Player_StaminaBar"))
+            {
+                a.GetComponent<RectTransform>().sizeDelta = new Vector2(100, a.GetComponent<RectTransform>().sizeDelta.y);
+            }
+
+
+            if (isTired)
+            {
+                staminaFillBar.GetComponent<Image>().color = alertStaminaColor;
+
+            }
+            else
+            {
+                staminaFillBar.GetComponent<Image>().color = normalStaminaColor;
+
+            }
+        }
+
+        else
+        {
+            foreach (GameObject a in GameObject.FindGameObjectsWithTag("Player_StaminaBar"))
+            {
+                a.GetComponent<RectTransform>().sizeDelta = new Vector2(0, a.GetComponent<RectTransform>().sizeDelta.y);
             }
         }
 
@@ -430,7 +533,9 @@ public class SC_PlayerProperties : MonoBehaviour
 
     void Return_Camera()
     {
-        cameraController.activeCam = "Main Camera";
+        //cameraController.activeCam = "Main Camera";
+        cameraController.isZoom = false;
+
     }
 
     void ResetAllAnimTrigger()
@@ -443,15 +548,64 @@ public class SC_PlayerProperties : MonoBehaviour
         }
     }
 
+    public void DecreaseStamina()
+    {
+        stamina -= 1;
+        staminaRegenCountdown = 1;
+    }
+
+
+    public void ReturnDefaultAnimator()
+    {
+        playerAnim.runtimeAnimatorController = defaultAnimator;
+    }
+
     public void PlaySound(string audioName)
     {
         audioSource.PlayOneShot(audioClips.Find(x => x.name == audioName));
+    }
+
+    public  void  UpdateAttackProperties()
+    {
+        attackDashForce = currentPlayerAttackProperties.attackDashForce;
+        attackPushForce = currentPlayerAttackProperties.attackPushForce;
+    }
+
+    public void SetJabAttack()
+    {
+        currentPlayerAttackProperties = jabAttack;
+    }
+
+    public void SetPushAttack()
+    {
+        currentPlayerAttackProperties = pushAttack;
+    }
+    public void SetKickAttack()
+    {
+        currentPlayerAttackProperties = kickAttack;
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRadius);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("InteractableObject"))
+        {
+            interactionObject = collision.gameObject;
+        }
+    }
+
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("InteractableObject"))
+        {
+            interactionObject = null;
+        }
     }
 
 

@@ -4937,7 +4937,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 940224915
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Time: 0.1
   m_Parameters:
@@ -5153,7 +5153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 17839886, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: m_Offset.y
-      value: 0.8769262
+      value: 0.8222222
       objectReference: {fileID: 0}
     - target: {fileID: 17839886, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -5169,7 +5169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 17839886, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: m_Size.y
-      value: 1.7152703
+      value: 1.644444
       objectReference: {fileID: 0}
     - target: {fileID: 17839886, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x

@@ -74,14 +74,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: Active_Movement
+    functionName: Active_canBlock
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: Active_canBlock
+    functionName: Active_Movement
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

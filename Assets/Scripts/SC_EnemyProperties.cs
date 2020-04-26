@@ -6,6 +6,12 @@ public enum EnemyState
 {
     Normal, OnExecution
 }
+public struct EnemySound
+{
+    AudioClip Hit;
+    AudioClip Hurt;
+    AudioClip Deflected;
+}
 
 public class SC_EnemyProperties : MonoBehaviour
 {
@@ -15,7 +21,7 @@ public class SC_EnemyProperties : MonoBehaviour
     [SerializeField]
     public float HP;
     public int defaultDHP; //DHP = Deathblow HP
-    int DHP;
+    public int DHP;
 
     public GameObject HPBar;
     float defaultHPBarLength;
@@ -105,10 +111,12 @@ public class SC_EnemyProperties : MonoBehaviour
         {
             enemyAnim.SetTrigger("Die");
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-            Destroy(gameObject, 1);
+            //Destroy(gameObject, 1);
         }
 
+
     }
+
     public void TakeDamage(float damage, float push, bool Execute)
     {
         enemyMovement.CanMove = false;
@@ -267,7 +275,11 @@ public class SC_EnemyProperties : MonoBehaviour
 
     public void UpdateObjective()
     {
-        FindObjectOfType<SC_PlayerObjective>().EnemyDie();
+        var obj_Kill = FindObjectOfType<SC_Objective_KillAll>();
+        if (obj_Kill != null)
+        {
+            FindObjectOfType<SC_Objective_KillAll>().EnemyDie();
+        }
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -276,11 +288,14 @@ public class SC_EnemyProperties : MonoBehaviour
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
             {
-                if (gameObject.transform.position.y > collision.transform.position.y)
+                if (gameObject.transform.position.y > collision.transform.position.y +0.5f)
                 {
-                    gameObject.transform.position =  collision.transform.position;
+
                     collision.gameObject.GetComponent<SC_EnemyProperties>().TakeDamage(0, 0, false);
                 }
+                //if (enemyPhysics.velocity.y == collision.relativeVelocity)
+
+
                 //if (gameObject.transform.position.y != collision.transform.position.y)
                 {
 

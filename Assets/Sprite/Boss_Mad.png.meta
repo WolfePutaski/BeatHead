@@ -1,0 +1,1277 @@
+fileFormatVersion: 2
+guid: ef545c5813445574db61335cc10c6368
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -808112923674609043
+    second: Boss2_0
+  - first:
+      213: 6642691135006647050
+    second: Boss2_1
+  - first:
+      213: -1374223935073179459
+    second: Boss2_2
+  - first:
+      213: 963400842054379146
+    second: Boss2_3
+  - first:
+      213: 8723241377798403360
+    second: Boss2_4
+  - first:
+      213: 1575804124362631357
+    second: Boss2_5
+  - first:
+      213: -1529921200140086767
+    second: Boss2_6
+  - first:
+      213: -3873381135295722997
+    second: Boss2_7
+  - first:
+      213: -857819337411733080
+    second: Boss2_8
+  - first:
+      213: -8764147781816543031
+    second: Boss2_9
+  - first:
+      213: -6692972147695234856
+    second: Boss2_10
+  - first:
+      213: 5280314630103495531
+    second: Boss2_11
+  - first:
+      213: -7780866390471228139
+    second: Boss2_12
+  - first:
+      213: -5656050386297363027
+    second: Boss2_13
+  - first:
+      213: 8878155772918991116
+    second: Boss2_14
+  - first:
+      213: -3530235163079317328
+    second: Boss2_15
+  - first:
+      213: -1836876459503734525
+    second: Boss2_16
+  - first:
+      213: -2072794844121553966
+    second: Boss2_17
+  - first:
+      213: -4619889322748862980
+    second: Boss2_18
+  - first:
+      213: 7916756120631981581
+    second: Boss2_19
+  - first:
+      213: -1702704488961133836
+    second: Boss2_20
+  - first:
+      213: 6838948995097542477
+    second: Boss2_21
+  - first:
+      213: -8285970264601437298
+    second: Boss2_22
+  - first:
+      213: 1009313777993982923
+    second: Boss2_23
+  - first:
+      213: 4265431906140031108
+    second: Boss2_24
+  - first:
+      213: 3534388328786775835
+    second: Boss2_25
+  - first:
+      213: 5652327366703412880
+    second: Boss2_26
+  - first:
+      213: 2283086319712335844
+    second: Boss2_27
+  - first:
+      213: -6436643841119113071
+    second: Boss2_28
+  - first:
+      213: 1395145658971993267
+    second: Boss2_29
+  - first:
+      213: -8151260214411409528
+    second: Boss2_30
+  - first:
+      213: 8354755942791800886
+    second: Boss2_31
+  - first:
+      213: 2250593264512052039
+    second: Boss2_32
+  - first:
+      213: -1606247596139759764
+    second: Boss2_33
+  - first:
+      213: -4089832595307624456
+    second: Boss2_34
+  - first:
+      213: 871170728213564122
+    second: Boss2_35
+  - first:
+      213: 5613385056424973808
+    second: Boss2_36
+  - first:
+      213: -8064482786337117034
+    second: Boss2_37
+  - first:
+      213: 33597744272898838
+    second: Boss2_38
+  - first:
+      213: -3489851206558241655
+    second: Boss2_39
+  - first:
+      213: 5538330056629580062
+    second: Boss2_40
+  - first:
+      213: -5505113467896623866
+    second: Boss2_41
+  - first:
+      213: -333881068659796244
+    second: Boss2_42
+  - first:
+      213: 4087699652299167142
+    second: Boss2_43
+  - first:
+      213: -5054523334501539873
+    second: Boss2_44
+  - first:
+      213: 8218532961844114931
+    second: Boss2_45
+  - first:
+      213: 490856694285514893
+    second: Boss2_46
+  - first:
+      213: 8738458979848984638
+    second: Boss_Mad_0
+  - first:
+      213: 7430327082949968772
+    second: Boss_Mad_1
+  - first:
+      213: -7059153925756028896
+    second: Boss_Mad_2
+  - first:
+      213: 2452035745310263730
+    second: Boss_Mad_3
+  - first:
+      213: -5544470187930267105
+    second: Boss_Mad_4
+  - first:
+      213: 2179184833227451879
+    second: Boss_Mad_5
+  - first:
+      213: 456168428865841454
+    second: Boss_Mad_6
+  - first:
+      213: -2125845789341473591
+    second: Boss_Mad_7
+  - first:
+      213: 8517128947055298569
+    second: Boss_Mad_8
+  - first:
+      213: -1702028799923867811
+    second: Boss_Mad_9
+  - first:
+      213: 1706902012864386465
+    second: Boss_Mad_10
+  - first:
+      213: 3636796583923151984
+    second: Boss_Mad_11
+  - first:
+      213: -7690238769770540126
+    second: Boss_Mad_12
+  - first:
+      213: 2696787499354128478
+    second: Boss_Mad_13
+  - first:
+      213: 6407120946399514954
+    second: Boss_Mad_14
+  - first:
+      213: 5457656348541284587
+    second: Boss_Mad_15
+  - first:
+      213: -8273184320205707219
+    second: Boss_Mad_16
+  - first:
+      213: 6924726524138825125
+    second: Boss_Mad_17
+  - first:
+      213: 2386440763094478197
+    second: Boss_Mad_18
+  - first:
+      213: -7354171390467953031
+    second: Boss_Mad_19
+  - first:
+      213: 7635258178790680726
+    second: Boss_Mad_20
+  - first:
+      213: 3000613802220693236
+    second: Boss_Mad_21
+  - first:
+      213: 9079046178613975997
+    second: Boss_Mad_22
+  - first:
+      213: -1502791977709737042
+    second: Boss_Mad_23
+  - first:
+      213: 18828603867700266
+    second: Boss_Mad_24
+  - first:
+      213: 9082304610244804968
+    second: Boss_Mad_25
+  - first:
+      213: -4131429532274560334
+    second: Boss_Mad_26
+  - first:
+      213: 3976009049787958894
+    second: Boss_Mad_27
+  - first:
+      213: 8859011788929229870
+    second: Boss_Mad_28
+  - first:
+      213: -2895777825407476172
+    second: Boss_Mad_29
+  - first:
+      213: -5379070519805643021
+    second: Boss_Mad_30
+  - first:
+      213: -5757572999757864215
+    second: Boss_Mad_31
+  - first:
+      213: -8069137018657075355
+    second: Boss_Mad_32
+  - first:
+      213: 937038469415816978
+    second: Boss_Mad_33
+  - first:
+      213: -8097222544315274821
+    second: Boss_Mad_34
+  - first:
+      213: 4847515889066215959
+    second: Boss_Mad_35
+  - first:
+      213: -4597951117364426213
+    second: Boss_Mad_36
+  - first:
+      213: -2603950489959280527
+    second: Boss_Mad_37
+  - first:
+      213: -4711897922327289937
+    second: Boss_Mad_38
+  - first:
+      213: 3911166781277410666
+    second: Boss_Mad_39
+  - first:
+      213: -5399861002544530351
+    second: Boss_Mad_40
+  - first:
+      213: 8487240348056643667
+    second: Boss_Mad_41
+  - first:
+      213: 3994913850323544736
+    second: Boss_Mad_42
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 42
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_Mad_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 897
+        width: 63
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e389832d42e354970800000000000000
+      internalID: 8738458979848984638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 897
+        width: 61
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48382384d13dd1760800000000000000
+      internalID: 7430327082949968772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_2
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 897
+        width: 53
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 028f180d7e8d80e90800000000000000
+      internalID: -7059153925756028896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 809
+        width: 58
+        height: 73
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b947c7d481670220800000000000000
+      internalID: 2452035745310263730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_4
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 809
+        width: 62
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f125cac6db51e03b0800000000000000
+      internalID: -5544470187930267105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 809
+        width: 57
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ede07c5f050e3e10800000000000000
+      internalID: 2179184833227451879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_6
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 809
+        width: 54
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29eb48e4c2a45600800000000000000
+      internalID: 456168428865841454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 713
+        width: 59
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4aa0f848a7f72e0800000000000000
+      internalID: -2125845789341473591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_8
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 713
+        width: 37
+        height: 85
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9088d63d6abe23670800000000000000
+      internalID: 8517128947055298569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_9
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 721
+        width: 61
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fad0ff2dd2168e0800000000000000
+      internalID: -1702028799923867811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_10
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 713
+        width: 57
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a55e2f465220b710800000000000000
+      internalID: 1706902012864386465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_11
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 635
+        width: 86
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074f719793f787230800000000000000
+      internalID: 3636796583923151984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_12
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 633
+        width: 96
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3d3e16598c64590800000000000000
+      internalID: -7690238769770540126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_13
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 633
+        width: 80
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5087b541f9ec6520800000000000000
+      internalID: 2696787499354128478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_14
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 633
+        width: 51
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a419b1bed8aaae850800000000000000
+      internalID: 6407120946399514954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_15
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 537
+        width: 55
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be075f8788d7dbb40800000000000000
+      internalID: 5457656348541284587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_16
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 537
+        width: 58
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28aec8a1bebf2d80800000000000000
+      internalID: -8273184320205707219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_17
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 537
+        width: 61
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5250eb512991060800000000000000
+      internalID: 6924726524138825125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_18
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 539
+        width: 59
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d22c9ea375e1120800000000000000
+      internalID: 2386440763094478197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 540
+        width: 75
+        height: 85
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e21dd951cb0f990800000000000000
+      internalID: -7354171390467953031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_20
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 441
+        width: 100
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698e63b3cd2e5f960800000000000000
+      internalID: 7635258178790680726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_21
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 441
+        width: 75
+        height: 87
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6af7dea5254a920800000000000000
+      internalID: 3000613802220693236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_22
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 441
+        width: 90
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb57a785604ffd70800000000000000
+      internalID: 9079046178613975997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_23
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 441
+        width: 75
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eabed4d88a2052be0800000000000000
+      internalID: -1502791977709737042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_24
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 354
+        width: 68
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c9625f384e24000800000000000000
+      internalID: 18828603867700266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_25
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 354
+        width: 76
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861c8834ce3da0e70800000000000000
+      internalID: 9082304610244804968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_26
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 354
+        width: 64
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2773acab63aa6c0800000000000000
+      internalID: -4131429532274560334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_27
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 354
+        width: 94
+        height: 73
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66895c3a2f9d2730800000000000000
+      internalID: 3976009049787958894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_28
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 265
+        width: 55
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24ef14f84881fa70800000000000000
+      internalID: 8859011788929229870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_29
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 265
+        width: 75
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e5228096120d7d0800000000000000
+      internalID: -2895777825407476172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_30
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 265
+        width: 58
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6753d9cd3b955b0800000000000000
+      internalID: -5379070519805643021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_31
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 265
+        width: 52
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e26d059cddf810b0800000000000000
+      internalID: -5757572999757864215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_32
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 265
+        width: 98
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f8df632aaa40090800000000000000
+      internalID: -8069137018657075355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_33
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 177
+        width: 52
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fc766f587010d00800000000000000
+      internalID: 937038469415816978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_34
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 178
+        width: 44
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9adc23ff2e0af80800000000000000
+      internalID: -8097222544315274821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_35
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 177
+        width: 14
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a8ad29406d54340800000000000000
+      internalID: 4847515889066215959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_36
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 83
+        width: 62
+        height: 85
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a02ead1dbc030c0800000000000000
+      internalID: -4597951117364426213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_37
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 83
+        width: 75
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170d54163d8ecdbd0800000000000000
+      internalID: -2603950489959280527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_38
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 84
+        width: 64
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafd7c9edc9fb9eb0800000000000000
+      internalID: -4711897922327289937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_39
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 83
+        width: 59
+        height: 80
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65195f1771474630800000000000000
+      internalID: 3911166781277410666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_40
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 83
+        width: 58
+        height: 84
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c39d22707df05b0800000000000000
+      internalID: -5399861002544530351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_41
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 57
+        height: 71
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3586745112cb8c570800000000000000
+      internalID: 8487240348056643667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Mad_42
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 57
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aaa2dc1bf8c07730800000000000000
+      internalID: 3994913850323544736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

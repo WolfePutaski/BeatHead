@@ -276,7 +276,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1053558941
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 659ba2fcf4fd6d74a99ef7104e510dda, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -357,7 +357,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1053558941
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 659ba2fcf4fd6d74a99ef7104e510dda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -438,7 +438,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1053558941
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 659ba2fcf4fd6d74a99ef7104e510dda, type: 3}
   m_Color: {r: 1, g: 1, b: 0, a: 1}
@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 6708245839564645729}
   - component: {fileID: 6708245839564645728}
   - component: {fileID: 6708245839564645743}
+  - component: {fileID: 3745521575257199261}
   m_Layer: 10
   m_Name: Objective_Computer
   m_TagString: InteractableObject
@@ -525,10 +526,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bc15dc5ad05754e8db4ae8adaf6d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objAnim: {fileID: 0}
   state: 0
   textHelp: {fileID: 6708245839968047439}
   InteractionGroup: {fileID: 6966596750847934488}
   holdFill: {fileID: 4798441236486406456}
+  playerObjective: {fileID: 0}
+  isObjectiveActive: 0
   toActiveText: Hold E to Interact
   secondsToActive: 1
   toFixText: Hold E to Fix
@@ -539,6 +543,25 @@ MonoBehaviour:
   progressMaxCount: 150
   progressText: {fileID: 6958263483920066425}
   brokenIcon: {fileID: 1410801509227411907}
+--- !u!95 &3745521575257199261
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708245839564645730}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5cabe7d8c836a544c89c35aad1eb111e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6708245839744758165
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.087, y: 2.036}
+  m_AnchoredPosition: {x: 0, y: 2.1}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6708245839968047434
@@ -1220,7 +1243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6966596750847934488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.60000014, y: 1.724, z: 0}
+  m_LocalPosition: {x: -0.7, y: 1.724, z: 0}
   m_LocalScale: {x: 1.4000001, y: -0.038810004, z: 1}
   m_Children:
   - {fileID: 484921500278214873}
@@ -1264,7 +1287,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1053558941
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 659ba2fcf4fd6d74a99ef7104e510dda, type: 3}
   m_Color: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}

@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 21768377583d46b45aca24258a0b7fa5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - animatorOverride_Stab: {fileID: 22100000, guid: 034ae840287365643aa529a021f3066f,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

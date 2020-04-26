@@ -53,10 +53,6 @@ public class SC_EnemyMovement : MonoBehaviour
     {
         distanceFromTarget = transform.position.x - Target.transform.position.x;
 
-        if (GameObject.Find("Player"))
-        {
-            RequestAttack();
-        }
 
         if (CanMove)
         {
@@ -84,7 +80,7 @@ public class SC_EnemyMovement : MonoBehaviour
     public void AllowMoving()
     {
         CanMove = true;
-    }
+    } 
 
     public void NotAllowMoving()
     {
@@ -128,12 +124,7 @@ public class SC_EnemyMovement : MonoBehaviour
 
     }
     //Attack Requesting
-    public void RequestAttack()
-    {
-        Target.SendMessage("GetAttackRequest", gameObject);
-        //Debug.Log("Attack Requested");
 
-    }
     public void AllowtoAttack()
     {
         IsEngaging = true;
@@ -141,11 +132,6 @@ public class SC_EnemyMovement : MonoBehaviour
 
     }
 
-    public void CancelAttack()
-    {
-        Target.SendMessage("CancelAttacker", gameObject);
-        IsEngaging = false;
-    }
 
     public void FollowPlayer()
     {
@@ -162,6 +148,7 @@ public class SC_EnemyMovement : MonoBehaviour
 
         if (!isFreezingMove)
         {
+
             if (Mathf.Abs(distanceFromTarget) > farDistance + btwFarDistance) //walk towards
             {
                 enemyPhysics.velocity = new Vector2(transform.localScale.normalized.x * DefaultSpeed, enemyPhysics.velocity.y);
@@ -230,11 +217,4 @@ public class SC_EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
-        {
-            enemyPhysics.velocity = Vector2.zero;
-        }
-    }
 }

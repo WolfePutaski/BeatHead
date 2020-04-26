@@ -63,6 +63,7 @@ public class SC_PlayerBlock : MonoBehaviour
             playerProperties.canAttack = true;
             playerProperties.isBlocking = false;
             playerProperties.onDeflect = false;
+            playerAnim.ResetTrigger("Deflected");
             if(deflectTimer > 0)
             {
             deflectDelayTimer = playerProperties.deflectDelay;

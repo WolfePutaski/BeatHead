@@ -16,7 +16,7 @@ public class SC_PlayerAttack : MonoBehaviour
     Rigidbody2D playerPhysics;
     SC_PlayerProperties playerProperties;
     SC_CameraController cameraController;
-    bool isExecuting;
+    [HideInInspector]public bool isExecuting;
 
     //public float attackDashForce;
     //public float attackPushForce;
@@ -28,9 +28,11 @@ public class SC_PlayerAttack : MonoBehaviour
     LayerMask executeLayer;
     //public float attackRadius;
     //public float damage;
+    
     Collider2D[] enemiesToDamage;
     Collider2D enemyToExecute;
 
+    int AttackSequence;
 
     // Start is called before the first frame update
     void Start()
@@ -49,12 +51,24 @@ public class SC_PlayerAttack : MonoBehaviour
     void  Update()
     {
 
+        playerAnim.SetInteger("AttackSequence", AttackSequence);
+
+
         if (timeBtwAttack <= 0)
         {
             playerProperties.canAttack = true;
 
             if (playerProperties.canAttack && Input.GetMouseButtonDown(0))
             {
+                if (AttackSequence == 0)
+                {
+                    AttackSequence = 1;
+                }
+                if (AttackSequence == 1)
+                {
+                    AttackSequence = 0;
+                }
+
                 //Check Execution
                 enemyToExecute = null;
                 if (Physics2D.OverlapCircle(playerProperties.attackPos.position, playerProperties.attackRadius, executeLayer))
@@ -65,15 +79,17 @@ public class SC_PlayerAttack : MonoBehaviour
                 //if not, play normal attack
                 else
                 {
-
+                    playerProperties.canMove = false;
                     playerAnim.SetTrigger("Pressed Attack");
 
                 }
 
             }
         }
+
         else
         {
+            playerAnim.ResetTrigger("Pressed Attack");
             playerProperties.canAttack = false;
             timeBtwAttack -= Time.deltaTime;
         }
@@ -106,10 +122,11 @@ public class SC_PlayerAttack : MonoBehaviour
                 enemy.transform.position = new Vector2(playerProperties.attackPos.position.x, enemy.transform.position.y);
                 enemy.GetComponent<SC_EnemyProperties>().TakeDamage(playerProperties.damage, playerProperties.attackPushForce * gameObject.transform.localScale.x,true); //getcomponent and takedamage
 
-                if (enemy.GetComponent<SC_EnemyProperties>().HP <= 0)
+                //if (enemy.GetComponent<SC_EnemyProperties>().HP <= 0)
                 {
                     playerProperties.BigHPRefillCount += 0.4f;
-                    playerProperties.HP = Mathf.Clamp(playerProperties.HP + 1.5f, playerProperties.maxHP/2, playerProperties.maxHP);
+                    playerProperties.HP = Mathf.Clamp(playerProperties.HP + 1.5f, playerProperties.maxHP*0.75f, playerProperties.maxHP);
+                    playerProperties.stamina = playerProperties.maxStamina;
                 }
             }
         }
@@ -140,6 +157,17 @@ public class SC_PlayerAttack : MonoBehaviour
         isExecuting = false;
     }
 
+    void SyringeStab()
+    {
+        playerProperties.PlaySound("Player_FleshStab");
+        playerProperties.PlaySound("Player_SyringeStab");
+        cameraController.Shake();
+        if (GetComponent<SC_Objective_KillBoss1>())
+        {
+            GetComponent<SC_Objective_KillBoss1>().LostSyringe();
+        }
+    }
+
     void AttackDash()
     {
         playerPhysics.velocity = new Vector2(0, playerPhysics.velocity.y);
@@ -149,7 +177,9 @@ public class SC_PlayerAttack : MonoBehaviour
     void TriggerExecuteAttack(GameObject enemy)
 
     {
-        cameraController.activeCam = "Zoom Cam";
+        //cameraController.activeCam = "Zoom Cam";
+        cameraController.isZoom = true;
+
         isExecuting = true;
         //cameraController
         enemy.SendMessage("OnExecuted");
@@ -159,6 +189,22 @@ public class SC_PlayerAttack : MonoBehaviour
 
     }
 
+    void ReposExecuteEnemy()
+    {
+        enemyToExecute = Physics2D.OverlapCircle(playerProperties.attackPos.position, playerProperties.attackRadius, executeLayer);
+        enemyToExecute.gameObject.transform.position = playerProperties.executionPos.transform.position;
+
+    }
+
+    void Deactive_isExecuting()
+    {
+        isExecuting = false;
+    }
+
+    void Active_isExecuting()
+    {
+        isExecuting = true;
+    }
 
 
 
@@ -171,4 +217,5 @@ public class SC_PlayerAttack : MonoBehaviour
     {
         playerProperties.canAttack = true;
     }
+
 }

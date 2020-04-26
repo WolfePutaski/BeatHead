@@ -67,7 +67,7 @@ public class SC_EnemyRanged : MonoBehaviour
         {
             Debug.DrawLine(gameObject.transform.position + Vector3.up, gameObject.transform.position + Vector3.up + Vector3.right * transform.localScale.x * minShootRange, Color.green);
 
-            if (Mathf.Abs(enemyMovement.distanceFromTarget) <= minShootRange && Mathf.Abs(enemyMovement.distanceFromTarget) > chaseRange)
+            if (Mathf.Abs(enemyMovement.distanceFromTarget) <= minShootRange && Mathf.Abs(enemyMovement.distanceFromTarget) > chaseRange && !enemyMovement.Target.GetComponent<SC_PlayerProperties>().isDowned)
             {
 
                 if (isAiming == false && Physics2D.Raycast(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 1), Vector2.right * transform.localScale.x, minShootRange, whatToHit))

@@ -13,12 +13,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: defaultHP
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: audioClips.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: 6e1f0dc592cd16a40b7a2b91a574aea9, type: 3}
+    - target: {fileID: 2154682792397614819, guid: 3b9319ec191b36546b9f9fe8328f297c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300044, guid: 07550b8d95d03c348b7cc67cd955f3b2,
+        type: 3}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_LocalPosition.x

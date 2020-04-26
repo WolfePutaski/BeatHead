@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AnimatorOverride_Player_SyringeStab
+  m_Controller: {fileID: 9100000, guid: 932e8c51f30b88b489133b80648bf0c0, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 954cdebd41ee74e4d8876bb99a031eef, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c8cf546bc0f819a47b8dcf65b4a68b07, type: 2}

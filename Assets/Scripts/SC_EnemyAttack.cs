@@ -83,7 +83,7 @@ public class SC_EnemyAttack : MonoBehaviour
 
     public void ScanForAttack()
     {
-        if (!isAttacking && timeBtwAttack <= 0 && OnScanning && Mathf.Abs(enemyMovement.distanceFromTarget) < enemyMovement.closeDistance)
+        if (!isAttacking && timeBtwAttack <= 0 && OnScanning && Mathf.Abs(enemyMovement.distanceFromTarget) < enemyMovement.closeDistance && !Target.GetComponent<SC_PlayerProperties>().isDowned)
         {
             isAttacking = true;
             enemyAnim.SetTrigger("Attack");
