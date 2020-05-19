@@ -9,7 +9,8 @@ using TMPro;
 public class SC_PlayerObjectiveController : MonoBehaviour
 {
     public string newObjectiveScriptName;
-    string currnetObjectiveScriptName;
+    public string currnetObjectiveScriptName;
+    public string currentObjDescription;
     public bool hasObjective;
 
 
@@ -26,17 +27,18 @@ public class SC_PlayerObjectiveController : MonoBehaviour
     {
         if (!isShowingNewObjective)
         {
-            showObjective = (Input.GetKey(KeyCode.Tab));
+
+            showObjective = (Input.GetKey(KeyCode.Tab)) && !SC_Cheats.isPause;
         }
 
 
 
         objectiveText.SetActive(showObjective);
 
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            GetNewObjective();
-        }
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    GetNewObjective();
+        //}
         if (Input.GetKeyDown(KeyCode.I))
         {
             RemoveScript();
@@ -50,17 +52,9 @@ public class SC_PlayerObjectiveController : MonoBehaviour
     {
         if (!hasObjective)
         {
-            System.Type MyScriptType = System.Type.GetType("SC_Objective_" + newObjectiveScriptName + ",Assembly-CSharp");
-            gameObject.AddComponent(MyScriptType);
+
             hasObjective = true;
             currnetObjectiveScriptName = newObjectiveScriptName;
-            StartCoroutine(ShowNewObjective());
-
-        }
-        else
-        {
-            RemoveScript();
-            GetNewObjective();
         }
 
     }
@@ -80,26 +74,54 @@ public class SC_PlayerObjectiveController : MonoBehaviour
 
     public void UpdateNewObjectiveText(string newText)
     {
-
+        currentObjDescription = newText;
         objectiveText.GetComponent<TextMeshProUGUI>().text = newText;
-        StartCoroutine(ShowNewObjective());
+        StartCoroutine(UpdateNewObjective());
 
     }
 
     public void ObjectiveClear()
     {
-        StartCoroutine(ShowNewObjective());
         objectiveText.GetComponent<TextMeshProUGUI>().text = string.Format("Objective is Clear!");
+        currentObjDescription = objectiveText.GetComponent<TextMeshProUGUI>().text;
+
         RemoveScript();
+        StartCoroutine(UpdateNewObjective());
     }
 
-    public IEnumerator ShowNewObjective()
+    public IEnumerator UpdateNewObjective()
     {
+
         isShowingNewObjective = true;
         showObjective = true;
         yield return new WaitForSeconds(3);
+
+        if (FindObjectOfType<SC_LevelController>() && !hasObjective)
+        {
+            if (FindObjectOfType<SC_LevelController>().objectiveNumber + 1 < FindObjectOfType<SC_LevelController>().objectiveList.Count)
+            {
+                FindObjectOfType<SC_LevelController>().GoToNextObjective();
+                System.Type MyScriptType = System.Type.GetType("SC_Objective_" + newObjectiveScriptName + ",Assembly-CSharp");
+                gameObject.AddComponent(MyScriptType);
+                GetNewObjective();
+                yield return new WaitForSeconds(3);
+            }
+
+
+        }
         showObjective = false;
 
         isShowingNewObjective = false;
+    }
+
+    public void GetNewObjective_V2(string objectiveName)
+    {        
+        RemoveScript();
+        newObjectiveScriptName = objectiveName;
+        System.Type MyScriptType = System.Type.GetType("SC_Objective_" + newObjectiveScriptName + ",Assembly-CSharp");
+        gameObject.AddComponent(MyScriptType);
+        GetNewObjective();
+        StartCoroutine(UpdateNewObjective());
+
     }
 }

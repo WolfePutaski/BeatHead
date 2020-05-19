@@ -14,7 +14,7 @@ public class SC_CameraController : MonoBehaviour
     public CameraState camState;
     Animator cameraAnim;
     public GameObject cam;
-    Transform playerPos;
+    public GameObject playerPos;
     Vector3 playPos;
     Vector3 smoothPos;
     float camZoomTar;
@@ -51,7 +51,7 @@ public class SC_CameraController : MonoBehaviour
 
         cam = Camera.main.gameObject;
         GameObject player = GameObject.Find("Player");
-        playerPos = player.GetComponent<Transform>();
+        //playerPos = player;
         cameraAnim = cam.GetComponent<Animator>();
         smoothSpeed = defaultSmoothSpeed;
 
@@ -66,10 +66,7 @@ public class SC_CameraController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+
         if (isFollowing)
             {
             FollowPlayer();
@@ -160,6 +157,11 @@ public class SC_CameraController : MonoBehaviour
     public void Shake()
     {
         cameraAnim.SetTrigger("Shake1");
+    }
+
+    public void ChangeTarget(string targetName)
+    {
+        playerPos = GameObject.Find(targetName);
     }
 
     //public void Zoom(float zoom)

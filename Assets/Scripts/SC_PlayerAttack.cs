@@ -58,7 +58,7 @@ public class SC_PlayerAttack : MonoBehaviour
         {
             playerProperties.canAttack = true;
 
-            if (playerProperties.canAttack && Input.GetMouseButtonDown(0))
+            if (playerProperties.canAttack && Input.GetMouseButtonDown(0) && !SC_Cheats.isPause && playerProperties.allowInput)
             {
                 if (AttackSequence == 0)
                 {
@@ -124,7 +124,7 @@ public class SC_PlayerAttack : MonoBehaviour
 
                 //if (enemy.GetComponent<SC_EnemyProperties>().HP <= 0)
                 {
-                    playerProperties.BigHPRefillCount += 0.4f;
+                    playerProperties.BigHPRefillCount += 0.5f;
                     playerProperties.HP = Mathf.Clamp(playerProperties.HP + 1.5f, playerProperties.maxHP*0.75f, playerProperties.maxHP);
                     playerProperties.stamina = playerProperties.maxStamina;
                 }
@@ -162,10 +162,10 @@ public class SC_PlayerAttack : MonoBehaviour
         playerProperties.PlaySound("Player_FleshStab");
         playerProperties.PlaySound("Player_SyringeStab");
         cameraController.Shake();
-        if (GetComponent<SC_Objective_KillBoss1>())
-        {
-            GetComponent<SC_Objective_KillBoss1>().LostSyringe();
-        }
+        //if (GetComponent<SC_Objective_KillBoss1>())
+        //{
+        //    GetComponent<SC_Objective_KillBoss1>().LostSyringe();
+        //}
     }
 
     void AttackDash()

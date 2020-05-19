@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Linq;
 using TMPro;
@@ -18,6 +19,7 @@ public class SC_PlayerProperties : MonoBehaviour
     RuntimeAnimatorController defaultAnimator;
     AudioSource audioSource;
 
+    public bool allowInput;
 
     [Header("Health")]
     public int maxBigHP;
@@ -38,8 +40,11 @@ public class SC_PlayerProperties : MonoBehaviour
     float HPregenDelayCount;
     bool onRecovering;
 
+    float timeSinceDying = 0;
+
     GameObject HPBar;
     public List<GameObject> HPBlock;
+    public GameObject getUpText;
 
     [Header("Posture")]
     public float maxPosture;
@@ -49,6 +54,8 @@ public class SC_PlayerProperties : MonoBehaviour
     float postureRegenDelayCount;
 
     public GameObject postureBar;
+
+    Color postureBarDefaultColor;
 
     [Header("Movement")]
 
@@ -99,6 +106,7 @@ public class SC_PlayerProperties : MonoBehaviour
     public GameObject staminaFillBar;
     public Color normalStaminaColor;
     public Color alertStaminaColor;
+    public AudioClip tiredSound;
 
     [Header("Blocking")]
     public bool canBlock;
@@ -113,6 +121,7 @@ public class SC_PlayerProperties : MonoBehaviour
 
     [Header("Audio")]
     public List<AudioClip> audioClips;
+    public AudioClip radioSound;
     //public float deflectTimer;
 
     // Start is called before the first frame update
@@ -133,8 +142,11 @@ public class SC_PlayerProperties : MonoBehaviour
         stamina = maxStamina;
         //HUD
         postureBar = GameObject.Find("Player_PostureBar");
+        postureBarDefaultColor = postureBar.GetComponent<Image>().color;
         HPBar = GameObject.Find("Player_HPBar");
         staminaFillBar = GameObject.Find("Player_StaminaBar");
+
+    
         //HPBlock = new List<GameObject>();
         //HPBlock.AddRange(GameObject.FindGameObjectsWithTag("Player_HPBlock"));
 
@@ -166,16 +178,19 @@ public class SC_PlayerProperties : MonoBehaviour
         {
             if (interactionObject != null)
             {
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetKey(KeyCode.E) && !SC_Cheats.isPause)
                 {
                     interactionObject.SendMessage("PlayerInteract", SendMessageOptions.DontRequireReceiver);
                     canMove = false;
                     playerAnim.SetFloat("Moving", 0);
+
                 }
 
-                
+
+
             }
         }
+
 
 
     }
@@ -302,6 +317,8 @@ public class SC_PlayerProperties : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             playerAnim.SetTrigger("WentDown");
 
+
+
         }
 
         //Downed
@@ -319,7 +336,7 @@ public class SC_PlayerProperties : MonoBehaviour
             {
                 mashCount -= Time.deltaTime;
             }
-            if (Input.GetKeyDown(KeyCode.Space) && BigHP > 0)
+            if (Input.GetKeyDown(KeyCode.Space) && BigHP > 0 && !SC_Cheats.isPause)
             {
                 mashCount += 1;
             }
@@ -359,13 +376,20 @@ public class SC_PlayerProperties : MonoBehaviour
             }
 
 
+
         }
 
-        if (stamina == 0)
+        if (stamina <= 0)
         {
+            if (!isTired)
+            {
+                audioSource.PlayOneShot(tiredSound);
+            }
+
             isTired = true;
+
         }
-        if (stamina == maxStamina)
+        if (stamina >= maxStamina*0.5f)
         {
             isTired = false;
         }
@@ -426,11 +450,13 @@ public class SC_PlayerProperties : MonoBehaviour
             getUpBar.GetComponent<Image>().fillAmount = 0;
             float HPPercentage = (HP / maxHP);
             HPBar.GetComponent<Image>().fillAmount = HPPercentage;
+            getUpText.SetActive(false);
         }
         if (isDowned)
         {
             getUpBar.GetComponent<Image>().fillAmount = 1 - downTimer / getUpTimerDefault;
             HPBar.GetComponent<Image>().fillAmount = mashCount/10;
+            getUpText.SetActive(BigHP > 0);
         }
 
 
@@ -466,6 +492,17 @@ public class SC_PlayerProperties : MonoBehaviour
             {
                 a.GetComponent<RectTransform>().sizeDelta = new Vector2(100, a.GetComponent<RectTransform>().sizeDelta.y);
             }
+
+            if (posture <= 0)
+            {
+                postureBar.GetComponent<Image>().color = alertStaminaColor;
+
+            }
+            else
+            {
+                postureBar.GetComponent<Image>().color = postureBarDefaultColor;
+
+            }
         }
         else
         {
@@ -473,6 +510,8 @@ public class SC_PlayerProperties : MonoBehaviour
             {
                 a.GetComponent<RectTransform>().sizeDelta = new Vector2(0, a.GetComponent<RectTransform>().sizeDelta.y);
             }
+
+
         }
 
         staminaFillBar.GetComponent<Image>().fillAmount = 1 - (stamina / maxStamina);
@@ -505,9 +544,19 @@ public class SC_PlayerProperties : MonoBehaviour
             }
         }
 
+
         if (BigHP <= 0)
         {
             GameObject.Find("GAME OVER").GetComponent<TextMeshProUGUI>().enabled = true;
+            timeSinceDying += Time.deltaTime;
+            if (timeSinceDying > 1)
+            {
+                if (Input.anyKeyDown)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
+            }
+
         }
     }
 

@@ -46,6 +46,7 @@ public class SC_EnemyProperties : MonoBehaviour
 
     [Header("State")]
     EnemyState enemyState;
+    public bool isOnScreen;
 
     [Header("SoundFX")]
     public List<AudioClip> audioClips;
@@ -111,6 +112,8 @@ public class SC_EnemyProperties : MonoBehaviour
         {
             enemyAnim.SetTrigger("Die");
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+            gameObject.tag = "Untagged";
+            HP = 0;
             //Destroy(gameObject, 1);
         }
 
@@ -196,7 +199,7 @@ public class SC_EnemyProperties : MonoBehaviour
         }
     }
 
-    void Stunned()
+    public void Stunned()
     {
         gameObject.layer = LayerMask.NameToLayer("Enemies_ToExecute");
         enemyAnim.SetTrigger("Stunned");
@@ -275,11 +278,14 @@ public class SC_EnemyProperties : MonoBehaviour
 
     public void UpdateObjective()
     {
-        var obj_Kill = FindObjectOfType<SC_Objective_KillAll>();
-        if (obj_Kill != null)
+        print("Enemy Died!");
+
+        if (FindObjectOfType<SC_Objective_KillAll>() != null)
         {
-            FindObjectOfType<SC_Objective_KillAll>().EnemyDie();
+            FindObjectOfType<SC_Objective_KillAll>().SendMessage("EnemyDie", SendMessageOptions.DontRequireReceiver);
+
         }
+
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -321,5 +327,15 @@ public class SC_EnemyProperties : MonoBehaviour
 
     }
 
-   
+    private void OnBecameVisible()
+    {
+        isOnScreen = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        isOnScreen = false;
+    }
+
+
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc111f4b98dfe35468224ac7ce015a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyProperties: {fileID: 0}
   normalAnimator: {fileID: 9100000, guid: 489d3ce317c179c469e982870a857d6b, type: 2}
   madAnimator: {fileID: 9100000, guid: f69f72df6b2ba2342ad555d3a0d53db5, type: 2}
   currentPhase: 0
@@ -48,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: f69f72df6b2ba2342ad555d3a0d53db5, type: 2}
     - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: defaultHP
-      value: 20
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: defaultDHP
@@ -60,7 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: defaultPosture
-      value: 4
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: regenPerSec
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1845497328, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
       propertyPath: FreezeRateMax

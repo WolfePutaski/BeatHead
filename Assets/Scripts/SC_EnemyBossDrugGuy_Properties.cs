@@ -11,14 +11,14 @@ public class SC_EnemyBossDrugGuy_Properties : MonoBehaviour
 {
     public enum DrugBossState
     {
-        Normal, Mad
+        Normal, Mad, Dead
     }
 
-    SC_EnemyProperties enemyProperties;
+    [HideInInspector] public SC_EnemyProperties enemyProperties;
     Animator enemyAnim;
     public RuntimeAnimatorController normalAnimator;
     public RuntimeAnimatorController madAnimator;
-    public int currentPhase; // 0,1,2,3
+    public int currentPhase; // 0,1,2,3, 4== dead
     public bool isInjected;
     public DrugBossState state;
     public bool DHPLocked;
@@ -36,52 +36,105 @@ public class SC_EnemyBossDrugGuy_Properties : MonoBehaviour
 
         PhaseCheck();
 
+        if (state == DrugBossState.Normal)
+        {
+            if (enemyProperties.HP <= 0)
+            {
+                state = DrugBossState.Dead;
+            }
+        }
+
         if (state == DrugBossState.Mad)
         {
             MadFunctions();
+        }
+
+        if (state == DrugBossState.Dead)
+        {
+            enemyProperties.HP = 0;
+            enemyProperties.DHP = 0;
+            gameObject.tag = "Untagged";
+            enemyAnim.ResetTrigger("GetUp");
+        }
+        else
+        {
+            gameObject.tag = "Enemy_Boss";
         }
 
     }
 
     void MadFunctions()
     {
-        if (!DHPLocked)
+
+        // When Executed
+        if (DHPFreezeNum != enemyProperties.DHP)
         {
-            DHPFreezeNum = enemyProperties.DHP;
-            //DHPLocked = true;
-        }
+            if (isInjected)
 
-        if (!isInjected)
-
-        {
-            DHPLocked = true;
-
-            if (DHPLocked)
             {
-                if (DHPFreezeNum != enemyProperties.DHP)
-                {
-                    enemyProperties.DHP = DHPFreezeNum;
-                    enemyAnim.SetTrigger("StunAfterExecute");
-                }
-            }
-
-        }
-
-        if (isInjected)
-        {
-            if (DHPFreezeNum != enemyProperties.DHP)
-            {
+                DHPLocked = false;
                 DHPFreezeNum = enemyProperties.DHP;
                 KnockedDown();
                 isInjected = false;
             }
+
+            else
+            {
+                DHPLocked = true;
+
+                if (enemyProperties.DHP >= 0)
+                {
+                    enemyProperties.DHP = Mathf.Clamp(DHPFreezeNum, 1, enemyProperties.defaultDHP);
+
+                }
+
+                if (DHPLocked)
+                {
+                    // getexecuted
+                    
+                    enemyAnim.SetTrigger("Die");
+                    enemyAnim.SetTrigger("GetUp");
+                    enemyProperties.harderned = false;
+                    enemyAnim.SetTrigger("StunAfterExecute");
+                    gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+
+
+                }
+
+
+            }
         }
 
-        enemyProperties.HP = Mathf.Clamp(enemyProperties.HP, 0.01f, enemyProperties.defaultHP);
+        if (enemyProperties.DHP > 1)
+        {
+            enemyProperties.HP = Mathf.Clamp(enemyProperties.HP, 0.01f, enemyProperties.defaultHP);
+
+        }
+        else if (enemyProperties.DHP == 1)
+        {
+            enemyProperties.HP = enemyProperties.defaultHP;
+
+        }
+        else if (enemyProperties.DHP <= 0)
+        {
+            enemyProperties.HP = 0;
+        }
+
         if (enemyProperties.HP <= 0.01f)
         {
             enemyProperties.HP = enemyProperties.defaultHP;
-            enemyAnim.SetTrigger("StunAfterExecute");
+
+
+            if (enemyProperties.DHP > 0)
+            {
+                enemyAnim.ResetTrigger("Hurt");
+                enemyProperties.Stunned();
+                enemyProperties.PlaySound("Player_DeflectSuccess");
+                FindObjectOfType<SC_PlayerBlock>().PlayParticle();
+
+            }
+
+
         }
     }
 
@@ -109,15 +162,25 @@ public class SC_EnemyBossDrugGuy_Properties : MonoBehaviour
         if (enemyProperties.DHP > 0)
         {
             GetUp();
-            enemyAnim.SetTrigger("StunAfterExecute");
+        }
+        else
+        {
+            state = DrugBossState.Dead;
+
+            enemyAnim.ResetTrigger("GetUp");
+
+
         }
 
     }
 
     void GetUp()
     {
+        enemyAnim.SetTrigger("StunAfterExecute");
         enemyProperties.HP = enemyProperties.defaultHP;
         enemyAnim.SetTrigger("GetUp");
+        enemyProperties.harderned = false;
+
     }
 
     //When Mad, DHP can be depleted only when Injected!

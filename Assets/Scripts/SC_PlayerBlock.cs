@@ -37,7 +37,7 @@ public class SC_PlayerBlock : MonoBehaviour
         if (playerProperties.canBlock)
         {
             {
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButtonDown(1) && !SC_Cheats.isPause)
                 {
                     playerProperties.canAttack = false;
                     playerProperties.isBlocking = true;
@@ -58,7 +58,7 @@ public class SC_PlayerBlock : MonoBehaviour
             playerAnim.SetBool("Is Blocking", playerProperties.isBlocking);
         }
 
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && !SC_Cheats.isPause)
         {
             playerProperties.canAttack = true;
             playerProperties.isBlocking = false;
@@ -129,7 +129,7 @@ public class SC_PlayerBlock : MonoBehaviour
         playerProperties.canBlock = true;
     }
 
-    void PlayParticle()
+    public void PlayParticle()
     {
         playerProperties.deflectPart.Play();
     }

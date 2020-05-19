@@ -36,7 +36,7 @@ public class SC_PlayerMovement : MonoBehaviour
         {
             Movement();
 
-            if (Input.GetKeyDown(KeyCode.V) && Input.GetAxisRaw("Horizontal") != 0 && dashCount > 0)
+            if (Input.GetKeyDown(KeyCode.V) && Input.GetAxisRaw("Horizontal") != 0 && dashCount > 0 && !SC_Cheats.isPause)
             {
                 Roll();
             }
@@ -92,7 +92,10 @@ public class SC_PlayerMovement : MonoBehaviour
             playerProperties.playerSpeed = playerProperties.defaultSpeed;
         }
 
-        playerPhysics.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * playerProperties.playerSpeed * Time.deltaTime, playerPhysics.velocity.y);
+        if (!SC_Cheats.isPause && playerProperties.canMove)
+        {
+            playerPhysics.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * playerProperties.playerSpeed * Time.deltaTime, playerPhysics.velocity.y);
+        }
 
 
 
@@ -106,7 +109,10 @@ public class SC_PlayerMovement : MonoBehaviour
                 gameObject.transform.localScale = new Vector2(-1, gameObject.transform.localScale.y);
             }
 
-        playerAnim.SetFloat("Moving", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
+        if (!SC_Cheats.isPause)
+        {
+            playerAnim.SetFloat("Moving", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
+        }
     }
 
     void HUDUpdate()

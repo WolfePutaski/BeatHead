@@ -5200,6 +5200,10 @@ PrefabInstance:
       propertyPath: audioClips.Array.data[5]
       value: 
       objectReference: {fileID: 8300000, guid: 6e1f0dc592cd16a40b7a2b91a574aea9, type: 3}
+    - target: {fileID: 17839889, guid: 3b9319ec191b36546b9f9fe8328f297c, type: 3}
+      propertyPath: regenPerSec
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1714070790211081706, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: startTimeBtwAttack
@@ -5239,17 +5243,17 @@ PrefabInstance:
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 11.45
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.4293069
       objectReference: {fileID: 0}
     - target: {fileID: 8296466519088867936, guid: 3b9319ec191b36546b9f9fe8328f297c,
         type: 3}

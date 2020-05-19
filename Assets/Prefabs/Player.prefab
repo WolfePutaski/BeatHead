@@ -5047,6 +5047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnBlock: 0
+  allowInput: 1
   maxBigHP: 5
   BigHP: 0
   BigHPKillRefillAmount: 0.7
@@ -5067,17 +5068,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  getUpText: {fileID: 0}
   maxPosture: 12
   posture: 0
   postureRegenRate_default: 2
   postureBar: {fileID: 0}
   dashCountMax: 3
   dashRegenTime: 1
-  dashForce: 7
+  dashForce: 12
   defaultSpeed: 180
   slowWalkSpeed: 100
   playerSpeed: 0
-  canMove: 1
+  canMove: 0
   interactionObject: {fileID: 0}
   interactableObjectLayer:
     serializedVersion: 2
@@ -5089,19 +5091,30 @@ MonoBehaviour:
   attackPushForce: 2
   startTimeBtwAttack: 0
   currentPlayerAttackProperties:
-    attackDashForce: 0
-    attackPushForce: 0
+    attackDashForce: 2
+    attackPushForce: 2
   jabAttack:
     attackDashForce: 2
     attackPushForce: 2
   pushAttack:
-    attackDashForce: 2
-    attackPushForce: 6
+    attackDashForce: 3
+    attackPushForce: 3
   kickAttack:
     attackDashForce: 2
-    attackPushForce: 7
+    attackPushForce: 6
   attackRadius: 0.4
   damage: 1
+  attackSpeed: 0
+  attackDefaultSpeed: 1
+  attackSlowSpeed: 0.6
+  maxStamina: 6
+  stamina: 0
+  staminaRegenCountdown: 0
+  isTired: 0
+  staminaFillBar: {fileID: 0}
+  normalStaminaColor: {r: 0, g: 0.49411765, b: 0, a: 1}
+  alertStaminaColor: {r: 0.8, g: 0.2, b: 0, a: 1}
+  tiredSound: {fileID: 8300000, guid: 18bab64ac688064438af086020f325de, type: 3}
   canBlock: 1
   isBlocking: 0
   deflectPart: {fileID: 5350122000386700494}
@@ -5122,6 +5135,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 87fd3c79d7529fb48a1f930f011294a7, type: 3}
   - {fileID: 8300000, guid: ca959c1177c4c434a905072a05c292ae, type: 3}
   - {fileID: 8300000, guid: 0aaf8d97d80853e4da13c849837e2120, type: 3}
+  - {fileID: 8300000, guid: 34158b3d1e1eaec4d9aadb76fde981d8, type: 3}
+  radioSound: {fileID: 8300000, guid: 34158b3d1e1eaec4d9aadb76fde981d8, type: 3}
 --- !u!114 &252442494271667810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5179,6 +5194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newObjectiveScriptName: KillBoss1
+  currnetObjectiveScriptName: 
+  currentObjDescription: 
   hasObjective: 0
   objectiveText: {fileID: 0}
   isShowingNewObjective: 0
@@ -5289,7 +5306,8 @@ AudioSource:
   m_GameObject: {fileID: 4594123752402572943}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5903917214749224678, guid: 73ef2cce29543384fba1b1a414b838ee,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 215b82a034b6a4a4bae77a771e82b416, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

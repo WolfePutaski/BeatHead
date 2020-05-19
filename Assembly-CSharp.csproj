@@ -62,13 +62,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SC_BriefingScreen.cs" />
     <Compile Include="Assets\Scripts\Interactable\SC_InteractableObject_Computer.cs" />
+    <Compile Include="Assets\Scripts\Interactable\SC_InteractableObject_Switch.cs" />
     <Compile Include="Assets\Scripts\Interactable\SC_InteractableObject_Syringe.cs" />
+    <Compile Include="Assets\Scripts\Objectives\SC_Objective_GoToExit.cs" />
     <Compile Include="Assets\Scripts\Objectives\SC_Objective_HackComputer.cs" />
     <Compile Include="Assets\Scripts\Objectives\SC_Objective_KillAll.cs" />
     <Compile Include="Assets\Scripts\Objectives\SC_Objective_KillBoss1.cs" />
+    <Compile Include="Assets\Scripts\Objectives\SC_Objective_KillRemaining.cs" />
+    <Compile Include="Assets\Scripts\SC_BriefingScreen.cs" />
     <Compile Include="Assets\Scripts\SC_CameraController.cs" />
+    <Compile Include="Assets\Scripts\SC_Cheats.cs" />
     <Compile Include="Assets\Scripts\SC_Door.cs" />
     <Compile Include="Assets\Scripts\SC_EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\SC_EnemyBossDrugGuy_Properties.cs" />
@@ -77,7 +81,10 @@
     <Compile Include="Assets\Scripts\SC_EnemyRanged.cs" />
     <Compile Include="Assets\Scripts\SC_EnemySquadSpawner.cs" />
     <Compile Include="Assets\Scripts\SC_FPSDisplay.cs" />
+    <Compile Include="Assets\Scripts\SC_InteractableObject_Drawer.cs" />
     <Compile Include="Assets\Scripts\SC_LevelController.cs" />
+    <Compile Include="Assets\Scripts\SC_LevelController_Level1.cs" />
+    <Compile Include="Assets\Scripts\SC_LevelController_Level2.cs" />
     <Compile Include="Assets\Scripts\SC_PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\SC_PlayerBlock.cs" />
     <Compile Include="Assets\Scripts\SC_PlayerMovement.cs" />
@@ -85,6 +92,7 @@
     <Compile Include="Assets\Scripts\SC_PlayerProperties.cs" />
     <Compile Include="Assets\Scripts\SC_PostureBar.cs" />
     <Compile Include="Assets\Scripts\SC_SpawnerEnemy.cs" />
+    <Compile Include="Assets\Scripts\TestScript.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

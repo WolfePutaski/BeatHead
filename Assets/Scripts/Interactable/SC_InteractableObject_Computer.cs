@@ -23,16 +23,27 @@ public class SC_InteractableObject_Computer : MonoBehaviour
     public string toFixText;
     public float secondsToFix;
     float secondsHeldMax = 99;
-    float secondsHeld = 0;
-    bool triggerUse = false;
+    [HideInInspector] public float secondsHeld = 0;
+    bool triggerUsed = false;
     public bool interactable;
     bool onPlayer = false;
+
+    public bool canBeBroken;
+    public float maxTimeToBeBroken;
+    public float TimeToBeBroken;
+    public GameObject enemy;
+    AudioSource audioSource;
+    public AudioClip alert;
+    public bool soundOn;
+    public bool toBeBroken;
+
+    public Renderer otherEntrance;
 
     [Header("Progress")]
     public GameObject progressStateGroup;
     public GameObject progressFill;
     public float progressMaxCount;
-    float progressCount;
+    public float progressCount;
     public GameObject progressText;
     public GameObject brokenIcon;
 
@@ -40,21 +51,78 @@ public class SC_InteractableObject_Computer : MonoBehaviour
     void Start()
     {
         objAnim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
+        TimeToBeBroken = maxTimeToBeBroken;
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckUse();
-        UpdateProgression();
         UpdateHUD();
+        WaitToBeBroken();
+
+        if (otherEntrance != null)
+        {
+            OtherEntranceVisible();
+        }
     }
 
-    void UpdateProgression()
+    void OtherEntranceVisible()
     {
+        if (otherEntrance.isVisible)
+        {
+            if (state == CompueterState.Active)
+            {
+                {
+                    if (TimeToBeBroken <= 0 && state == CompueterState.Broken)
+                    {
+                        Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
 
+                    }
+                    toBeBroken = false;
+                    TimeToBeBroken = maxTimeToBeBroken;
+                }
+
+
+            }
+        }
     }
 
+    void WaitToBeBroken()
+    {
+        if (state == CompueterState.Active)
+        {
+            audioSource.Stop();
+            if (toBeBroken)
+            {
+                if (otherEntrance != null)
+                {
+                    if (!otherEntrance.isVisible)
+                    {
+                        TimeToBeBroken -= Time.deltaTime;
+                    }
+                }
+                else
+                {
+                    TimeToBeBroken -= Time.deltaTime;
+                }
+
+                if (TimeToBeBroken <= 0)
+                {
+                    Debug.Log("Computer is Broken!");
+                    state = CompueterState.Broken;
+                    if (soundOn)
+                    {
+                        audioSource.clip = alert;
+                        audioSource.Play();
+                    }
+                }
+            }
+        }
+
+    }
     void CheckUse()
     {
         if (isObjectiveActive)
@@ -78,13 +146,6 @@ public class SC_InteractableObject_Computer : MonoBehaviour
 
 
 
-        if (triggerUse)
-        {
-            if (state == CompueterState.Inactive)
-            {
-                state = CompueterState.Active;
-            }
-        }
 
         if (onPlayer)
         {
@@ -117,20 +178,22 @@ public class SC_InteractableObject_Computer : MonoBehaviour
             }
 
 
-            if (triggerUse)
+            if (triggerUsed)
             {
                 if(state == CompueterState.Inactive)
                 {
                     state = CompueterState.Active;
                     progressCount = 0;
+
                 }
 
                 if (state == CompueterState.Broken)
                 {
                     state = CompueterState.Active;
+                    TimeToBeBroken = maxTimeToBeBroken;
                 }
 
-                triggerUse = false;
+                triggerUsed = false;
 
             }
 
@@ -168,6 +231,8 @@ public class SC_InteractableObject_Computer : MonoBehaviour
                 helpText.SetText(toFixText);
                     progressText.SetActive(!onPlayer);
                 progressFill.GetComponent<SpriteRenderer>().color = Color.red;
+
+
             }
 
         }
@@ -179,6 +244,7 @@ public class SC_InteractableObject_Computer : MonoBehaviour
 
         if (state == CompueterState.Active)
         {
+            secondsHeld = 0;
             progressText.SetActive(true);
             progressCount += Time.deltaTime;
             progressText.GetComponent<TextMeshPro>().SetText(string.Format("{0}s", Mathf.RoundToInt(progressCount)));
@@ -205,7 +271,10 @@ public class SC_InteractableObject_Computer : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        secondsHeld = 0;
+        if (interactable)
+        {
+            secondsHeld = 0;
+        }
 
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -226,7 +295,7 @@ public class SC_InteractableObject_Computer : MonoBehaviour
             }
             if (secondsHeld >= secondsHeldMax)
             {
-                triggerUse = true;
+                triggerUsed = true;
 
                 secondsHeld = 0;
             }
@@ -242,9 +311,37 @@ public class SC_InteractableObject_Computer : MonoBehaviour
 
     private IEnumerator ResetHold2()
     {
-        secondsHeld = -1;
-        yield return new WaitForSeconds(1);
+        secondsHeld = -1f;
+        yield return new WaitForSeconds(.3f);
         interactable = true;
+        secondsHeld = 0;
+
+    }
+
+    //AutoBrokenPC
+    private void OnBecameInvisible()
+    {
+        if (state == CompueterState.Active)
+        {
+            {
+                toBeBroken = true;
+            }
+        }
+
+
+    }
+
+    private void OnBecameVisible()
+    {
+
+                if (TimeToBeBroken <= 0 && state == CompueterState.Broken)
+                {
+                    Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+
+                }
+                toBeBroken = false;
+                TimeToBeBroken = maxTimeToBeBroken;
+            
     }
 
 }

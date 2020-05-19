@@ -18,6 +18,7 @@ TagManager:
   - Player_DashArrow
   - InteractableObject
   - Player_StaminaBar
+  - Enemy_Boss
   layers:
   - Default
   - TransparentFX
@@ -81,4 +82,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3241408355
+    locked: 0
+  - name: Menu
+    uniqueID: 3611073375
     locked: 0

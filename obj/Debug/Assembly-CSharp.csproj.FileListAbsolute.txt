@@ -297,3 +297,7 @@ D:\IDD\2019-2\IDD391 Project\BeatHead\Temp\bin\Debug\UnityEngine.TestRunner.pdb
 D:\IDD\2019-2\IDD391 Project\BeatHead\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\IDD\2019-2\IDD391 Project\BeatHead\obj\Debug\Assembly-CSharp.dll
 D:\IDD\2019-2\IDD391 Project\BeatHead\obj\Debug\Assembly-CSharp.pdb
+D:\IDD\2019-2\IDD391 Project\BeatHead\Temp\bin\Debug\Cinemachine.dll
+D:\IDD\2019-2\IDD391 Project\BeatHead\Temp\bin\Debug\com.unity.cinemachine.editor.dll
+D:\IDD\2019-2\IDD391 Project\BeatHead\Temp\bin\Debug\Cinemachine.pdb
+D:\IDD\2019-2\IDD391 Project\BeatHead\Temp\bin\Debug\com.unity.cinemachine.editor.pdb
